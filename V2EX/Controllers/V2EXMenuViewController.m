@@ -8,6 +8,8 @@
 
 #import "V2EXMenuViewController.h"
 
+#define MENU_BUTTON_COUNT 5
+
 @interface V2EXMenuViewController ()
 
 @end
@@ -28,7 +30,7 @@
     [super viewDidLoad];
 	
     self.tableView = ({
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, (self.view.frame.size.height - 54 * 4) / 2.0f, self.view.frame.size.width, 54 * 4) style:UITableViewStylePlain];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, (self.view.frame.size.height - 54 * MENU_BUTTON_COUNT) / 2.0f, self.view.frame.size.width, 54 * MENU_BUTTON_COUNT) style:UITableViewStylePlain];
         tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
         tableView.delegate = self;
         tableView.dataSource = self;
@@ -65,6 +67,10 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 1:
+            navigationController.viewControllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"latestTopicsController"]];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+        case 2:
             navigationController.viewControllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"settingsController"]];
             [self.sideMenuViewController hideMenuViewController];
             break;
@@ -88,7 +94,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
-    return 4;
+    return MENU_BUTTON_COUNT;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -106,8 +112,8 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
     }
     
-    NSArray *titles = @[@"社区", @"我的", @"设置", @"登出"];
-    NSArray *images = @[@"IconHome", @"IconProfile", @"IconSettings", @"IconEmpty"];
+    NSArray *titles = @[@"社区", @"热点", @"我的", @"设置", @"登出"];
+    NSArray *images = @[@"IconHome", @"IconHome", @"IconProfile", @"IconSettings", @"IconEmpty"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     
@@ -124,22 +130,22 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
 {
-    NSLog(@"willShowMenuViewController");
+//    NSLog(@"willShowMenuViewController");
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu didShowMenuViewController:(UIViewController *)menuViewController
 {
-    NSLog(@"didShowMenuViewController");
+//    NSLog(@"didShowMenuViewController");
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController
 {
-    NSLog(@"willHideMenuViewController");
+//    NSLog(@"willHideMenuViewController");
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController
 {
-    NSLog(@"didHideMenuViewController");
+//    NSLog(@"didHideMenuViewController");
 }
 
 @end

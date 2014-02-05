@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RESideMenu.h"
+#import "V2EXApiClient.h"
 
 @interface V2EXNodesListViewController : UIViewController
 - (IBAction)showMenu:(id)sender;

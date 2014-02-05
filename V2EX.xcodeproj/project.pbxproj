@@ -10,6 +10,13 @@
 		1F568DF5075C4D42A74F009E /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15679B70D32749699DEC121A /* libPods-Tests.a */; };
 		366C891931644DF08230F331 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74300964D351441AA8933272 /* Foundation.framework */; };
 		4CE104C3DA0C4529966FEE14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE6D7CB50A0844A0AF530171 /* main.m */; };
+		5E0553D4189E7310002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553D3189E7310002CEAAA /* V2EXMBProgressHUDUtil.m */; };
+		5E0553D5189F3682002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553D3189E7310002CEAAA /* V2EXMBProgressHUDUtil.m */; };
+		5E0553D9189F3E77002CEAAA /* V2EXTopicsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E0553D8189F3E77002CEAAA /* V2EXTopicsListCell.xib */; };
+		5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */; };
+		5E0553E7189F4E1E002CEAAA /* V2EXLastestTopicsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E6189F4E1E002CEAAA /* V2EXLastestTopicsModel.m */; };
+		5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */; };
+		5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */; };
 		5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6769189B518B00EDF8FD /* V2EXApiClient.m */; };
 		5E5A6187189D593B00E29C6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5A6186189D593B00E29C6B /* libPods.a */; };
 		5E5B6760189A42BA00EDF8FD /* V2EXNodesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B675F189A42BA00EDF8FD /* V2EXNodesListViewController.m */; };
@@ -25,6 +32,14 @@
 		5E66EB00189A324700500B35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EAFE189A324700500B35 /* Main.storyboard */; };
 		5E66EB03189A324700500B35 /* V2EXRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EB02189A324700500B35 /* V2EXRootViewController.m */; };
 		5E66EB05189A324700500B35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EB04189A324700500B35 /* Images.xcassets */; };
+		5E72BF9618A1D12E00BB88DD /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72BF9518A1D12E00BB88DD /* libxml2.2.dylib */; };
+		5E72BF9718A1D13500BB88DD /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72BF9518A1D12E00BB88DD /* libxml2.2.dylib */; };
+		5E72BF9D18A1E0DC00BB88DD /* V2EXAbstractModel+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BF9C18A1E0DC00BB88DD /* V2EXAbstractModel+HTML.m */; };
+		5E72BFA118A1E3C300BB88DD /* V2EXAbstractModel+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BFA018A1E3C300BB88DD /* V2EXAbstractModel+JSON.m */; };
+		5E72BFA418A1F0DA00BB88DD /* V2EXLastestTopicsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E6189F4E1E002CEAAA /* V2EXLastestTopicsModel.m */; };
+		5E72BFA518A1F0E600BB88DD /* V2EXAbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */; };
+		5E72BFA618A1F0E900BB88DD /* V2EXAbstractModel+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BFA018A1E3C300BB88DD /* V2EXAbstractModel+JSON.m */; };
+		5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */; };
 		5EFDE766189BBB48007D8AE1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */; };
 		AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01641A634A3C4DD4AD34110A /* MyTest.m */; };
 /* End PBXBuildFile section */
@@ -43,8 +58,21 @@
 		01641A634A3C4DD4AD34110A /* MyTest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MyTest.m; path = Tests/MyTest.m; sourceTree = "<group>"; };
 		0788401DD709495D965637D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		15679B70D32749699DEC121A /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E0553D2189E7310002CEAAA /* V2EXMBProgressHUDUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXMBProgressHUDUtil.h; sourceTree = "<group>"; };
+		5E0553D3189E7310002CEAAA /* V2EXMBProgressHUDUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXMBProgressHUDUtil.m; sourceTree = "<group>"; };
+		5E0553D8189F3E77002CEAAA /* V2EXTopicsListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = V2EXTopicsListCell.xib; sourceTree = "<group>"; };
+		5E0553E2189F4DF4002CEAAA /* V2EXAbstractModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXAbstractModel.h; sourceTree = "<group>"; };
+		5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXAbstractModel.m; sourceTree = "<group>"; };
+		5E0553E5189F4E1E002CEAAA /* V2EXLastestTopicsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXLastestTopicsModel.h; sourceTree = "<group>"; };
+		5E0553E6189F4E1E002CEAAA /* V2EXLastestTopicsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXLastestTopicsModel.m; sourceTree = "<group>"; };
+		5E0553E8189F4EB7002CEAAA /* V2EXApiUri.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2EXApiUri.h; sourceTree = "<group>"; };
+		5E0553E9189F4FD7002CEAAA /* V2EXRequestDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2EXRequestDataDelegate.h; sourceTree = "<group>"; };
+		5E1398B7189E0C0C00384FF9 /* V2EXLatestTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXLatestTopicsViewController.h; sourceTree = "<group>"; };
+		5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXLatestTopicsViewController.m; sourceTree = "<group>"; };
+		5E1398BE189E172800384FF9 /* V2EXTopicsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXTopicsListCell.h; sourceTree = "<group>"; };
+		5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTopicsListCell.m; sourceTree = "<group>"; };
 		5E5A6181189D093600E29C6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		5E5A6186189D593B00E29C6B /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		5E5A6186189D593B00E29C6B /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		5E5B675E189A42BA00EDF8FD /* V2EXNodesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNodesListViewController.h; sourceTree = "<group>"; };
 		5E5B675F189A42BA00EDF8FD /* V2EXNodesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNodesListViewController.m; sourceTree = "<group>"; };
 		5E5B6761189A4CBF00EDF8FD /* V2EXSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXSettingsViewController.h; sourceTree = "<group>"; };
@@ -68,6 +96,13 @@
 		5E66EB02189A324700500B35 /* V2EXRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2EXRootViewController.m; sourceTree = "<group>"; };
 		5E66EB04189A324700500B35 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5E66EB0B189A324700500B35 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5E72BF9518A1D12E00BB88DD /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		5E72BF9B18A1E0DC00BB88DD /* V2EXAbstractModel+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "V2EXAbstractModel+HTML.h"; sourceTree = "<group>"; };
+		5E72BF9C18A1E0DC00BB88DD /* V2EXAbstractModel+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "V2EXAbstractModel+HTML.m"; sourceTree = "<group>"; };
+		5E72BF9F18A1E3C300BB88DD /* V2EXAbstractModel+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "V2EXAbstractModel+JSON.h"; sourceTree = "<group>"; };
+		5E72BFA018A1E3C300BB88DD /* V2EXAbstractModel+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "V2EXAbstractModel+JSON.m"; sourceTree = "<group>"; };
+		5E72BFAF18A20A3C00BB88DD /* UIViewController+MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MBProgressHUD.h"; sourceTree = "<group>"; };
+		5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MBProgressHUD.m"; sourceTree = "<group>"; };
 		5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6B6E4DB549C04343BF3F0323 /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
 		74300964D351441AA8933272 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -80,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E72BF9618A1D12E00BB88DD /* libxml2.2.dylib in Frameworks */,
 				5E5A6187189D593B00E29C6B /* libPods.a in Frameworks */,
 				5E66EAEF189A324700500B35 /* CoreGraphics.framework in Frameworks */,
 				5E66EAF1189A324700500B35 /* UIKit.framework in Frameworks */,
@@ -92,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				366C891931644DF08230F331 /* Foundation.framework in Frameworks */,
+				5E72BF9718A1D13500BB88DD /* libxml2.2.dylib in Frameworks */,
 				1F568DF5075C4D42A74F009E /* libPods-Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,9 +136,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E0553D1189E72C1002CEAAA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5E0553D2189E7310002CEAAA /* V2EXMBProgressHUDUtil.h */,
+				5E0553D3189E7310002CEAAA /* V2EXMBProgressHUDUtil.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5E0553EA189F5BA2002CEAAA /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				5E1398BE189E172800384FF9 /* V2EXTopicsListCell.h */,
+				5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */,
+				5E0553D8189F3E77002CEAAA /* V2EXTopicsListCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		5E5B6759189A3BD900EDF8FD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E72BFAB18A206DE00BB88DD /* Categories */,
 				5E66EB01189A324700500B35 /* V2EXRootViewController.h */,
 				5E66EB02189A324700500B35 /* V2EXRootViewController.m */,
 				5E5B675E189A42BA00EDF8FD /* V2EXNodesListViewController.h */,
@@ -110,6 +167,8 @@
 				5E5B6762189A4CBF00EDF8FD /* V2EXSettingsViewController.m */,
 				5E5B6764189A4ECC00EDF8FD /* V2EXMenuViewController.h */,
 				5E5B6765189A4ECC00EDF8FD /* V2EXMenuViewController.m */,
+				5E1398B7189E0C0C00384FF9 /* V2EXLatestTopicsViewController.h */,
+				5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -117,6 +176,10 @@
 		5E5B675A189A3C9100EDF8FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5E72BF9E18A1E18700BB88DD /* AbstractModels */,
+				5E0553E5189F4E1E002CEAAA /* V2EXLastestTopicsModel.h */,
+				5E0553E6189F4E1E002CEAAA /* V2EXLastestTopicsModel.m */,
+				5E0553E9189F4FD7002CEAAA /* V2EXRequestDataDelegate.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -124,6 +187,7 @@
 		5E5B675B189A3C9D00EDF8FD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5E0553D1189E72C1002CEAAA /* UI */,
 				5E5B6767189B514800EDF8FD /* Network */,
 			);
 			path = Utilities;
@@ -139,6 +203,7 @@
 		5E5B675D189A3CAE00EDF8FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E0553EA189F5BA2002CEAAA /* TableViewCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,6 +213,7 @@
 			children = (
 				5E5B6768189B518B00EDF8FD /* V2EXApiClient.h */,
 				5E5B6769189B518B00EDF8FD /* V2EXApiClient.m */,
+				5E0553E8189F4EB7002CEAAA /* V2EXApiUri.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -177,6 +243,7 @@
 		5E66EAEB189A324700500B35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E72BF9518A1D12E00BB88DD /* libxml2.2.dylib */,
 				5E5A6186189D593B00E29C6B /* libPods.a */,
 				5E5A6181189D093600E29C6B /* QuartzCore.framework */,
 				5E66EAEC189A324700500B35 /* Foundation.framework */,
@@ -215,6 +282,28 @@
 				5E66EAFA189A324700500B35 /* V2EX-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5E72BF9E18A1E18700BB88DD /* AbstractModels */ = {
+			isa = PBXGroup;
+			children = (
+				5E0553E2189F4DF4002CEAAA /* V2EXAbstractModel.h */,
+				5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */,
+				5E72BF9B18A1E0DC00BB88DD /* V2EXAbstractModel+HTML.h */,
+				5E72BF9C18A1E0DC00BB88DD /* V2EXAbstractModel+HTML.m */,
+				5E72BF9F18A1E3C300BB88DD /* V2EXAbstractModel+JSON.h */,
+				5E72BFA018A1E3C300BB88DD /* V2EXAbstractModel+JSON.m */,
+			);
+			name = AbstractModels;
+			sourceTree = "<group>";
+		};
+		5E72BFAB18A206DE00BB88DD /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5E72BFAF18A20A3C00BB88DD /* UIViewController+MBProgressHUD.h */,
+				5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		7AE34B76E8884B81903380CC /* Tests */ = {
@@ -312,6 +401,7 @@
 			files = (
 				5E66EB05189A324700500B35 /* Images.xcassets in Resources */,
 				5EFDE766189BBB48007D8AE1 /* Default-568h@2x.png in Resources */,
+				5E0553D9189F3E77002CEAAA /* V2EXTopicsListCell.xib in Resources */,
 				5E66EAF7189A324700500B35 /* InfoPlist.strings in Resources */,
 				5E66EB00189A324700500B35 /* Main.storyboard in Resources */,
 			);
@@ -387,8 +477,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E0553D5189F3682002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */,
 				4CE104C3DA0C4529966FEE14 /* main.m in Sources */,
+				5E72BFA518A1F0E600BB88DD /* V2EXAbstractModel.m in Sources */,
 				AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */,
+				5E72BFA418A1F0DA00BB88DD /* V2EXLastestTopicsModel.m in Sources */,
+				5E72BFA618A1F0E900BB88DD /* V2EXAbstractModel+JSON.m in Sources */,
 				5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,13 +491,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */,
 				5E66EAF9189A324700500B35 /* main.m in Sources */,
+				5E72BF9D18A1E0DC00BB88DD /* V2EXAbstractModel+HTML.m in Sources */,
 				5E5B6763189A4CBF00EDF8FD /* V2EXSettingsViewController.m in Sources */,
+				5E0553D4189E7310002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */,
+				5E0553E7189F4E1E002CEAAA /* V2EXLastestTopicsModel.m in Sources */,
 				5E5B6766189A4ECC00EDF8FD /* V2EXMenuViewController.m in Sources */,
 				5E5B676A189B518B00EDF8FD /* V2EXApiClient.m in Sources */,
+				5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */,
+				5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */,
+				5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */,
 				5E5B6760189A42BA00EDF8FD /* V2EXNodesListViewController.m in Sources */,
 				5E66EB03189A324700500B35 /* V2EXRootViewController.m in Sources */,
 				5E66EAFD189A324700500B35 /* V2EXAppDelegate.m in Sources */,
+				5E72BFA118A1E3C300BB88DD /* V2EXAbstractModel+JSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +715,7 @@
 				5E66EB1A189A324700500B35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		5E66EB1B189A324700500B35 /* Build configuration list for PBXNativeTarget "V2EX" */ = {
 			isa = XCConfigurationList;
@@ -622,7 +724,7 @@
 				5E66EB1D189A324700500B35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		64B9281F2AB54E3EB3A71E9F /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
@@ -631,7 +733,7 @@
 				F03CE7BDE5394236909B6AC5 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

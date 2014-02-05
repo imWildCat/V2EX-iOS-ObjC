@@ -8,13 +8,9 @@
 
 #import "V2EXApiClient.h"
 
-#define HTTP_ROOT_URL @"http://www.v2ex.com/api/"
-#define HTTPS_ROOT_URL @"https://www.v2ex.com/api/"
-#define SITE_STATS @"site/stats.json"
-#define SITE_INFO @"site/info.json"
-#define NODES_ALL @"nodes/all.json"
-#define NODES_SHOW @"nodes/show.json"
-#define TOPICS_LATEST @"topics/latest.json"
+#define HTTP_ROOT_URL @"http://www.v2ex.com/"
+#define HTTPS_ROOT_URL @"https://www.v2ex.com/"
+#define JSONAPI_URI @"api/"
 //TODO: Adding more support for user agent.
 #define DEFAULT_USET_AGENT @"5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16"
 
@@ -75,21 +71,48 @@
  *
  *  @return HTTP_ROOT_URL or HTTP_ROOT_URL.
  */
-- (NSString *) _getBaseUrl{
+- (NSString *) _getBaseUrl:(BOOL)isJsonApi{
+    NSString *rootUrl;
     if(_isHTTPS){
-        return HTTPS_ROOT_URL;
+        rootUrl = HTTPS_ROOT_URL;
     } else {
-        return HTTP_ROOT_URL;
+        rootUrl =  HTTP_ROOT_URL;
+    }
+    if (isJsonApi) {
+        return [rootUrl stringByAppendingString:JSONAPI_URI];
+    } else {
+        return rootUrl;
     }
 }
 
+- (void) managerRequestData:(NSString *)uri isGetMethod:(BOOL)isGetMethod isJsonApi:(BOOL)isJsonApi parameters:(NSDictionary *)params success:(void (^)(id dataObject))success failure:(void (^)(NSError *error))failure
+{
+    [self _setSerializer:isJsonApi];
+    NSString *url = [[self _getBaseUrl:isJsonApi] stringByAppendingString:uri];
+    
+    if(isGetMethod){
+        [_manager GET:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+            success(responseObject);
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            failure(error);
+        }];
+    } else {
+        [_manager POST:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+            success(responseObject);
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            failure(error);
+        }];
+    }
+}
+
+
+
+
 - (void) _managerGetJson:(NSString *)uri parameters:(NSDictionary *)params success:(void (^)(NSDictionary *jsonData))success failure:(void (^)(NSString *errorMessage))failure
 {
-    [self _setSerializer:YES];
-    NSString *url = [[self _getBaseUrl] stringByAppendingString:uri];
-    [_manager GET:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-        success(responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    [self managerRequestData:uri isGetMethod:YES isJsonApi:YES parameters:nil success:^(id data) {
+        success(data);
+    } failure:^(NSError *error) {
         failure([error description]);
     }];
 }

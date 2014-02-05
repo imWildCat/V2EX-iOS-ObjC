@@ -19,36 +19,29 @@ PODS:
     - AFNetworking/NSURLConnection
   - GHUnit (0.5.9)
   - hpple (0.2.0)
-  - MultiLayerNavigation (0.0.1)
+  - MBProgressHUD (0.8)
   - RESideMenu (3.4)
   - SDWebImage (3.5.2):
     - SDWebImage/Core
   - SDWebImage/Core (3.5.2)
-  - SVProgressHUD (1.0)
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
   - GHUnit
   - hpple
-  - MultiLayerNavigation (from `https://github.com/myoula/MultiLayerNavigation.git`)
+  - MBProgressHUD
   - RESideMenu (~> 3.4)
   - SDWebImage
-  - SVProgressHUD
   - SVPullToRefresh
-
-EXTERNAL SOURCES:
-  MultiLayerNavigation:
-    :git: https://github.com/myoula/MultiLayerNavigation.git
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   GHUnit: 2f3ea0192633e92afaef959476a8d28db179797d
   hpple: dde62f905f482bbec50186280d1a1be2c881241b
-  MultiLayerNavigation: 6f243ee7a02bf0c6d781fe4435c3fb4d7b70c7e5
+  MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   RESideMenu: d8d6330052e0348718826045b912a1c71748357d
   SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
-  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
   SVPullToRefresh: 61a0e4bd12bd6f8e3465909810b0fbeb1a28d5f2
 
 COCOAPODS: 0.29.0

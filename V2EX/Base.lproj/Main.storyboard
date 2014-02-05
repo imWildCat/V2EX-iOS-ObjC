@@ -30,13 +30,49 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="zCm-Zc-r8o" kind="relationship" relationship="rootViewController" id="xe2-NI-ycZ"/>
                         <segue destination="UI8-2P-H1z" kind="push" identifier="settings" id="f9L-yc-PH4"/>
+                        <segue destination="zCm-Zc-r8o" kind="push" identifier="nodesList" id="F9F-lC-XiD"/>
+                        <segue destination="t59-zd-IQ1" kind="relationship" relationship="rootViewController" id="a1F-DP-D5G"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQk-1S-mq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-615" y="-628"/>
+        </scene>
+        <!--Latest Topics View Controller - 热门话题-->
+        <scene sceneID="Uvl-kg-WcB">
+            <objects>
+                <tableViewController storyboardIdentifier="latestTopicsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t59-zd-IQ1" customClass="V2EXLatestTopicsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="smk-D9-cqf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="lqP-5z-m92" customClass="V2EXTopicsListCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lqP-5z-m92" id="1pI-8V-2Y4">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="t59-zd-IQ1" id="nLZ-lb-JYA"/>
+                            <outlet property="delegate" destination="t59-zd-IQ1" id="0Xj-Cr-8pY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="热门话题" id="FzO-hw-ezh">
+                        <barButtonItem key="leftBarButtonItem" image="IconMenu" id="Bhz-jA-OTy">
+                            <connections>
+                                <action selector="showMenu:" destination="t59-zd-IQ1" id="7rg-pW-GJ7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lS-Er-ob7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="-1341"/>
         </scene>
         <!--Nodes List View Controller-->
         <scene sceneID="qSH-r8-0Eq">
@@ -126,6 +162,7 @@
     <resources>
         <image name="IconMenu" width="24" height="24"/>
     </resources>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
