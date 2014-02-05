@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>92064A3E-F5D9-4F9D-9EB4-B02385838B0A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>V2EX</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CF0B353A-D8A3-4BCD-B987-321443E300F4</key>
+		<string>https://github.com/imWildCat/V2EX-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>V2EX.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CF0B353A-D8A3-4BCD-B987-321443E300F4</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/imWildCat/V2EX-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CF0B353A-D8A3-4BCD-B987-321443E300F4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CF0B353A-D8A3-4BCD-B987-321443E300F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>V2EX-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
