@@ -23,5 +23,8 @@
     NSLog(@"%@",dataObject);
 }
 
+- (void)testMBProgressHUD {
+    [V2EXMBProgressHUDUtil showMessage:@"test"];
+}
 
 @end

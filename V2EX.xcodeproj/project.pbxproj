@@ -18,6 +18,7 @@
 		5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */; };
 		5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */; };
 		5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
+		5E2BAE2218A539680039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
 		5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6769189B518B00EDF8FD /* V2EXApiClient.m */; };
 		5E5A6187189D593B00E29C6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5A6186189D593B00E29C6B /* libPods.a */; };
 		5E5B6760189A42BA00EDF8FD /* V2EXNodesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B675F189A42BA00EDF8FD /* V2EXNodesListViewController.m */; };
@@ -498,6 +499,7 @@
 				AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */,
 				5E72BFA418A1F0DA00BB88DD /* V2EXLastestTopicsModel.m in Sources */,
 				5E72BFA618A1F0E900BB88DD /* V2EXAbstractModel+JSON.m in Sources */,
+				5E2BAE2218A539680039FFB0 /* V2EXHttpRequestSerializer.m in Sources */,
 				5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

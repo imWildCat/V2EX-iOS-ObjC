@@ -13,5 +13,5 @@
 
 + (MBProgressHUD *)showGlobalProgressHUDWithTitle:(NSString *)title;
 + (void)dismissGlobalHUD;
-+ (MBProgressHUD*)HUDShowMessage:(NSString*)msg;
++ (MBProgressHUD*)showMessage:(NSString*)msg;
 @end

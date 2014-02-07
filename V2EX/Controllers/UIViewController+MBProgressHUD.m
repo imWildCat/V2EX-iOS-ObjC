@@ -20,6 +20,6 @@
 }
 
 -(void)showMessage:(NSString *)message {
-    [V2EXMBProgressHUDUtil HUDShowMessage:message];
+    [V2EXMBProgressHUDUtil showMessage:message];
 }
 @end

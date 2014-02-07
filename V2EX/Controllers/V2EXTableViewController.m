@@ -71,8 +71,8 @@
 }
 
 - (void)requestDataFailure:(NSString *)errorMessage {
-    [self showMessage:errorMessage];
     [self hideProgressView];
+    [self showMessage:errorMessage];
     
     // Refresh Control
     [self.refreshControl endRefreshing];

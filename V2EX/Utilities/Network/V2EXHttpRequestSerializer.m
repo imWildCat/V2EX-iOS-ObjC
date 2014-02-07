@@ -13,9 +13,8 @@
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method URLString:(NSString *)URLString parameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error
 {
     NSMutableURLRequest *request = [super requestWithMethod:method URLString:URLString parameters:parameters error:error];
-    [request setTimeoutInterval:60];
+    [request setTimeoutInterval:5];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-    NSLog(@"requestWithMethod");
     return request;
 }
 
