@@ -379,6 +379,11 @@
 				CLASSPREFIX = V2EX;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = WildCat;
+				TargetAttributes = {
+					5E66EAE8189A324700500B35 = {
+						DevelopmentTeam = 6XENCH3F68;
+					};
+				};
 			};
 			buildConfigurationList = 5E66EAE4189A324700500B35 /* Build configuration list for PBXProject "V2EX" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -624,10 +629,13 @@
 			baseConfigurationReference = 0788401DD709495D965637D2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "V2EX/V2EX-Prefix.pch";
 				INFOPLIST_FILE = "V2EX/V2EX-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -637,10 +645,13 @@
 			baseConfigurationReference = 0788401DD709495D965637D2 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "V2EX/V2EX-Prefix.pch";
 				INFOPLIST_FILE = "V2EX/V2EX-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -39,14 +39,17 @@
     NSLog(@"viewDidLoad");
   
     [self showProgressView];
-    [_latestTopicsModel get];
-    
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)loadData {
+    [_latestTopicsModel get];
 }
 
 #pragma mark - Table view data source

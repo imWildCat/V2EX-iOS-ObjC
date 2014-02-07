@@ -32,6 +32,24 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // Refresh control
+    UIRefreshControl *rc = [[UIRefreshControl alloc] init];
+    rc.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+    [rc addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = rc;
+}
+
+- (void)refreshTableView {
+    if(self.refreshControl.refreshing){
+        self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中"];
+        [self loadData];
+    }
+}
+
+- (void)loadData {
+    // Must implement this method in subclass.
+    NSLog(@"Do nothing.");
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,11 +64,19 @@
     [self setReceivedData:dataObject];
     [self.tableView reloadData];
     [self hideProgressView];
+    
+    // Refresh Control
+    [self.refreshControl endRefreshing];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
 }
 
 - (void)requestDataFailure:(NSString *)errorMessage {
     [self showMessage:errorMessage];
     [self hideProgressView];
+    
+    // Refresh Control
+    [self.refreshControl endRefreshing];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
 }
 
 #pragma mark - Table view data source
