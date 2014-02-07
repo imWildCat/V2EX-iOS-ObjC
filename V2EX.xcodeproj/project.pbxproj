@@ -40,6 +40,7 @@
 		5E72BFA518A1F0E600BB88DD /* V2EXAbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */; };
 		5E72BFA618A1F0E900BB88DD /* V2EXAbstractModel+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BFA018A1E3C300BB88DD /* V2EXAbstractModel+JSON.m */; };
 		5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */; };
+		5E72BFBF18A4663D00BB88DD /* V2EXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BFBE18A4663D00BB88DD /* V2EXTableViewController.m */; };
 		5EFDE766189BBB48007D8AE1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */; };
 		AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01641A634A3C4DD4AD34110A /* MyTest.m */; };
 /* End PBXBuildFile section */
@@ -103,6 +104,8 @@
 		5E72BFA018A1E3C300BB88DD /* V2EXAbstractModel+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "V2EXAbstractModel+JSON.m"; sourceTree = "<group>"; };
 		5E72BFAF18A20A3C00BB88DD /* UIViewController+MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MBProgressHUD.h"; sourceTree = "<group>"; };
 		5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MBProgressHUD.m"; sourceTree = "<group>"; };
+		5E72BFBD18A4663D00BB88DD /* V2EXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXTableViewController.h; sourceTree = "<group>"; };
+		5E72BFBE18A4663D00BB88DD /* V2EXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTableViewController.m; sourceTree = "<group>"; };
 		5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6B6E4DB549C04343BF3F0323 /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
 		74300964D351441AA8933272 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -169,6 +172,8 @@
 				5E5B6765189A4ECC00EDF8FD /* V2EXMenuViewController.m */,
 				5E1398B7189E0C0C00384FF9 /* V2EXLatestTopicsViewController.h */,
 				5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */,
+				5E72BFBD18A4663D00BB88DD /* V2EXTableViewController.h */,
+				5E72BFBE18A4663D00BB88DD /* V2EXTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 				5E72BF9D18A1E0DC00BB88DD /* V2EXAbstractModel+HTML.m in Sources */,
 				5E5B6763189A4CBF00EDF8FD /* V2EXSettingsViewController.m in Sources */,
 				5E0553D4189E7310002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */,
+				5E72BFBF18A4663D00BB88DD /* V2EXTableViewController.m in Sources */,
 				5E0553E7189F4E1E002CEAAA /* V2EXLastestTopicsModel.m in Sources */,
 				5E5B6766189A4ECC00EDF8FD /* V2EXMenuViewController.m in Sources */,
 				5E5B676A189B518B00EDF8FD /* V2EXApiClient.m in Sources */,

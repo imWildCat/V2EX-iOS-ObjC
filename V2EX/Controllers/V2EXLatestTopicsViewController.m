@@ -6,8 +6,9 @@
 //  Copyright (c) 2014 WildCat. All rights reserved.
 //
 
-#import "V2EXLatestTopicsViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "V2EXLatestTopicsViewController.h"
+#import "V2EXTopicsListCell.h"
 
 @interface V2EXLatestTopicsViewController ()
 
@@ -58,7 +59,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.topicsData count];
+    return [self.receivedData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,7 +79,7 @@
     
     
     NSUInteger row = [indexPath row];
-    id rowData = [self.topicsData objectAtIndex:row];
+    id rowData = [self.receivedData objectAtIndex:row];
     
     [cell.title setText:[rowData valueForKey:@"title"]];
     [cell.nodeTitle setText:[[rowData objectForKey:@"node"] valueForKey:@"title"]];
@@ -94,16 +95,16 @@
     return cell;
 }
 
-- (void)requestDataSuccess:(NSDictionary *)dataObject {
-    [self setTopicsData:dataObject];
-    [self.tableView reloadData];
-    [self hideProgressView];
-}
-
-- (void)requestDataFailure:(NSString *)errorMessage {
-    [self showMessage:errorMessage];
-    [self showProgressView];
-}
+//- (void)requestDataSuccess:(NSDictionary *)dataObject {
+//    [self setTopicsData:dataObject];
+//    [self.tableView reloadData];
+//    [self hideProgressView];
+//}
+//
+//- (void)requestDataFailure:(NSString *)errorMessage {
+//    [self showMessage:errorMessage];
+//    [self showProgressView];
+//}
 
 
 /*

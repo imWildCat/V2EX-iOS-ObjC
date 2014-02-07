@@ -9,16 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <RESideMenu.h>
 #import "UIViewController+MBProgressHUD.h"
-#import "V2EXTopicsListCell.h"
-#import "V2EXRequestDataDelegate.h"
 #import "V2EXLastestTopicsModel.h"
+#import "V2EXTableViewController.h"
 
-@interface V2EXLatestTopicsViewController : UITableViewController <V2EXRequestDataDelegate>
+@interface V2EXLatestTopicsViewController : V2EXTableViewController
 {
     V2EXLastestTopicsModel *_latestTopicsModel;
 }
 
 - (IBAction)showMenu:(id)sender;
 
-@property (nonatomic,strong) id topicsData;
 @end
