@@ -17,6 +17,7 @@
 		5E0553E7189F4E1E002CEAAA /* V2EXLastestTopicsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E6189F4E1E002CEAAA /* V2EXLastestTopicsModel.m */; };
 		5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */; };
 		5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */; };
+		5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
 		5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6769189B518B00EDF8FD /* V2EXApiClient.m */; };
 		5E5A6187189D593B00E29C6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5A6186189D593B00E29C6B /* libPods.a */; };
 		5E5B6760189A42BA00EDF8FD /* V2EXNodesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B675F189A42BA00EDF8FD /* V2EXNodesListViewController.m */; };
@@ -72,6 +73,8 @@
 		5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXLatestTopicsViewController.m; sourceTree = "<group>"; };
 		5E1398BE189E172800384FF9 /* V2EXTopicsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXTopicsListCell.h; sourceTree = "<group>"; };
 		5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTopicsListCell.m; sourceTree = "<group>"; };
+		5E2BAE1F18A5302C0039FFB0 /* V2EXHttpRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXHttpRequestSerializer.h; sourceTree = "<group>"; };
+		5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXHttpRequestSerializer.m; sourceTree = "<group>"; };
 		5E5A6181189D093600E29C6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5E5A6186189D593B00E29C6B /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		5E5B675E189A42BA00EDF8FD /* V2EXNodesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNodesListViewController.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				5E5B6768189B518B00EDF8FD /* V2EXApiClient.h */,
 				5E5B6769189B518B00EDF8FD /* V2EXApiClient.m */,
 				5E0553E8189F4EB7002CEAAA /* V2EXApiUri.h */,
+				5E2BAE1F18A5302C0039FFB0 /* V2EXHttpRequestSerializer.h */,
+				5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -501,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */,
 				5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */,
 				5E66EAF9189A324700500B35 /* main.m in Sources */,
 				5E72BF9D18A1E0DC00BB88DD /* V2EXAbstractModel+HTML.m in Sources */,

@@ -7,6 +7,7 @@
 #import <AFNetworking.h>
 #import "V2EXLastestTopicsModel.h"
 #import "V2EXRequestDataDelegate.h"
+#import "V2EXMBProgressHUDUtil.h"
 
 @interface MyTest : GHTestCase <V2EXRequestDataDelegate>
 @end
@@ -21,5 +22,6 @@
 - (void)requestDataSuccess:(NSDictionary *)dataObject {
     NSLog(@"%@",dataObject);
 }
+
 
 @end

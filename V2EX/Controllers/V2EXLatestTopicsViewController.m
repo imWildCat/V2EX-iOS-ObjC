@@ -35,8 +35,6 @@
     if(!_latestTopicsModel){
         _latestTopicsModel = [[V2EXLastestTopicsModel alloc]initWithDelegate:self];
     }
-    
-    NSLog(@"viewDidLoad");
   
     [self showProgressView];
     [self loadData];

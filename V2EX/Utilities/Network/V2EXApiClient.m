@@ -7,6 +7,7 @@
 //
 
 #import "V2EXApiClient.h"
+#import "V2EXHttpRequestSerializer.h"
 
 #define HTTP_ROOT_URL @"http://www.v2ex.com/"
 #define HTTPS_ROOT_URL @"https://www.v2ex.com/"
@@ -46,8 +47,9 @@
 
     if(isJsonApi){
         if(![_manager.requestSerializer isMemberOfClass:[AFJSONRequestSerializer class]]){
-            AFJSONRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
+            V2EXHttpRequestSerializer *requestSerializer = [V2EXHttpRequestSerializer serializer];
             [requestSerializer setValue:DEFAULT_USET_AGENT forHTTPHeaderField:@"User-Agent"];
+//            NSMutableURLRequest *request = [req]
             AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializer];
             
             [_manager setRequestSerializer:requestSerializer];
@@ -55,7 +57,7 @@
         }
     } else {
         if(![_manager.requestSerializer isMemberOfClass:[AFHTTPRequestSerializer class]]){
-            AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
+            V2EXHttpRequestSerializer *requestSerializer = [V2EXHttpRequestSerializer serializer];
             [requestSerializer setValue:DEFAULT_USET_AGENT forHTTPHeaderField:@"User-Agent"];
             AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
             [responseSerializer setAcceptableContentTypes:[NSSet setWithObjects:@"text/html", nil]];

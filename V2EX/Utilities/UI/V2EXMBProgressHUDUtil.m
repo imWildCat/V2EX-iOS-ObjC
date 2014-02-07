@@ -16,6 +16,7 @@
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:window animated:YES];
     hud.labelText = title;
+    hud.userInteractionEnabled = NO;
     return hud;
 }
 
@@ -36,7 +37,7 @@
     hud.labelText = msg;
     hud.hidden = NO;
     hud.alpha = 0.8f;
-    [hud hide:YES afterDelay:1.0f];
+    [hud hide:YES afterDelay:3.5f];
     return hud;
 }
 
