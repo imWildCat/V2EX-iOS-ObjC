@@ -1,21 +1,24 @@
 //
-//  V2EXAbstractModel+HTML.m
+//  V2EXNormalModel.m
 //  V2EX
 //
-//  Created by WildCat on 2/5/14.
+//  Created by WildCat on 2/8/14.
 //  Copyright (c) 2014 WildCat. All rights reserved.
 //
 
-#import "V2EXAbstractModel+HTML.h"
+#import "V2EXNormalModel.h"
+#import <TFHpple.h>
 
-@implementation V2EXAbstractModel (HTML)
+@implementation V2EXNormalModel
 
-- (void)getHtmlData:(NSString *)uri parameters:(NSDictionary *)parameter {
+- (void)getHTMLData:(NSString *)uri parameters:(NSDictionary *)parameter {
     [self loadData:uri isGetMethod:YES isJsonApi:NO parameters:parameter];
 }
 
 - (void)postData:(NSString *)uri parameters:(NSDictionary *)parameter {
     [self loadData:uri isGetMethod:NO isJsonApi:NO parameters:parameter];
 }
+
+
 
 @end

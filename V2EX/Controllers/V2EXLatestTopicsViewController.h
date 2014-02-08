@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <RESideMenu.h>
 #import "UIViewController+MBProgressHUD.h"
-#import "V2EXLastestTopicsModel.h"
+#import "V2EXJSONModel.h"
 #import "V2EXTableViewController.h"
 
 @interface V2EXLatestTopicsViewController : V2EXTableViewController
 {
-    V2EXLastestTopicsModel *_latestTopicsModel;
+    V2EXJSONModel *_jsonModel;
 }
 
 - (IBAction)showMenu:(id)sender;

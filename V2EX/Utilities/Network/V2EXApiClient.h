@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
-#import "V2EXApiUri.h"
 
 @interface V2EXApiClient : NSObject
 {
@@ -19,7 +18,6 @@
 }
 + (V2EXApiClient *)sharedClient;
 
-- (void)getLatestTopics:(void(^)(id topicsData))success failure:(void(^)(NSString *errorMessage))failure;
 - (void) managerRequestData:(NSString *)uri isGetMethod:(BOOL)isGetMethod isJsonApi:(BOOL)isJsonApi parameters:(NSDictionary *)params success:(void (^)(id dataObject))success failure:(void (^)(NSError *error))failure;
 
 @end

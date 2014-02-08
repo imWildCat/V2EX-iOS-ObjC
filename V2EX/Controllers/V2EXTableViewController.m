@@ -65,17 +65,24 @@
     [self.tableView reloadData];
     [self hideProgressView];
     
-    // Refresh Control
-    [self.refreshControl endRefreshing];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+    [self finishRefresh];
 }
 
 - (void)requestDataFailure:(NSString *)errorMessage {
     [self hideProgressView];
     [self showMessage:errorMessage];
     
+    [self finishRefresh];
+}
+
+- (void)finishRefresh {
     // Refresh Control
     [self.refreshControl endRefreshing];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载完成"];
+    [self performSelector:@selector(afterFinishRefresh) withObject:nil afterDelay:0.5f];
+}
+
+- (void)afterFinishRefresh {
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
 }
 

@@ -119,14 +119,6 @@
     }];
 }
 
-- (void)getLatestTopics:(void(^)(id topicsData))success failure:(void (^)(NSString *))failure
-{
-    [self _managerGetJson:TOPICS_LATEST parameters:nil success:^(NSDictionary *jsonData) {
-        success(jsonData);
-    } failure:^(NSString *errorMessage) {
-        failure(errorMessage);
-    }];
-}
 
 
 

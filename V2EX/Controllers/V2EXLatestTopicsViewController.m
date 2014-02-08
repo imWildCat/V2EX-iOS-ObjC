@@ -32,8 +32,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    if(!_latestTopicsModel){
-        _latestTopicsModel = [[V2EXLastestTopicsModel alloc]initWithDelegate:self];
+    if(!_jsonModel){
+        _jsonModel = [[V2EXJSONModel alloc]initWithDelegate:self];
     }
   
     [self showProgressView];
@@ -47,7 +47,7 @@
 }
 
 - (void)loadData {
-    [_latestTopicsModel get];
+    [_jsonModel getLatestTopics];
 }
 
 #pragma mark - Table view data source

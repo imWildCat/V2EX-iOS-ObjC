@@ -39,7 +39,7 @@
             </objects>
             <point key="canvasLocation" x="-615" y="-628"/>
         </scene>
-        <!--Latest Topics View Controller - 热门话题-->
+        <!--Latest Topics View Controller - 最新话题-->
         <scene sceneID="Uvl-kg-WcB">
             <objects>
                 <tableViewController storyboardIdentifier="latestTopicsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t59-zd-IQ1" customClass="V2EXLatestTopicsViewController" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                             <outlet property="delegate" destination="t59-zd-IQ1" id="0Xj-Cr-8pY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="热门话题" id="FzO-hw-ezh">
+                    <navigationItem key="navigationItem" title="最新话题" id="FzO-hw-ezh">
                         <barButtonItem key="leftBarButtonItem" image="IconMenu" id="Bhz-jA-OTy">
                             <connections>
                                 <action selector="showMenu:" destination="t59-zd-IQ1" id="7rg-pW-GJ7"/>
