@@ -10,7 +10,7 @@
 
 @implementation V2EXAbstractModel
 
-- (id)initWithDelegate:(id)delegate {
+- (id)initWithDelegate:(id <V2EXRequestDataDelegate>)delegate {
     self = [self init];
     if(self){
         _delegate = delegate;

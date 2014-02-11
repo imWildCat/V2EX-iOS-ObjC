@@ -18,7 +18,9 @@ PODS:
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
   - GHUnit (0.5.9)
+  - HMSegmentedControl (1.3.0)
   - hpple (0.2.0)
+  - Masonry (0.4.0)
   - MBProgressHUD (0.8)
   - RESideMenu (3.4)
   - SDWebImage (3.5.2):
@@ -29,7 +31,9 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
   - GHUnit
+  - HMSegmentedControl (~> 1.3.0)
   - hpple
+  - Masonry
   - MBProgressHUD
   - RESideMenu (~> 3.4)
   - SDWebImage
@@ -38,7 +42,9 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   GHUnit: 2f3ea0192633e92afaef959476a8d28db179797d
+  HMSegmentedControl: 3a58d4fc011e40c93c5299b9e8283e89c32f4c64
   hpple: dde62f905f482bbec50186280d1a1be2c881241b
+  Masonry: d673617c9cbc24aaea90fba20b10e47fd9970a39
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   RESideMenu: d8d6330052e0348718826045b912a1c71748357d
   SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e

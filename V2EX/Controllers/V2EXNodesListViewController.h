@@ -7,10 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RESideMenu.h"
+#import <RESideMenu.h>
+#import <HMSegmentedControl.h>
 #import "V2EXApiClient.h"
+#import "DRPaginatedScrollView.h"
 
-@interface V2EXNodesListViewController : UIViewController
+
+@interface V2EXNodesListViewController : UIViewController <UIScrollViewDelegate>
+{
+    CGFloat _segmentedControlX;
+}
+
+@property (strong, nonatomic) DRPaginatedScrollView * paginatedScrollView;
+@property (strong, nonatomic) HMSegmentedControl *segmentedControl;
+
 - (IBAction)showMenu:(id)sender;
 
 @end

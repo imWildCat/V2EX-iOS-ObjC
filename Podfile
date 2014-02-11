@@ -5,6 +5,8 @@ pod 'hpple'
 pod 'MBProgressHUD'
 pod 'SVPullToRefresh'
 pod 'SDWebImage'
+pod 'HMSegmentedControl', '~> 1.3.0'
+pod 'Masonry'
 #pod 'MultiLayerNavigation', :git => 'https://github.com/myoula/MultiLayerNavigation.git'
 
 #JLRubyChina

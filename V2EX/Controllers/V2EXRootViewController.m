@@ -18,6 +18,8 @@
 - (void)awakeFromNib
 {
     self.contentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
+    // The first sub view controller is according to contentController
+    
     self.menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
     self.backgroundImage = [UIImage imageNamed:@"Stars"];
     self.delegate = (V2EXMenuViewController *)self.menuViewController;

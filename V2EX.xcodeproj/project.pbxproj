@@ -40,6 +40,12 @@
 		5E72BFA518A1F0E600BB88DD /* V2EXAbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */; };
 		5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */; };
 		5E72BFBF18A4663D00BB88DD /* V2EXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BFBE18A4663D00BB88DD /* V2EXTableViewController.m */; };
+		5E7EDC6D18A74EAC0085628E /* V2EXAppSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC6C18A74EAC0085628E /* V2EXAppSize.m */; };
+		5E7EDC6E18A74EAC0085628E /* V2EXAppSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC6C18A74EAC0085628E /* V2EXAppSize.m */; };
+		5E7EDC7118A762C60085628E /* UIViewController+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC7018A762C60085628E /* UIViewController+Size.m */; };
+		5E7EDC7218A762C60085628E /* UIViewController+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC7018A762C60085628E /* UIViewController+Size.m */; };
+		5E8256CB18A85EFD00E11196 /* DRPaginatedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8256CA18A85EFD00E11196 /* DRPaginatedScrollView.m */; };
+		5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */; };
 		5EFDE766189BBB48007D8AE1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */; };
 		AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01641A634A3C4DD4AD34110A /* MyTest.m */; };
 /* End PBXBuildFile section */
@@ -105,6 +111,15 @@
 		5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MBProgressHUD.m"; sourceTree = "<group>"; };
 		5E72BFBD18A4663D00BB88DD /* V2EXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXTableViewController.h; sourceTree = "<group>"; };
 		5E72BFBE18A4663D00BB88DD /* V2EXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTableViewController.m; sourceTree = "<group>"; };
+		5E7EDC6A18A72B510085628E /* NormalAPIURI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalAPIURI.h; sourceTree = "<group>"; };
+		5E7EDC6B18A74EAC0085628E /* V2EXAppSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXAppSize.h; sourceTree = "<group>"; };
+		5E7EDC6C18A74EAC0085628E /* V2EXAppSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXAppSize.m; sourceTree = "<group>"; };
+		5E7EDC6F18A762C60085628E /* UIViewController+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Size.h"; sourceTree = "<group>"; };
+		5E7EDC7018A762C60085628E /* UIViewController+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Size.m"; sourceTree = "<group>"; };
+		5E8256C918A85EFD00E11196 /* DRPaginatedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRPaginatedScrollView.h; path = "../../../../../../Downloads/DRPaginatedScrollView-master/Demo/DRPaginatedScrollView/DRPaginatedScrollView.h"; sourceTree = "<group>"; };
+		5E8256CA18A85EFD00E11196 /* DRPaginatedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRPaginatedScrollView.m; path = "../../../../../../Downloads/DRPaginatedScrollView-master/Demo/DRPaginatedScrollView/DRPaginatedScrollView.m"; sourceTree = "<group>"; };
+		5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameMethods.m"; sourceTree = "<group>"; };
+		5EE2A26818AA79E700A63885 /* UIView+FrameMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameMethods.h"; sourceTree = "<group>"; };
 		5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6B6E4DB549C04343BF3F0323 /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
 		74300964D351441AA8933272 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -143,6 +158,8 @@
 			children = (
 				5E0553D2189E7310002CEAAA /* V2EXMBProgressHUDUtil.h */,
 				5E0553D3189E7310002CEAAA /* V2EXMBProgressHUDUtil.m */,
+				5E7EDC6B18A74EAC0085628E /* V2EXAppSize.h */,
+				5E7EDC6C18A74EAC0085628E /* V2EXAppSize.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -202,6 +219,7 @@
 		5E5B675C189A3CA600EDF8FD /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
+				5E8256C818A85EAD00E11196 /* DRPaginatedScrollView */,
 			);
 			path = ThirdParties;
 			sourceTree = "<group>";
@@ -209,6 +227,7 @@
 		5E5B675D189A3CAE00EDF8FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E8256CC18AA165000E11196 /* Categories */,
 				5E0553EA189F5BA2002CEAAA /* TableViewCells */,
 			);
 			path = Views;
@@ -222,6 +241,7 @@
 				5E2BAE1F18A5302C0039FFB0 /* V2EXHttpRequestSerializer.h */,
 				5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */,
 				5E54EF3718A5C2C100D88308 /* JSONAPIURI.h */,
+				5E7EDC6A18A72B510085628E /* NormalAPIURI.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -306,8 +326,28 @@
 			children = (
 				5E72BFAF18A20A3C00BB88DD /* UIViewController+MBProgressHUD.h */,
 				5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */,
+				5E7EDC6F18A762C60085628E /* UIViewController+Size.h */,
+				5E7EDC7018A762C60085628E /* UIViewController+Size.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		5E8256C818A85EAD00E11196 /* DRPaginatedScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				5E8256C918A85EFD00E11196 /* DRPaginatedScrollView.h */,
+				5E8256CA18A85EFD00E11196 /* DRPaginatedScrollView.m */,
+			);
+			path = DRPaginatedScrollView;
+			sourceTree = "<group>";
+		};
+		5E8256CC18AA165000E11196 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */,
+				5EE2A26818AA79E700A63885 /* UIView+FrameMethods.h */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		7AE34B76E8884B81903380CC /* Tests */ = {
@@ -487,9 +527,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E0553D5189F3682002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */,
+				5E7EDC6E18A74EAC0085628E /* V2EXAppSize.m in Sources */,
 				4CE104C3DA0C4529966FEE14 /* main.m in Sources */,
 				5E72BFA518A1F0E600BB88DD /* V2EXAbstractModel.m in Sources */,
 				AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */,
+				5E7EDC7218A762C60085628E /* UIViewController+Size.m in Sources */,
 				5E2BAE2218A539680039FFB0 /* V2EXHttpRequestSerializer.m in Sources */,
 				5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */,
 			);
@@ -499,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E8256CB18A85EFD00E11196 /* DRPaginatedScrollView.m in Sources */,
 				5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */,
 				5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */,
 				5E66EAF9189A324700500B35 /* main.m in Sources */,
@@ -509,8 +552,11 @@
 				5E5B6766189A4ECC00EDF8FD /* V2EXMenuViewController.m in Sources */,
 				5E5B676A189B518B00EDF8FD /* V2EXApiClient.m in Sources */,
 				5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */,
+				5E7EDC6D18A74EAC0085628E /* V2EXAppSize.m in Sources */,
 				5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */,
 				5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */,
+				5E7EDC7118A762C60085628E /* UIViewController+Size.m in Sources */,
+				5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */,
 				5E5B6760189A42BA00EDF8FD /* V2EXNodesListViewController.m in Sources */,
 				5E66EB03189A324700500B35 /* V2EXRootViewController.m in Sources */,
 				5E66EAFD189A324700500B35 /* V2EXAppDelegate.m in Sources */,
@@ -632,8 +678,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "V2EX/V2EX-Prefix.pch";
 				INFOPLIST_FILE = "V2EX/V2EX-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -648,8 +696,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "V2EX/V2EX-Prefix.pch";
 				INFOPLIST_FILE = "V2EX/V2EX-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

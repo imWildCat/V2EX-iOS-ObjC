@@ -131,6 +131,7 @@
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
 {
 //    NSLog(@"willShowMenuViewController");
+    [self hideProgressView];
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu didShowMenuViewController:(UIViewController *)menuViewController
