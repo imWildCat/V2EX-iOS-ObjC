@@ -8,8 +8,7 @@
 
 #import "V2EXNodesListViewController.h"
 #import <Masonry.h>
-#import "UIView+FrameMethods.h"
-
+#import "V2EXNodesListModel.h"
 
 @interface V2EXNodesListViewController ()
 
@@ -36,6 +35,17 @@
 //    }
     if (!self.paginatedScrollView) {
         self.paginatedScrollView = [DRPaginatedScrollView new];
+        
+        _nodesListModel0 = [[V2EXNodesListModel alloc] initWithIndex:0];
+        _nodesListModel1 = [[V2EXNodesListModel alloc] initWithIndex:1];
+        _nodesListModel2 = [[V2EXNodesListModel alloc] initWithIndex:2];
+        _nodesListModel3 = [[V2EXNodesListModel alloc] initWithIndex:3];
+        _nodesListModel4 = [[V2EXNodesListModel alloc] initWithIndex:4];
+        _nodesListModel5 = [[V2EXNodesListModel alloc] initWithIndex:5];
+        _nodesListModel6 = [[V2EXNodesListModel alloc] initWithIndex:6];
+        _nodesListModel7 = [[V2EXNodesListModel alloc] initWithIndex:7];
+        _nodesListModel8 = [[V2EXNodesListModel alloc] initWithIndex:8];
+        _nodesListModel9 = [[V2EXNodesListModel alloc] initWithIndex:9];
         NSLog(@"init");
     }
     
@@ -44,7 +54,7 @@
 //    CGFloat width = [self getWidth];
     
     // Tying up the segmented control to a scroll view
-    self.segmentedControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 65 + yDelta, 320, 50)];
+    self.segmentedControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 64 + yDelta, 320, 50)];
    
     [self setupSegmentedControl];
     [self setupPaginatedScrollView];
@@ -56,8 +66,8 @@
 - (void)setupSegmentedControl {
     [self.segmentedControl setScrollEnabled:YES];
     [self.segmentedControl setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth];
-    [self.segmentedControl setSectionTitles:@[@"Worldwide", @"Local", @"Headlines",@"Other"]];
-    [self.segmentedControl setSelectedSegmentIndex:1];
+    [self.segmentedControl setSectionTitles:@[/*@"收藏", */@"分享与探索", @"V2EX", @"iOS", @"Geek", @"游戏", @"Apple", @"生活", @"Internet", @"城市", @"品牌"]];
+    [self.segmentedControl setSelectedSegmentIndex:0];
     [self.segmentedControl setBackgroundColor:[UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:1]];
     [self.segmentedControl setTextColor:[UIColor whiteColor]];
     [self.segmentedControl setSelectedTextColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1]];
@@ -76,69 +86,50 @@
     [self.paginatedScrollView setJumpDurationPerPage:0.125];
     [self.paginatedScrollView setDelegate:self];
     
-    [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
-        UILabel * label = [UILabel new];
-        [label setText:@"Hi! This is a DRPaginatedScrollView. Every page has been easily implemented entirely by blocks.\n\nIt uses Autolayout. Rotate your device and check it out!\n\nPretty nice, isn't it?"];
-        [label setNumberOfLines:100];
-        [label setBackgroundColor:[UIColor clearColor]];
-        [label setTextAlignment:NSTextAlignmentCenter];
-        [label setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:18]];
-        [pageView addSubview:label];
-        
-        [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(pageView);
-            make.left.equalTo(@15);
-            make.right.equalTo(@-15);
-        }];
-    }];
-    
-//    __unsafe_unretained typeof(self) _self = self;
+    __weak typeof(self) _weakSelf = self;
     
     [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
-      
-        UILabel * label = [UILabel new];
-        [label setText:@"Oh, and by the way... there's a function to perform jumps to any page you specify. It's really simple to use, and it has a really cool parameter called \"bounce\".\n\nThis parameter... well, tap the button below and you'll see what it is for."];
-        [label setNumberOfLines:100];
-        [label setBackgroundColor:[UIColor clearColor]];
-        [label setTextAlignment:NSTextAlignmentCenter];
-        [label setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:18]];
-        [pageView addSubview:label];
-        
-        [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(@15);
-            make.bottom.equalTo(@0);
-            make.left.equalTo(@15);
-            make.right.equalTo(@-15);
-        }];
+        [_weakSelf handlePageWith:pageView andModel:_weakSelf.nodesListModel0];
     }];
     
     [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
-        
-        UILabel *label = [UILabel new];
-        [label setText:@"Thanks for using this demo app of DRPaginatedScrollView. I hope you can give it a chance in any of your future projects.\n\n\nAny feedback you'd like to leave me? I'll gladly read it :)"];
-        [label setNumberOfLines:100];
-        [label setTextAlignment:NSTextAlignmentCenter];
-        [label setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:18]];
-        [pageView addSubview:label];
-        
-        [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(@5);
-            make.bottom.equalTo(@0);
-            make.left.equalTo(@0);
-            make.right.equalTo(@0);
-        }];
+        [_weakSelf handlePageWith:pageView andModel:_weakSelf.nodesListModel1];
     }];
     
     [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
-        UITableView *tableview = [[UITableView alloc]init];
-        [pageView addSubview:tableview];
-        [tableview mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(@5);
-            make.bottom.equalTo(@0);
-            make.left.equalTo(@0);
-            make.right.equalTo(@0);
-        }];
+        [_weakSelf handlePageWith:pageView andModel:_weakSelf.nodesListModel2];
     }];
+    
+    [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
+        [_weakSelf handlePageWith:pageView andModel:_weakSelf.nodesListModel3];
+    }];
+    
+    [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
+        [_weakSelf handlePageWith:pageView andModel:_weakSelf.nodesListModel4];
+    }];
+    
+    [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
+        [_weakSelf handlePageWith:pageView andModel:_weakSelf.nodesListModel5];
+    }];
+    
+    [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
+        [_weakSelf handlePageWith:pageView andModel:_weakSelf.nodesListModel6];
+    }];
+    
+    [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
+        [_weakSelf handlePageWith:pageView andModel:_weakSelf.nodesListModel7];
+    }];
+    
+    [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
+        [_weakSelf handlePageWith:pageView andModel:_weakSelf.nodesListModel8];
+    }];
+    
+    [self.paginatedScrollView addPageWithHandler:^(UIView *pageView) {
+        [_weakSelf handlePageWith:pageView andModel:_weakSelf.nodesListModel9];
+    }];
+    
+
+    
 }
 
 - (void)setupView {
@@ -182,7 +173,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)handlePageWith:(UIView *)pageView andModel:(V2EXNodesListModel *)nodesListModel {
+    UITableView *tableview = [[UITableView alloc]init];
+    [tableview setDelegate:nodesListModel];
+    [tableview setDataSource:nodesListModel];
+    //        [tableview reloadData];
+    tableview.separatorInset = UIEdgeInsetsZero;
+    [pageView addSubview:tableview];
+    [tableview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@5);
+        make.bottom.equalTo(@0);
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+    }];
+}
+
 - (IBAction)showMenu:(id)sender {
     [self.sideMenuViewController presentMenuViewController];
 }
+
+
 @end

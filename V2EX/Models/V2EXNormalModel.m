@@ -19,6 +19,8 @@
     [self loadData:uri isGetMethod:NO isJsonApi:NO parameters:parameter];
 }
 
-
+- (void)getIndex {
+    [self getHTMLData:@"" parameters:nil];
+}
 
 @end

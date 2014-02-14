@@ -10,6 +10,7 @@
 
 @interface V2EXJSONModel : V2EXAbstractModel
 
+- (void)getAllNodes;
 - (void)getLatestTopics;
 
 @end

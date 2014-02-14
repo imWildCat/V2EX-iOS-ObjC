@@ -46,6 +46,14 @@
 		5E7EDC7218A762C60085628E /* UIViewController+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC7018A762C60085628E /* UIViewController+Size.m */; };
 		5E8256CB18A85EFD00E11196 /* DRPaginatedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8256CA18A85EFD00E11196 /* DRPaginatedScrollView.m */; };
 		5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */; };
+		5EE2A26C18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26B18ADAAA000A63885 /* V2EXNodesListModel.m */; };
+		5EE2A26D18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26B18ADAAA000A63885 /* V2EXNodesListModel.m */; };
+		5EE2A27D18ADB83B00A63885 /* NodesAll.json in Resources */ = {isa = PBXBuildFile; fileRef = 5EE2A27C18ADB83B00A63885 /* NodesAll.json */; };
+		5EE2A28018ADBB1C00A63885 /* V2EXStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A27F18ADBB1C00A63885 /* V2EXStringUtil.m */; };
+		5EE2A28118ADBB1C00A63885 /* V2EXStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A27F18ADBB1C00A63885 /* V2EXStringUtil.m */; };
+		5EE2A28318ADCEF300A63885 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2A28218ADCEF300A63885 /* CoreData.framework */; };
+		5EE2A28C18ADF7AB00A63885 /* V2EXNormalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */; };
+		5EE2A29018AE05CA00A63885 /* NodesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EE2A28F18AE05CA00A63885 /* NodesList.plist */; };
 		5EFDE766189BBB48007D8AE1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */; };
 		AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01641A634A3C4DD4AD34110A /* MyTest.m */; };
 /* End PBXBuildFile section */
@@ -120,6 +128,13 @@
 		5E8256CA18A85EFD00E11196 /* DRPaginatedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRPaginatedScrollView.m; path = "../../../../../../Downloads/DRPaginatedScrollView-master/Demo/DRPaginatedScrollView/DRPaginatedScrollView.m"; sourceTree = "<group>"; };
 		5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameMethods.m"; sourceTree = "<group>"; };
 		5EE2A26818AA79E700A63885 /* UIView+FrameMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameMethods.h"; sourceTree = "<group>"; };
+		5EE2A26A18ADAAA000A63885 /* V2EXNodesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNodesListModel.h; sourceTree = "<group>"; };
+		5EE2A26B18ADAAA000A63885 /* V2EXNodesListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNodesListModel.m; sourceTree = "<group>"; };
+		5EE2A27C18ADB83B00A63885 /* NodesAll.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NodesAll.json; sourceTree = "<group>"; };
+		5EE2A27E18ADBB1C00A63885 /* V2EXStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXStringUtil.h; sourceTree = "<group>"; };
+		5EE2A27F18ADBB1C00A63885 /* V2EXStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXStringUtil.m; sourceTree = "<group>"; };
+		5EE2A28218ADCEF300A63885 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5EE2A28F18AE05CA00A63885 /* NodesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodesList.plist; sourceTree = "<group>"; };
 		5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6B6E4DB549C04343BF3F0323 /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
 		74300964D351441AA8933272 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -134,9 +149,10 @@
 			files = (
 				5E72BF9618A1D12E00BB88DD /* libxml2.2.dylib in Frameworks */,
 				5E5A6187189D593B00E29C6B /* libPods.a in Frameworks */,
+				5EE2A28318ADCEF300A63885 /* CoreData.framework in Frameworks */,
 				5E66EAEF189A324700500B35 /* CoreGraphics.framework in Frameworks */,
-				5E66EAF1189A324700500B35 /* UIKit.framework in Frameworks */,
 				5E66EAED189A324700500B35 /* Foundation.framework in Frameworks */,
+				5E66EAF1189A324700500B35 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,12 +213,15 @@
 		5E5B675A189A3C9100EDF8FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5EE2A27218ADB09D00A63885 /* Data */,
 				5E72BF9E18A1E18700BB88DD /* AbstractModels */,
 				5E0553E9189F4FD7002CEAAA /* V2EXRequestDataDelegate.h */,
 				5E54EF3118A5C19000D88308 /* V2EXJSONModel.h */,
 				5E54EF3218A5C19000D88308 /* V2EXJSONModel.m */,
 				5E54EF3418A5C1E300D88308 /* V2EXNormalModel.h */,
 				5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */,
+				5EE2A26A18ADAAA000A63885 /* V2EXNodesListModel.h */,
+				5EE2A26B18ADAAA000A63885 /* V2EXNodesListModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +231,8 @@
 			children = (
 				5E0553D1189E72C1002CEAAA /* UI */,
 				5E5B6767189B514800EDF8FD /* Network */,
+				5EE2A27E18ADBB1C00A63885 /* V2EXStringUtil.h */,
+				5EE2A27F18ADBB1C00A63885 /* V2EXStringUtil.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -271,6 +292,7 @@
 		5E66EAEB189A324700500B35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EE2A28218ADCEF300A63885 /* CoreData.framework */,
 				5E72BF9518A1D12E00BB88DD /* libxml2.2.dylib */,
 				5E5A6186189D593B00E29C6B /* libPods.a */,
 				5E5A6181189D093600E29C6B /* QuartzCore.framework */,
@@ -348,6 +370,23 @@
 				5EE2A26818AA79E700A63885 /* UIView+FrameMethods.h */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		5EE2A27218ADB09D00A63885 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5EE2A27318ADB0D600A63885 /* NodesList */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5EE2A27318ADB0D600A63885 /* NodesList */ = {
+			isa = PBXGroup;
+			children = (
+				5EE2A27C18ADB83B00A63885 /* NodesAll.json */,
+				5EE2A28F18AE05CA00A63885 /* NodesList.plist */,
+			);
+			path = NodesList;
 			sourceTree = "<group>";
 		};
 		7AE34B76E8884B81903380CC /* Tests */ = {
@@ -449,10 +488,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E66EB05189A324700500B35 /* Images.xcassets in Resources */,
+				5EE2A27D18ADB83B00A63885 /* NodesAll.json in Resources */,
 				5EFDE766189BBB48007D8AE1 /* Default-568h@2x.png in Resources */,
 				5E0553D9189F3E77002CEAAA /* V2EXTopicsListCell.xib in Resources */,
 				5E66EAF7189A324700500B35 /* InfoPlist.strings in Resources */,
 				5E66EB00189A324700500B35 /* Main.storyboard in Resources */,
+				5EE2A29018AE05CA00A63885 /* NodesList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,8 +573,11 @@
 				5E72BFA518A1F0E600BB88DD /* V2EXAbstractModel.m in Sources */,
 				AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */,
 				5E7EDC7218A762C60085628E /* UIViewController+Size.m in Sources */,
+				5EE2A26D18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */,
+				5EE2A28C18ADF7AB00A63885 /* V2EXNormalModel.m in Sources */,
 				5E2BAE2218A539680039FFB0 /* V2EXHttpRequestSerializer.m in Sources */,
 				5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */,
+				5EE2A28118ADBB1C00A63885 /* V2EXStringUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,9 +600,11 @@
 				5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */,
 				5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */,
 				5E7EDC7118A762C60085628E /* UIViewController+Size.m in Sources */,
+				5EE2A26C18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */,
 				5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */,
 				5E5B6760189A42BA00EDF8FD /* V2EXNodesListViewController.m in Sources */,
 				5E66EB03189A324700500B35 /* V2EXRootViewController.m in Sources */,
+				5EE2A28018ADBB1C00A63885 /* V2EXStringUtil.m in Sources */,
 				5E66EAFD189A324700500B35 /* V2EXAppDelegate.m in Sources */,
 				5E54EF3618A5C1E300D88308 /* V2EXNormalModel.m in Sources */,
 			);

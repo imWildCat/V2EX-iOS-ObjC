@@ -17,6 +17,11 @@ PODS:
   - AFNetworking/Serialization (2.1.0)
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
+  - FMDB (2.2):
+    - FMDB/standard
+  - FMDB/common (2.2)
+  - FMDB/standard (2.2):
+    - FMDB/common
   - GHUnit (0.5.9)
   - HMSegmentedControl (1.3.0)
   - hpple (0.2.0)
@@ -30,6 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
+  - FMDB
   - GHUnit
   - HMSegmentedControl (~> 1.3.0)
   - hpple
@@ -41,6 +47,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
+  FMDB: 97472cfacf0d9e445e915704fb43b4b142799c36
   GHUnit: 2f3ea0192633e92afaef959476a8d28db179797d
   HMSegmentedControl: 3a58d4fc011e40c93c5299b9e8283e89c32f4c64
   hpple: dde62f905f482bbec50186280d1a1be2c881241b

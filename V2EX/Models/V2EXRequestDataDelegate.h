@@ -12,7 +12,7 @@
 
 @required
 
-- (void)requestDataSuccess:(NSDictionary *) dataObject;
-- (void)requestDataFailure:(NSString *) errorMessage;
+- (void)requestDataSuccess:(id)dataObject;
+- (void)requestDataFailure:(NSString *)errorMessage;
 
 @end

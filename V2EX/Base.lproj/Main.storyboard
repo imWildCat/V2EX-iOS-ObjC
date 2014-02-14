@@ -31,7 +31,8 @@
                     </navigationBar>
                     <connections>
                         <segue destination="UI8-2P-H1z" kind="push" identifier="settings" id="f9L-yc-PH4"/>
-                        <segue destination="zCm-Zc-r8o" kind="relationship" relationship="rootViewController" id="7UA-ON-DYn"/>
+                        <segue destination="t59-zd-IQ1" kind="relationship" relationship="rootViewController" id="0ea-rb-oq5"/>
+                        <segue destination="zCm-Zc-r8o" kind="push" identifier="nodesList" id="tb7-5S-GDX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQk-1S-mq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -48,7 +49,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="lqP-5z-m92" customClass="V2EXTopicsListCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lqP-5z-m92" id="1pI-8V-2Y4">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
@@ -73,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="-55" y="-1341"/>
         </scene>
-        <!--Nodes List View Controller-->
+        <!--Nodes List View Controller - 社区-->
         <scene sceneID="qSH-r8-0Eq">
             <objects>
                 <viewController storyboardIdentifier="nodesListController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zCm-Zc-r8o" customClass="V2EXNodesListViewController" sceneMemberID="viewController">
@@ -86,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ecd-Wd-ROK">
+                    <navigationItem key="navigationItem" title="社区" id="ecd-Wd-ROK">
                         <barButtonItem key="leftBarButtonItem" image="IconMenu" id="QOF-vW-GTA">
                             <connections>
                                 <action selector="showMenu:" destination="zCm-Zc-r8o" id="Gun-0c-Kkl"/>

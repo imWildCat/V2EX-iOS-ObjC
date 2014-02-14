@@ -10,5 +10,6 @@
 
 @interface V2EXNormalModel : V2EXAbstractModel
 
+- (void)getIndex;
 
 @end

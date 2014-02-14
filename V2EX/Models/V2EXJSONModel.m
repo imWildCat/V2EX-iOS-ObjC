@@ -19,4 +19,8 @@
     [self getJSONData:TOPICS_LATEST parameters:nil];
 }
 
+- (void)getAllNodes {
+    [self getJSONData:NODES_ALL parameters:nil];
+}
+
 @end

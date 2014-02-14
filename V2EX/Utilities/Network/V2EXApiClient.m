@@ -46,17 +46,13 @@
 - (void) _setSerializer:(BOOL)isJsonApi{
 
     if(isJsonApi){
-        if(![_manager.requestSerializer isMemberOfClass:[AFJSONRequestSerializer class]]){
             V2EXHttpRequestSerializer *requestSerializer = [V2EXHttpRequestSerializer serializer];
             [requestSerializer setValue:DEFAULT_USET_AGENT forHTTPHeaderField:@"User-Agent"];
-//            NSMutableURLRequest *request = [req]
             AFJSONResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializer];
             
             [_manager setRequestSerializer:requestSerializer];
             [_manager setResponseSerializer:responseSerializer];
-        }
     } else {
-        if(![_manager.requestSerializer isMemberOfClass:[AFHTTPRequestSerializer class]]){
             V2EXHttpRequestSerializer *requestSerializer = [V2EXHttpRequestSerializer serializer];
             [requestSerializer setValue:DEFAULT_USET_AGENT forHTTPHeaderField:@"User-Agent"];
             AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -64,7 +60,6 @@
             
             [_manager setRequestSerializer:requestSerializer];
             [_manager setResponseSerializer:responseSerializer];
-        }
     }
 }
 

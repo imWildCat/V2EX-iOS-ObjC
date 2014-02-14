@@ -4,27 +4,38 @@
 #import <GHUnit/GHUnit.h>
 #import <Foundation/Foundation.h>
 #import <TFHpple.h>
-#import <AFNetworking.h>
-#import "V2EXLastestTopicsModel.h"
+
+#import "V2EXNormalModel.h"
 #import "V2EXRequestDataDelegate.h"
-#import "V2EXMBProgressHUDUtil.h"
 
 @interface MyTest : GHTestCase <V2EXRequestDataDelegate>
 @end
 
 @implementation MyTest
 
-- (void)testDataModel {
-    V2EXLastestTopicsModel *lastestTopicsM = [[V2EXLastestTopicsModel alloc]initWithDelegate:self];
-    [lastestTopicsM get];
+- (void)test2MakePlist {
+    V2EXNormalModel *model = [[V2EXNormalModel alloc] initWithDelegate:self];
+    [model getIndex];
+    
 }
 
-- (void)requestDataSuccess:(NSDictionary *)dataObject {
-    NSLog(@"%@",dataObject);
+- (void)requestDataSuccess:(id)dataObject {
+//    NSLog(@"%@",dataObject);
+    TFHpple *doc = [[TFHpple alloc]initWithHTMLData:dataObject];
+    NSArray *elements = [doc searchWithXPathQuery:@"/html/body/div[2]/div/div[3]/div[11]/table//a"];
+    NSMutableString *string = [NSMutableString new];
+    for (TFHppleElement *element in elements) {
+        [string appendString:@"<string>"];
+        [string appendString:[[element objectForKey:@"href"] stringByReplacingOccurrencesOfString:@"/go/" withString:@""]];
+        [string appendString:@"</string>\n"];
+    }
+    NSLog(string);
 }
 
-- (void)testMBProgressHUD {
-    [V2EXMBProgressHUDUtil showMessage:@"test"];
+- (void)requestDataFailure:(NSString *)errorMessage {
+    NSLog(@"%@",errorMessage);
 }
+
+
 
 @end

@@ -7,12 +7,15 @@
 //
 
 #import "V2EXAppDelegate.h"
+#import <FMDatabase.h>
+#import <FMDatabaseAdditions.h>
+#import "V2EXStringUtil.h"
 
 @implementation V2EXAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [self prepareForLaunching];
     return YES;
 }
 							
@@ -42,5 +45,69 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)prepareForLaunching {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSFileManager *fileMgr = [NSFileManager new];
+    
+    NSString *documentDirectory = [paths objectAtIndex:0];
+
+    [fileMgr createDirectoryAtPath:[documentDirectory stringByAppendingString:@"/db"] withIntermediateDirectories:YES attributes:nil error:nil];
+    
+    NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"db/v2ex_normal.db"];
+    FMDatabase *db = [FMDatabase databaseWithPath:dbPath] ;
+    if (![db open]) {
+        NSLog(@"Could not open db.");
+    }
+    
+    int nodesCount = [db intForQuery:@"SELECT COUNT(*) FROM nodes"];
+    
+    if (nodesCount > 700) {
+        NSLog(@"nodes > 700");
+    } else {
+        [db executeUpdate:@"CREATE TABLE IF NOT EXISTS nodes (id integer NOT NULL PRIMARY KEY UNIQUE,name text NOT NULL,title text NOT NULL,uri text NOT NULL,topics integer NOT NULL,header text,footer text,created text NOT NULL)"];
+        
+        
+        NSBundle *bundle = [NSBundle mainBundle];
+        NSString *plistPath = [bundle pathForResource:@"NodesAll" ofType:@"json"];
+        NSData   *jsonData = [NSData dataWithContentsOfFile:plistPath];
+        id json = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+        
+        for (NSDictionary *row in json) {
+            NSString *header, *footer;
+            if ([row objectForKey:@"header"] != [NSNull null]) {
+                header = [V2EXStringUtil stringByStrippingHTML:[row objectForKey:@"header"]];
+            } else {
+                header = nil;
+            }
+            if ([row objectForKey:@"footer"] != [NSNull null]) {
+                footer = [V2EXStringUtil stringByStrippingHTML:[row objectForKey:@"footer"]];
+            } else {
+                footer = nil;
+            }
+            
+            [db executeUpdate:@"INSERT OR REPLACE INTO nodes (id, name, title, uri, topics, header, footer, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                [row objectForKey:@"id"],
+                [row objectForKey:@"name"],
+                [row objectForKey:@"title"],
+                [[row objectForKey:@"url"] stringByReplacingOccurrencesOfString:@"http://www.v2ex.com/go/" withString:@""],
+                [row objectForKey:@"topics"],
+                header,
+                footer,
+                [row objectForKey:@"created"]
+             ];
+        }
+    }
+    
+    
+//    V2EXJSONModel *nodesListModel = [[V2EXJSONModel alloc] initWithDelegate:self];
+//    [nodesListModel getAllNodes];
+}
+
+
+
+//- (void)requestDataSuccess:(id)dataObject {
+//    _dictAllNodes = dataObject;
+//}
 
 @end
