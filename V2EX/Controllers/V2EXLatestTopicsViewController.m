@@ -35,7 +35,7 @@
     if(!_jsonModel){
         _jsonModel = [[V2EXJSONModel alloc]initWithDelegate:self];
     }
-  
+    self.tableView.separatorInset = UIEdgeInsetsZero;
     [self showProgressView];
     [self loadData];
 }
