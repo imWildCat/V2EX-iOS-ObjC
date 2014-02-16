@@ -30,9 +30,9 @@
         [self setShowsVerticalScrollIndicator:NO];
         [self setJumpDurationPerPage:0.1];
         
-        [self setActionWhenTappedBlock:^(DRPaginatedScrollView * paginatedScrollView) {
-            [paginatedScrollView jumpToPage:[paginatedScrollView nextPage] bounce:0 completion:nil];
-        }];
+//        [self setActionWhenTappedBlock:^(DRPaginatedScrollView * paginatedScrollView) {
+//            [paginatedScrollView jumpToPage:[paginatedScrollView nextPage] bounce:0 completion:nil];
+//        }];
         
         self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap)];
         [self addGestureRecognizer:self.tapGestureRecognizer];

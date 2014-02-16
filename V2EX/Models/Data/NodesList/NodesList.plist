@@ -3,159 +3,157 @@
 <plist version="1.0">
 <array>
 	<array>
-        <string>qna</string>
-        <string>share</string>
-        <string>create</string>
-        <string>autistic</string>
-        <string>in</string>
-        <string>random</string>
-        <string>ideas</string>
-        <string>design</string>
-        <string>blog</string>
-        <string>paper</string>
+		<string>qna</string>
+		<string>share</string>
+		<string>create</string>
+		<string>autistic</string>
+		<string>in</string>
+		<string>random</string>
+		<string>ideas</string>
+		<string>design</string>
+		<string>blog</string>
+		<string>paper</string>
 	</array>
 	<array>
-        <string>v2ex</string>
-        <string>babel</string>
-        <string>gae</string>
-        <string>dns</string>
-        <string>feedback</string>
-        <string>picky</string>
-        <string>guide</string>
-        <string></string>
-        <string>olivida</string>
+		<string>v2ex</string>
+		<string>babel</string>
+		<string>gae</string>
+		<string>dns</string>
+		<string>feedback</string>
+		<string>picky</string>
+		<string>guide</string>
+		<string>olivida</string>
 	</array>
-    <array>
+	<array>
 		<string>idev</string>
-        <string>imarketing</string>
-        <string>iad</string>
-        <string>icode</string>
-        <string>itransfer</string>
+		<string>imarketing</string>
+		<string>iad</string>
+		<string>icode</string>
+		<string>itransfer</string>
 	</array>
 	<array>
 		<string>programmer</string>
-        <string>python</string>
-        <string>android</string>
-        <string>linux</string>
-        <string>cloud</string>
-        <string>bitcoin</string>
-        <string>php</string>
-        <string>server</string>
-        <string>hardware</string>
-        <string>linode</string>
-        <string>designer</string>
-        <string>outsourcing</string>
-        <string>kindle</string>
-        <string>mysql</string>
-        <string>bb</string>
-        <string>tornado</string>
-        <string>ror</string>
-        <string>typography</string>
-        <string>java</string>
-        <string>markdown</string>
-        <string>programming</string>
-        <string>mongodb</string>
-        <string>redis</string>
-        <string>ruby</string>
-        <string>car</string>
-        <string>business</string>
-        <string>photoshop</string>
-        <string>lego</string>
-        <string>math</string>
-        <string>sony</string>
+		<string>python</string>
+		<string>android</string>
+		<string>linux</string>
+		<string>cloud</string>
+		<string>bitcoin</string>
+		<string>php</string>
+		<string>server</string>
+		<string>hardware</string>
+		<string>linode</string>
+		<string>designer</string>
+		<string>outsourcing</string>
+		<string>kindle</string>
+		<string>mysql</string>
+		<string>bb</string>
+		<string>tornado</string>
+		<string>ror</string>
+		<string>typography</string>
+		<string>java</string>
+		<string>markdown</string>
+		<string>programming</string>
+		<string>mongodb</string>
+		<string>redis</string>
+		<string>ruby</string>
+		<string>car</string>
+		<string>business</string>
+		<string>photoshop</string>
+		<string>lego</string>
+		<string>math</string>
+		<string>sony</string>
 	</array>
-    <array>
+	<array>
 		<string>games</string>
-        <string>igame</string>
-        <string>bf3</string>
-        <string>lol</string>
-        <string>sc2</string>
-        <string>steam</string>
-        <string>ps3</string>
-        <string>wow</string>
-        <string>eve</string>
-        <string>xbox360</string>
-        <string>gt</string>
-        <string>wii</string>
+		<string>igame</string>
+		<string>bf3</string>
+		<string>lol</string>
+		<string>sc2</string>
+		<string>steam</string>
+		<string>ps3</string>
+		<string>wow</string>
+		<string>eve</string>
+		<string>xbox360</string>
+		<string>gt</string>
+		<string>wii</string>
 	</array>
 	<array>
 		<string>macosx</string>
-        <string>iphone</string>
-        <string>mbp</string>
-        <string>ipad</string>
-        <string>mba</string>
-        <string>accessory</string>
-        <string>imac</string>
-        <string>macmini</string>
-        <string>ipod</string>
-        <string>macbook</string>
-        <string>mobileme</string>
-        <string>macpro</string>
-        <string>iwork</string>
-        <string>ilife</string>
-        <string>garageband</string>
+		<string>iphone</string>
+		<string>mbp</string>
+		<string>ipad</string>
+		<string>mba</string>
+		<string>accessory</string>
+		<string>imac</string>
+		<string>macmini</string>
+		<string>ipod</string>
+		<string>macbook</string>
+		<string>mobileme</string>
+		<string>macpro</string>
+		<string>iwork</string>
+		<string>ilife</string>
+		<string>garageband</string>
 	</array>
-    <array>
+	<array>
 		<string>all4all</string>
-        <string>jobs</string>
-        <string>afterdark</string>
-        <string>music</string>
-        <string>movie</string>
-        <string>exchange</string>
-        <string>reading</string>
-        <string>photograph</string>
-        <string>tv</string>
-        <string>taste</string>
-        <string>creditcard</string>
-        <string>invest</string>
-        <string>travel</string>
-        <string>lohas</string>
-        <string>baby</string>
-        <string>soccer</string>
-        <string>pet</string>
-        <string>bike</string>
-        <string>tuan</string>
-        <string>coffee</string>
-        <string>plant</string>
-        <string>diary</string>
-        <string>love</string>
-        <string>mushroom</string>
-        <string>mileage</string>
+		<string>jobs</string>
+		<string>afterdark</string>
+		<string>music</string>
+		<string>movie</string>
+		<string>exchange</string>
+		<string>reading</string>
+		<string>photograph</string>
+		<string>tv</string>
+		<string>taste</string>
+		<string>creditcard</string>
+		<string>invest</string>
+		<string>travel</string>
+		<string>lohas</string>
+		<string>baby</string>
+		<string>soccer</string>
+		<string>pet</string>
+		<string>bike</string>
+		<string>tuan</string>
+		<string>coffee</string>
+		<string>plant</string>
+		<string>diary</string>
+		<string>love</string>
+		<string>mushroom</string>
+		<string>mileage</string>
 	</array>
 	<array>
 		<string>google</string>
-        <string>twitter</string>
-        <string>facebook</string>
-        <string>wikipedia</string>
-        <string>path</string>
-        <string>reddit</string>
-        <string>4sq</string>
+		<string>twitter</string>
+		<string>facebook</string>
+		<string>wikipedia</string>
+		<string>path</string>
+		<string>reddit</string>
+		<string>4sq</string>
 	</array>
-    <array>
+	<array>
 		<string>beijing</string>
-        <string>shanghai</string>
-        <string>shenzhen</string>
-        <string>hangzhou</string>
-        <string>guangzhou</string>
-        <string>chengdu</string>
-        <string>kunming</string>
-        <string>wuhan</string>
-        <string>nyc</string>
-        <string>tianjin</string>
-        <string>la</string>
-        <string>sanfrancisco</string>
+		<string>shanghai</string>
+		<string>shenzhen</string>
+		<string>hangzhou</string>
+		<string>guangzhou</string>
+		<string>chengdu</string>
+		<string>kunming</string>
+		<string>wuhan</string>
+		<string>nyc</string>
+		<string>tianjin</string>
+		<string>la</string>
+		<string>sanfrancisco</string>
 	</array>
 	<array>
 		<string>uniqlo</string>
-        <string>lamy</string>
-        <string>ikea</string>
-        <string>muji</string>
-        <string>gap</string>
-        <string>moleskine</string>
-        <string>gstar</string>
-        <string>nike</string>
-        <string>adidas</string>
+		<string>lamy</string>
+		<string>ikea</string>
+		<string>muji</string>
+		<string>gap</string>
+		<string>moleskine</string>
+		<string>gstar</string>
+		<string>nike</string>
+		<string>adidas</string>
 	</array>
-    
 </array>
 </plist>

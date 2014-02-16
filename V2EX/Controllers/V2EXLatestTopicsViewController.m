@@ -102,8 +102,8 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSUInteger index = indexPath.row;
-    
+    NSUInteger index = indexPath.row;
+    NSLog(@"%i",index);
 }
 
 //- (void)requestDataSuccess:(NSDictionary *)dataObject {

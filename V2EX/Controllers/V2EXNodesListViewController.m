@@ -175,18 +175,20 @@
 
 - (void)handlePageWith:(UIView *)pageView andModel:(V2EXNodesListModel *)nodesListModel {
     UITableView *tableview = [[UITableView alloc]init];
+    tableview.rowHeight = 55;
     [tableview setDelegate:nodesListModel];
     [tableview setDataSource:nodesListModel];
-    //        [tableview reloadData];
+//    [tableview reloadData];
     tableview.separatorInset = UIEdgeInsetsZero;
     [pageView addSubview:tableview];
     [tableview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@5);
+        make.top.equalTo(@10);
         make.bottom.equalTo(@0);
         make.left.equalTo(@0);
         make.right.equalTo(@0);
     }];
 }
+
 
 - (IBAction)showMenu:(id)sender {
     [self.sideMenuViewController presentMenuViewController];

@@ -7,6 +7,7 @@
 //
 
 #import "V2EXNodesListModel.h"
+#import "V2EXNodesListCell.h"
 
 @implementation V2EXNodesListModel
 
@@ -41,25 +42,38 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-    } else {
-        while ([cell.contentView.subviews lastObject] != nil) {
-            [(UIView*)[cell.contentView.subviews lastObject]removeFromSuperview];
-        }
-    }
+    static NSString *CellIdentifier = @"nodesListCell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+//    } else {
+//        while ([cell.contentView.subviews lastObject] != nil) {
+//            [(UIView*)[cell.contentView.subviews lastObject]removeFromSuperview];
+//        }
+//    }
+    
+    UINib *nib = [UINib nibWithNibName:@"V2EXNodesListCell" bundle:nil];
+    [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
+    V2EXNodesListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 
     NSUInteger index = [indexPath row];
+    NSString *uri = [_data objectAtIndex:index];
     
-    FMResultSet *retSet = [_db executeQuery:@"SELECT * FROM nodes WHERE uri = ?",[_data objectAtIndex:index]];
+    FMResultSet *retSet = [_db executeQuery:@"SELECT * FROM nodes WHERE uri = ?",uri];
     [retSet next];
     
-    cell.textLabel.text = [retSet stringForColumn:@"title"];
-    cell.detailTextLabel.text = [retSet stringForColumn:@"header"];
-    
+    cell.nodeTitle.text = [retSet stringForColumn:@"title"];
+    cell.nodeHeader.text = [retSet stringForColumn:@"header"];
+    cell.nodeUri = uri;
+
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger index = indexPath.row;
+    NSLog(@"%i",index);
 }
 
 @end
