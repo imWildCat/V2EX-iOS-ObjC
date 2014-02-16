@@ -48,6 +48,7 @@
 		5E98FF2618B0AD5000D9D2C2 /* V2EXNodesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */; };
 		5E98FF2718B0AD5000D9D2C2 /* V2EXNodesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */; };
 		5E98FF2B18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E98FF2A18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib */; };
+		5E98FF2D18B0B99800D9D2C2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5E98FF2C18B0B99800D9D2C2 /* LICENSE */; };
 		5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */; };
 		5EE2A26C18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26B18ADAAA000A63885 /* V2EXNodesListModel.m */; };
 		5EE2A26D18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26B18ADAAA000A63885 /* V2EXNodesListModel.m */; };
@@ -132,6 +133,7 @@
 		5E98FF2418B0AD5000D9D2C2 /* V2EXNodesListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNodesListCell.h; sourceTree = "<group>"; };
 		5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNodesListCell.m; sourceTree = "<group>"; };
 		5E98FF2A18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = V2EXNodesListCell.xib; sourceTree = "<group>"; };
+		5E98FF2C18B0B99800D9D2C2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameMethods.m"; sourceTree = "<group>"; };
 		5EE2A26818AA79E700A63885 /* UIView+FrameMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameMethods.h"; sourceTree = "<group>"; };
 		5EE2A26A18ADAAA000A63885 /* V2EXNodesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNodesListModel.h; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		5E66EAE0189A324700500B35 = {
 			isa = PBXGroup;
 			children = (
+				5E98FF2C18B0B99800D9D2C2 /* LICENSE */,
 				5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */,
 				5E66EAF2189A324700500B35 /* V2EX */,
 				5E66EAEB189A324700500B35 /* Frameworks */,
@@ -502,6 +505,7 @@
 				5EFDE766189BBB48007D8AE1 /* Default-568h@2x.png in Resources */,
 				5E0553D9189F3E77002CEAAA /* V2EXTopicsListCell.xib in Resources */,
 				5E66EAF7189A324700500B35 /* InfoPlist.strings in Resources */,
+				5E98FF2D18B0B99800D9D2C2 /* LICENSE in Resources */,
 				5E66EB00189A324700500B35 /* Main.storyboard in Resources */,
 				5EE2A29018AE05CA00A63885 /* NodesList.plist in Resources */,
 			);
