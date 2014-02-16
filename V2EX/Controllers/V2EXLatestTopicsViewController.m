@@ -78,6 +78,9 @@
     
     V2EXTopicsListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+//    [cell.replies.layer setCornerRadius:8];
+//    [cell.userAvatar.layer setCornerRadius:cell.userAvatar.frame.size.width/5];
+////    cell.userAvatar.layer.masksToBounds = YES;
     
     NSUInteger row = [indexPath row];
     id rowData = [self.receivedData objectAtIndex:row];
@@ -94,6 +97,13 @@
     [cell.userAvatar setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"avatar_large"]];
 
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSUInteger index = indexPath.row;
+    
 }
 
 //- (void)requestDataSuccess:(NSDictionary *)dataObject {

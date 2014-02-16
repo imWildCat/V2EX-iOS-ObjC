@@ -53,8 +53,6 @@
 
     NSUInteger index = [indexPath row];
     
-    
-   
     FMResultSet *retSet = [_db executeQuery:@"SELECT * FROM nodes WHERE uri = ?",[_data objectAtIndex:index]];
     [retSet next];
     

@@ -44,7 +44,7 @@
 		5E7EDC6E18A74EAC0085628E /* V2EXAppSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC6C18A74EAC0085628E /* V2EXAppSize.m */; };
 		5E7EDC7118A762C60085628E /* UIViewController+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC7018A762C60085628E /* UIViewController+Size.m */; };
 		5E7EDC7218A762C60085628E /* UIViewController+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC7018A762C60085628E /* UIViewController+Size.m */; };
-		5E8256CB18A85EFD00E11196 /* DRPaginatedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8256CA18A85EFD00E11196 /* DRPaginatedScrollView.m */; };
+		5E98FED818B085B500D9D2C2 /* DRPaginatedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98FED718B085B500D9D2C2 /* DRPaginatedScrollView.m */; };
 		5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */; };
 		5EE2A26C18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26B18ADAAA000A63885 /* V2EXNodesListModel.m */; };
 		5EE2A26D18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26B18ADAAA000A63885 /* V2EXNodesListModel.m */; };
@@ -124,8 +124,8 @@
 		5E7EDC6C18A74EAC0085628E /* V2EXAppSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXAppSize.m; sourceTree = "<group>"; };
 		5E7EDC6F18A762C60085628E /* UIViewController+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Size.h"; sourceTree = "<group>"; };
 		5E7EDC7018A762C60085628E /* UIViewController+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Size.m"; sourceTree = "<group>"; };
-		5E8256C918A85EFD00E11196 /* DRPaginatedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DRPaginatedScrollView.h; path = "../../../../../../Downloads/DRPaginatedScrollView-master/Demo/DRPaginatedScrollView/DRPaginatedScrollView.h"; sourceTree = "<group>"; };
-		5E8256CA18A85EFD00E11196 /* DRPaginatedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DRPaginatedScrollView.m; path = "../../../../../../Downloads/DRPaginatedScrollView-master/Demo/DRPaginatedScrollView/DRPaginatedScrollView.m"; sourceTree = "<group>"; };
+		5E98FED618B085B500D9D2C2 /* DRPaginatedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRPaginatedScrollView.h; sourceTree = "<group>"; };
+		5E98FED718B085B500D9D2C2 /* DRPaginatedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRPaginatedScrollView.m; sourceTree = "<group>"; };
 		5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameMethods.m"; sourceTree = "<group>"; };
 		5EE2A26818AA79E700A63885 /* UIView+FrameMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameMethods.h"; sourceTree = "<group>"; };
 		5EE2A26A18ADAAA000A63885 /* V2EXNodesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNodesListModel.h; sourceTree = "<group>"; };
@@ -357,8 +357,8 @@
 		5E8256C818A85EAD00E11196 /* DRPaginatedScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				5E8256C918A85EFD00E11196 /* DRPaginatedScrollView.h */,
-				5E8256CA18A85EFD00E11196 /* DRPaginatedScrollView.m */,
+				5E98FED618B085B500D9D2C2 /* DRPaginatedScrollView.h */,
+				5E98FED718B085B500D9D2C2 /* DRPaginatedScrollView.m */,
 			);
 			path = DRPaginatedScrollView;
 			sourceTree = "<group>";
@@ -455,7 +455,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = V2EX;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = WildCat;
 				TargetAttributes = {
 					5E66EAE8189A324700500B35 = {
@@ -585,12 +585,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E8256CB18A85EFD00E11196 /* DRPaginatedScrollView.m in Sources */,
 				5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */,
 				5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */,
 				5E66EAF9189A324700500B35 /* main.m in Sources */,
 				5E5B6763189A4CBF00EDF8FD /* V2EXSettingsViewController.m in Sources */,
 				5E0553D4189E7310002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */,
+				5E98FED818B085B500D9D2C2 /* DRPaginatedScrollView.m in Sources */,
 				5E72BFBF18A4663D00BB88DD /* V2EXTableViewController.m in Sources */,
 				5E54EF3318A5C19000D88308 /* V2EXJSONModel.m in Sources */,
 				5E5B6766189A4ECC00EDF8FD /* V2EXMenuViewController.m in Sources */,
@@ -644,7 +644,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -684,7 +683,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
