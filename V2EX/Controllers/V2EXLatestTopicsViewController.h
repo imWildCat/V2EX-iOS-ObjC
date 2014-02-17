@@ -17,6 +17,7 @@
     V2EXJSONModel *_jsonModel;
 }
 
++ (V2EXLatestTopicsViewController *)sharedController;
 - (IBAction)showMenu:(id)sender;
 
 @end

@@ -9,6 +9,7 @@
 #import "V2EXNodesListViewController.h"
 #import <Masonry.h>
 #import "V2EXNodesListModel.h"
+#import "V2EXTopicsListInSingleNodeViewController.h"
 
 @interface V2EXNodesListViewController ()
 
@@ -16,13 +17,15 @@
 
 @implementation V2EXNodesListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
++ (V2EXNodesListViewController *)sharedController
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    static V2EXNodesListViewController *_sharedNodesListViewControllerInstance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        _sharedNodesListViewControllerInstance = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"nodesListController"];
+    });
+    
+    return _sharedNodesListViewControllerInstance;
 }
 
 - (void)viewDidLoad
@@ -35,18 +38,37 @@
 //    }
     if (!self.paginatedScrollView) {
         self.paginatedScrollView = [DRPaginatedScrollView new];
+        _normalModel = [[V2EXNormalModel alloc]initWithDelegate:self];
         
         _nodesListModel0 = [[V2EXNodesListModel alloc] initWithIndex:0];
+        _nodesListModel0.delegate = self;
+        
         _nodesListModel1 = [[V2EXNodesListModel alloc] initWithIndex:1];
+        _nodesListModel1.delegate = self;
+        
         _nodesListModel2 = [[V2EXNodesListModel alloc] initWithIndex:2];
+        _nodesListModel2.delegate = self;
+        
         _nodesListModel3 = [[V2EXNodesListModel alloc] initWithIndex:3];
+        _nodesListModel3.delegate = self;
+        
         _nodesListModel4 = [[V2EXNodesListModel alloc] initWithIndex:4];
+        _nodesListModel4.delegate = self;
+        
         _nodesListModel5 = [[V2EXNodesListModel alloc] initWithIndex:5];
+        _nodesListModel5.delegate = self;
+        
         _nodesListModel6 = [[V2EXNodesListModel alloc] initWithIndex:6];
+        _nodesListModel6.delegate = self;
+        
         _nodesListModel7 = [[V2EXNodesListModel alloc] initWithIndex:7];
+        _nodesListModel7.delegate = self;
+        
         _nodesListModel8 = [[V2EXNodesListModel alloc] initWithIndex:8];
+        _nodesListModel8.delegate = self;
+        
         _nodesListModel9 = [[V2EXNodesListModel alloc] initWithIndex:9];
-        NSLog(@"init");
+        _nodesListModel9.delegate = self;
     }
     
    
@@ -189,6 +211,29 @@
     }];
 }
 
+#pragma mark - V2EXRequestDataDelegate
+- (void)requestTopicsList:(NSString *)URI {
+    [self showProgressView];
+    [_normalModel getTopicsList:URI];
+    
+    NSLog(@"request %@",URI);
+}
+
+-(void)requestDataSuccess:(id)dataObject {
+    V2EXTopicsListInSingleNodeViewController *topicsListInSingleNodeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
+
+    topicsListInSingleNodeViewController.receivedData = dataObject;
+
+//    [self presentViewController:topicsListInSingleNodeViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:topicsListInSingleNodeViewController animated:YES];
+    
+    [self hideProgressView];
+}
+
+- (void)requestDataFailure:(NSString *)errorMessage {
+    [self hideProgressView];
+    [self showMessage:errorMessage];
+}
 
 - (IBAction)showMenu:(id)sender {
     [self.sideMenuViewController presentMenuViewController];

@@ -47,11 +47,16 @@
 }
 
 - (void)prepareForLaunching {
+    [self prepareForNodeList];
+    [self prepareForAllControllers];
+}
+
+- (void)prepareForNodeList {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSFileManager *fileMgr = [NSFileManager new];
     
     NSString *documentDirectory = [paths objectAtIndex:0];
-
+    
     [fileMgr createDirectoryAtPath:[documentDirectory stringByAppendingString:@"/db"] withIntermediateDirectories:YES attributes:nil error:nil];
     
     NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"db/v2ex_normal.db"];
@@ -87,21 +92,24 @@
             }
             
             [db executeUpdate:@"INSERT OR REPLACE INTO nodes (id, name, title, uri, topics, header, footer, created) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-                [row objectForKey:@"id"],
-                [row objectForKey:@"name"],
-                [row objectForKey:@"title"],
-                [[row objectForKey:@"url"] stringByReplacingOccurrencesOfString:@"http://www.v2ex.com/go/" withString:@""],
-                [row objectForKey:@"topics"],
-                header,
-                footer,
-                [row objectForKey:@"created"]
+             [row objectForKey:@"id"],
+             [row objectForKey:@"name"],
+             [row objectForKey:@"title"],
+             [[row objectForKey:@"url"] stringByReplacingOccurrencesOfString:@"http://www.v2ex.com/go/" withString:@""],
+             [row objectForKey:@"topics"],
+             header,
+             footer,
+             [row objectForKey:@"created"]
              ];
         }
     }
-    
-    
-//    V2EXJSONModel *nodesListModel = [[V2EXJSONModel alloc] initWithDelegate:self];
-//    [nodesListModel getAllNodes];
+    //    V2EXJSONModel *nodesListModel = [[V2EXJSONModel alloc] initWithDelegate:self];
+    //    [nodesListModel getAllNodes];
+}
+
+- (void)prepareForAllControllers {
+    _sharedLatestTopicsViewController = [V2EXLatestTopicsViewController sharedController];
+    _sharedNodesListViewController = [V2EXNodesListViewController sharedController];
 }
 
 

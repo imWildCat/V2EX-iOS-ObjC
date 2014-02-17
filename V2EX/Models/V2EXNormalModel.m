@@ -23,4 +23,8 @@
     [self getHTMLData:@"" parameters:nil];
 }
 
+- (void)getTopicsList:(NSString *)URI {
+    [self getHTMLData:[@"go/" stringByAppendingString:URI] parameters:nil];
+}
+
 @end

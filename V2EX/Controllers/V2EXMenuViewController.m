@@ -7,6 +7,7 @@
 //
 
 #import "V2EXMenuViewController.h"
+#import "V2EXAppDelegate.h"
 
 #define MENU_BUTTON_COUNT 5
 
@@ -61,13 +62,16 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UINavigationController *navigationController = (UINavigationController *)self.sideMenuViewController.contentViewController;
     
+    V2EXAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
     switch (indexPath.row) {
         case 0:
-            navigationController.viewControllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"nodesListController"]];
+//            navigationController.viewControllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"nodesListController"]];
+            navigationController.viewControllers = @[appDelegate.sharedNodesListViewController];
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 1:
-            navigationController.viewControllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"latestTopicsController"]];
+            navigationController.viewControllers = @[appDelegate.sharedLatestTopicsViewController];
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 2:

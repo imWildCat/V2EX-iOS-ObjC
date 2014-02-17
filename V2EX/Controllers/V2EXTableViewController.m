@@ -38,6 +38,8 @@
     rc.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
     [rc addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = rc;
+    
+    self.tableView.separatorInset = UIEdgeInsetsZero;
 }
 
 - (void)refreshTableView {

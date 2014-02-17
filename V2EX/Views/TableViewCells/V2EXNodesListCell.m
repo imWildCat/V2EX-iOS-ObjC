@@ -28,12 +28,13 @@
 - (void)awakeFromNib {
     self.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellClick)];
-    [self addGestureRecognizer:tap];//添加view的点击事件
+    [self addGestureRecognizer:tap];
+    // Add responder for click event.
 }
 
 - (void)cellClick {
-    #warning Incomplete method implementation.
-    NSLog(self.nodeUri);
+    // TODO: This is very bad implementation to respond click event in UITableViewCell as a result of using UITableView in UIScrollView. Need to improve. The page view(DRPaginatedScrollView) in V2EXNodesListController should be replaced by one doesn't inherit form UIScrollView.
+    [self.delegate requestTopicsList:self.nodeURI];
 }
 
 @end

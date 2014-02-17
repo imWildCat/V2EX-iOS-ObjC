@@ -55,6 +55,7 @@
     UINib *nib = [UINib nibWithNibName:@"V2EXNodesListCell" bundle:nil];
     [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
     V2EXNodesListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.delegate = self.delegate;
 
     NSUInteger index = [indexPath row];
     NSString *uri = [_data objectAtIndex:index];
@@ -64,13 +65,13 @@
     
     cell.nodeTitle.text = [retSet stringForColumn:@"title"];
     cell.nodeHeader.text = [retSet stringForColumn:@"header"];
-    cell.nodeUri = uri;
+    cell.nodeURI = uri;
 
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
-
+// TODO: Find the better scheme for page view because this method don't working while UITableView in UISrollView
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger index = indexPath.row;
     NSLog(@"%i",index);

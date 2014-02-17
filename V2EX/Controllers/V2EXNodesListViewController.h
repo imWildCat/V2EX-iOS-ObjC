@@ -9,14 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <RESideMenu.h>
 #import <HMSegmentedControl.h>
-#import "V2EXApiClient.h"
 #import "DRPaginatedScrollView.h"
 #import "V2EXNodesListModel.h"
+#import "V2EXRequestDataDelegate.h"
+#import "UIViewController+MBProgressHUD.h"
+#import "V2EXNormalModel.h"
 
 
-@interface V2EXNodesListViewController : UIViewController <UIScrollViewDelegate>
+@interface V2EXNodesListViewController : UIViewController <UIScrollViewDelegate, V2EXRequestDataDelegate>
 {
     CGFloat _segmentedControlX;
+    V2EXNormalModel *_normalModel;
 }
 
 @property (strong, nonatomic) DRPaginatedScrollView * paginatedScrollView;
@@ -33,7 +36,7 @@
 @property (nonatomic, retain) V2EXNodesListModel *nodesListModel8;
 @property (nonatomic, retain) V2EXNodesListModel *nodesListModel9;
 
-
++ (V2EXNodesListViewController *)sharedController;
 - (IBAction)showMenu:(id)sender;
 
 @end

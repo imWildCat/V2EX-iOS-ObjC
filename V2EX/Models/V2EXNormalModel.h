@@ -11,5 +11,6 @@
 @interface V2EXNormalModel : V2EXAbstractModel
 
 - (void)getIndex;
+- (void)getTopicsList:(NSString *)URI;
 
 @end

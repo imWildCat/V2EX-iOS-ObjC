@@ -15,4 +15,8 @@
 - (void)requestDataSuccess:(id)dataObject;
 - (void)requestDataFailure:(NSString *)errorMessage;
 
+@optional
+
+- (void)requestTopicsList:(NSString *)URI;
+
 @end

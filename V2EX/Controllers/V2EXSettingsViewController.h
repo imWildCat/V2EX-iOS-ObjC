@@ -10,6 +10,8 @@
 #import "RESideMenu.h"
 
 @interface V2EXSettingsViewController : UIViewController
+
++ (V2EXSettingsViewController *)sharedController;
 - (IBAction)showMenu:(id)sender;
 
 @end

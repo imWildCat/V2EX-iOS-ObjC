@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "V2EXLatestTopicsViewController.h"
+#import "V2EXNodesListViewController.h"
+
 @interface V2EXAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (retain, nonatomic) V2EXNodesListViewController *sharedNodesListViewController;
+@property (retain, nonatomic) V2EXLatestTopicsViewController *sharedLatestTopicsViewController;
+
 
 @end

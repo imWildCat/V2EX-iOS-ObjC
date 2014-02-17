@@ -16,6 +16,7 @@
 		5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */; };
 		5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */; };
 		5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */; };
+		5E23700F18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */; };
 		5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
 		5E2BAE2218A539680039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
 		5E54EF3318A5C19000D88308 /* V2EXJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54EF3218A5C19000D88308 /* V2EXJSONModel.m */; };
@@ -85,6 +86,8 @@
 		5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXLatestTopicsViewController.m; sourceTree = "<group>"; };
 		5E1398BE189E172800384FF9 /* V2EXTopicsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXTopicsListCell.h; sourceTree = "<group>"; };
 		5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTopicsListCell.m; sourceTree = "<group>"; };
+		5E23700D18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXTopicsListInSingleNodeViewController.h; sourceTree = "<group>"; };
+		5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTopicsListInSingleNodeViewController.m; sourceTree = "<group>"; };
 		5E2BAE1F18A5302C0039FFB0 /* V2EXHttpRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXHttpRequestSerializer.h; sourceTree = "<group>"; };
 		5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXHttpRequestSerializer.m; sourceTree = "<group>"; };
 		5E54EF3118A5C19000D88308 /* V2EXJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXJSONModel.h; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */,
 				5E72BFBD18A4663D00BB88DD /* V2EXTableViewController.h */,
 				5E72BFBE18A4663D00BB88DD /* V2EXTableViewController.m */,
+				5E23700D18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.h */,
+				5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -606,6 +611,7 @@
 				5E54EF3318A5C19000D88308 /* V2EXJSONModel.m in Sources */,
 				5E5B6766189A4ECC00EDF8FD /* V2EXMenuViewController.m in Sources */,
 				5E5B676A189B518B00EDF8FD /* V2EXApiClient.m in Sources */,
+				5E23700F18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m in Sources */,
 				5E98FF2618B0AD5000D9D2C2 /* V2EXNodesListCell.m in Sources */,
 				5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */,
 				5E7EDC6D18A74EAC0085628E /* V2EXAppSize.m in Sources */,

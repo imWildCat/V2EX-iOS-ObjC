@@ -16,11 +16,15 @@
 
 @implementation V2EXLatestTopicsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
++ (V2EXLatestTopicsViewController *)sharedController
 {
-    self = [super initWithStyle:style];
+    static V2EXLatestTopicsViewController *_sharedLatestTopicsViewControllerInstance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        _sharedLatestTopicsViewControllerInstance = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"latestTopicsController"];
+    });
     
-    return self;
+    return _sharedLatestTopicsViewControllerInstance;
 }
 
 - (void)viewDidLoad
@@ -35,7 +39,6 @@
     if(!_jsonModel){
         _jsonModel = [[V2EXJSONModel alloc]initWithDelegate:self];
     }
-    self.tableView.separatorInset = UIEdgeInsetsZero;
     [self showProgressView];
     [self loadData];
 }

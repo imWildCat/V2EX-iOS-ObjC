@@ -35,6 +35,17 @@
     // Dispose of any resources that can be recreated.
 }
 
++ (V2EXSettingsViewController *)sharedController
+{
+    static V2EXSettingsViewController *_sharedSettingsViewControllerInstance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        _sharedSettingsViewControllerInstance = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"settingsController"];
+    });
+    
+    return _sharedSettingsViewControllerInstance;
+}
+
 - (IBAction)showMenu:(id)sender {
     [self.sideMenuViewController presentMenuViewController];
 }
