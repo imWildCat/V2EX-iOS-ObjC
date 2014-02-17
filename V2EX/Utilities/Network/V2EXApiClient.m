@@ -86,20 +86,30 @@
 {
     [self _setSerializer:isJsonApi];
     NSString *url = [[self _getBaseUrl:isJsonApi] stringByAppendingString:uri];
-    
-    if(isGetMethod){
-        [_manager GET:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-            success(responseObject);
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            failure(error);
-        }];
+    if (!_isLoading) {
+        _isLoading = YES;
+        if(isGetMethod){
+            [_manager GET:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+                _isLoading = NO;
+                success(responseObject);
+            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                _isLoading = NO;
+                failure(error);
+            }];
+        } else {
+            [_manager POST:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+                _isLoading = NO;
+                success(responseObject);
+            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                _isLoading = NO;
+                failure(error);
+            }];
+        }
     } else {
-        [_manager POST:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-            success(responseObject);
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            failure(error);
-        }];
+        NSError *error = [[NSError alloc] initWithDomain:@"V2EX" code:444 userInfo:nil];
+        failure(error);
     }
+
 }
 
 

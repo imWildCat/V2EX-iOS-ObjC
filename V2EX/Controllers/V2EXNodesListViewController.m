@@ -213,10 +213,8 @@
 
 #pragma mark - V2EXRequestDataDelegate
 - (void)requestTopicsList:(NSString *)URI {
-    [self showProgressView];
-    [_normalModel getTopicsList:URI];
-    
-    NSLog(@"request %@",URI);
+        [self showProgressView];
+        [_normalModel getTopicsList:URI];
 }
 
 -(void)requestDataSuccess:(id)dataObject {

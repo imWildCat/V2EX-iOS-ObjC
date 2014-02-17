@@ -51,7 +51,6 @@
 
 - (void)loadData {
     // Must implement this method in subclass.
-    NSLog(@"Do nothing.");
 }
 
 - (void)didReceiveMemoryWarning

@@ -20,11 +20,12 @@
 }
 
 - (void)loadData:(NSString *)uri isGetMethod:(BOOL)isGetMethod isJsonApi:(BOOL)isJsonApi parameters:(NSDictionary *)parameters {
-    [self.apiClient managerRequestData:uri isGetMethod:isGetMethod isJsonApi:isJsonApi parameters:parameters success:^(id dataObject) {
-        [self loadDataSuccess:[self parseData:dataObject]];
-    } failure:^(NSError *error) {
-        [self loadDataFailure:error];
-    }];
+        [self.apiClient managerRequestData:uri isGetMethod:isGetMethod isJsonApi:isJsonApi parameters:parameters success:^(id dataObject) {
+            [self loadDataSuccess:[self parseData:dataObject]];
+        } failure:^(NSError *error) {
+            [self loadDataFailure:error];
+        }];
+    
 }
 
 - (NSDictionary *) parseData:(id)dataObject {

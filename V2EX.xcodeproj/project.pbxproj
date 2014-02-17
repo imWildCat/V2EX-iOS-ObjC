@@ -19,7 +19,6 @@
 		5E23700F18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */; };
 		5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
 		5E2BAE2218A539680039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
-		5E54EF3318A5C19000D88308 /* V2EXJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54EF3218A5C19000D88308 /* V2EXJSONModel.m */; };
 		5E54EF3618A5C1E300D88308 /* V2EXNormalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */; };
 		5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6769189B518B00EDF8FD /* V2EXApiClient.m */; };
 		5E5A6187189D593B00E29C6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5A6186189D593B00E29C6B /* libPods.a */; };
@@ -90,8 +89,6 @@
 		5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTopicsListInSingleNodeViewController.m; sourceTree = "<group>"; };
 		5E2BAE1F18A5302C0039FFB0 /* V2EXHttpRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXHttpRequestSerializer.h; sourceTree = "<group>"; };
 		5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXHttpRequestSerializer.m; sourceTree = "<group>"; };
-		5E54EF3118A5C19000D88308 /* V2EXJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXJSONModel.h; sourceTree = "<group>"; };
-		5E54EF3218A5C19000D88308 /* V2EXJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXJSONModel.m; sourceTree = "<group>"; };
 		5E54EF3418A5C1E300D88308 /* V2EXNormalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNormalModel.h; sourceTree = "<group>"; };
 		5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNormalModel.m; sourceTree = "<group>"; };
 		5E54EF3718A5C2C100D88308 /* JSONAPIURI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONAPIURI.h; sourceTree = "<group>"; };
@@ -205,19 +202,14 @@
 		5E5B6759189A3BD900EDF8FD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E9CF48718B1FBF200B6D577 /* MainControllers */,
 				5E72BFAB18A206DE00BB88DD /* Categories */,
-				5E66EB01189A324700500B35 /* V2EXRootViewController.h */,
-				5E66EB02189A324700500B35 /* V2EXRootViewController.m */,
 				5E5B675E189A42BA00EDF8FD /* V2EXNodesListViewController.h */,
 				5E5B675F189A42BA00EDF8FD /* V2EXNodesListViewController.m */,
 				5E5B6761189A4CBF00EDF8FD /* V2EXSettingsViewController.h */,
 				5E5B6762189A4CBF00EDF8FD /* V2EXSettingsViewController.m */,
-				5E5B6764189A4ECC00EDF8FD /* V2EXMenuViewController.h */,
-				5E5B6765189A4ECC00EDF8FD /* V2EXMenuViewController.m */,
 				5E1398B7189E0C0C00384FF9 /* V2EXLatestTopicsViewController.h */,
 				5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */,
-				5E72BFBD18A4663D00BB88DD /* V2EXTableViewController.h */,
-				5E72BFBE18A4663D00BB88DD /* V2EXTableViewController.m */,
 				5E23700D18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.h */,
 				5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */,
 			);
@@ -230,8 +222,6 @@
 				5EE2A27218ADB09D00A63885 /* Data */,
 				5E72BF9E18A1E18700BB88DD /* AbstractModels */,
 				5E0553E9189F4FD7002CEAAA /* V2EXRequestDataDelegate.h */,
-				5E54EF3118A5C19000D88308 /* V2EXJSONModel.h */,
-				5E54EF3218A5C19000D88308 /* V2EXJSONModel.m */,
 				5E54EF3418A5C1E300D88308 /* V2EXNormalModel.h */,
 				5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */,
 				5EE2A26A18ADAAA000A63885 /* V2EXNodesListModel.h */,
@@ -384,6 +374,19 @@
 				5EE2A26818AA79E700A63885 /* UIView+FrameMethods.h */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		5E9CF48718B1FBF200B6D577 /* MainControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E72BFBD18A4663D00BB88DD /* V2EXTableViewController.h */,
+				5E72BFBE18A4663D00BB88DD /* V2EXTableViewController.m */,
+				5E5B6764189A4ECC00EDF8FD /* V2EXMenuViewController.h */,
+				5E5B6765189A4ECC00EDF8FD /* V2EXMenuViewController.m */,
+				5E66EB01189A324700500B35 /* V2EXRootViewController.h */,
+				5E66EB02189A324700500B35 /* V2EXRootViewController.m */,
+			);
+			name = MainControllers;
 			sourceTree = "<group>";
 		};
 		5EE2A27218ADB09D00A63885 /* Data */ = {
@@ -608,7 +611,6 @@
 				5E0553D4189E7310002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */,
 				5E98FED818B085B500D9D2C2 /* DRPaginatedScrollView.m in Sources */,
 				5E72BFBF18A4663D00BB88DD /* V2EXTableViewController.m in Sources */,
-				5E54EF3318A5C19000D88308 /* V2EXJSONModel.m in Sources */,
 				5E5B6766189A4ECC00EDF8FD /* V2EXMenuViewController.m in Sources */,
 				5E5B676A189B518B00EDF8FD /* V2EXApiClient.m in Sources */,
 				5E23700F18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m in Sources */,

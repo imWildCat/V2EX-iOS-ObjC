@@ -22,6 +22,9 @@
 - (NSDictionary *) parseData:(id)dataObject;
 - (void)loadDataSuccess:(id)dataObject;
 - (void)loadDataFailure:(NSError *)error;
+// Need to support request start and terminate request. For example, - (void)startLoadData & - (void)terminateLoading;
+// If not, 
+
 
 - (void)loadData:(NSString *)uri isGetMethod:(BOOL)isGetMethod isJsonApi:(BOOL)isJsonApi parameters:(NSDictionary *)parameters;
 

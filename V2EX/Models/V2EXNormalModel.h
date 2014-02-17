@@ -10,7 +10,12 @@
 
 @interface V2EXNormalModel : V2EXAbstractModel
 
+// API
 - (void)getIndex;
 - (void)getTopicsList:(NSString *)URI;
+
+// JSON API
+- (void)getAllNodes;
+- (void)getLatestTopics;
 
 @end

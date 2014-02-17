@@ -15,6 +15,8 @@
     AFHTTPSessionManager *_manager;
 
     BOOL _isHTTPS;
+    
+    BOOL _isLoading;
 }
 + (V2EXApiClient *)sharedClient;
 

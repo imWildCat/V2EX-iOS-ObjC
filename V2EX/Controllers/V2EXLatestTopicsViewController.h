@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <RESideMenu.h>
 #import "UIViewController+MBProgressHUD.h"
-#import "V2EXJSONModel.h"
 #import "V2EXTableViewController.h"
+#import "V2EXNormalModel.h"
 
 @interface V2EXLatestTopicsViewController : V2EXTableViewController
 {
-    V2EXJSONModel *_jsonModel;
+    V2EXNormalModel *_normalModel;
 }
 
 + (V2EXLatestTopicsViewController *)sharedController;
