@@ -14,6 +14,7 @@
 #import "V2EXRequestDataDelegate.h"
 #import "UIViewController+MBProgressHUD.h"
 #import "V2EXNormalModel.h"
+#import "V2EXTopicsListInSingleNodeViewController.h"
 
 
 @interface V2EXNodesListViewController : UIViewController <UIScrollViewDelegate, V2EXRequestDataDelegate>
@@ -22,10 +23,13 @@
     V2EXNormalModel *_normalModel;
     
     NSMutableString *_uriClicked;
+    
+    __weak V2EXTopicsListInSingleNodeViewController *_topicsListInSingleNodeViewController;
 }
 
 @property (strong, nonatomic) DRPaginatedScrollView * paginatedScrollView;
 @property (strong, nonatomic) HMSegmentedControl *segmentedControl;
+
 
 @property (nonatomic, retain) V2EXNodesListModel *nodesListModel0;
 @property (nonatomic, retain) V2EXNodesListModel *nodesListModel1;

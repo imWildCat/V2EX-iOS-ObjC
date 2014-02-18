@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
     
+    _topicsListInSingleNodeViewController = [V2EXTopicsListInSingleNodeViewController sharedController];
+    
 //    if (!self.navigationBar) {
 //        self.navigationBar = [UINavigationBar new];
 //        NSLog(@"init");
@@ -219,13 +221,12 @@
 }
 
 -(void)requestDataSuccess:(id)dataObject {
-    V2EXTopicsListInSingleNodeViewController *topicsListInSingleNodeViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
+//    _topicsListInSingleNodeViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
 
-    topicsListInSingleNodeViewController.data = dataObject;
-    topicsListInSingleNodeViewController.uri = _uriClicked;
+    _topicsListInSingleNodeViewController.data = dataObject;
+    _topicsListInSingleNodeViewController.uri = _uriClicked;
 
-    [self.navigationController pushViewController:topicsListInSingleNodeViewController animated:YES];
-    
+    [self.navigationController pushViewController:_topicsListInSingleNodeViewController animated:YES];
     [self hideProgressView];
 }
 

@@ -14,7 +14,7 @@
 
 @interface V2EXTableViewController : UITableViewController <V2EXRequestDataDelegate>
 
-@property (nonatomic,strong) NSMutableArray* data;
-@property (nonatomic,strong) V2EXNormalModel *model;
+@property (nonatomic, strong) NSMutableArray* data;
+@property (nonatomic, strong) V2EXNormalModel *model;
 
 @end

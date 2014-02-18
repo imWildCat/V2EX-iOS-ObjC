@@ -106,6 +106,7 @@
             }];
         }
     } else {
+        _isLoading = NO;
         NSError *error = [[NSError alloc] initWithDomain:@"V2EX" code:444 userInfo:nil];
         failure(error);
     }

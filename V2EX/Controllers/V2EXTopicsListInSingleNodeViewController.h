@@ -12,10 +12,9 @@
 
 @interface V2EXTopicsListInSingleNodeViewController : V2EXTableViewController
 
-@property (strong, nonatomic) FMDatabase *db;
-@property (strong, nonatomic) NSMutableString *uri;
+@property (weak, nonatomic) NSMutableString *uri;
 
-//+ (V2EXTopicsListInSingleNodeViewController *)sharedController;
++ (V2EXTopicsListInSingleNodeViewController *)sharedController;
 //- (void)loadNewNode;
 
 @end

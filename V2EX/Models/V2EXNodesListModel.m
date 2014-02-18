@@ -16,15 +16,31 @@
     if ([super init]) {
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"NodesList" ofType:@"plist"];
         NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath];
-        _data = [array objectAtIndex:idx];
+        _nodeURIs = [array objectAtIndex:idx];
+        
+        _nodeTitles = [[NSMutableArray alloc] init];
+        _nodeHeaders = [[NSMutableArray alloc] init];
     
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentDirectory = [paths objectAtIndex:0];
         NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"db/v2ex_normal.db"];
-        _db = [FMDatabase databaseWithPath:dbPath];
-        [_db open];
+        FMDatabase *db = [FMDatabase databaseWithPath:dbPath];
+        
+        [db open];
+        for (NSString *nodeURI in _nodeURIs) {
+            FMResultSet *retSet = [db executeQuery:@"SELECT * FROM nodes WHERE uri = ?",nodeURI];
+            [retSet next];
+            NSString *title = [retSet stringForColumn:@"title"];
+            NSString *header = [retSet stringForColumn:@"header"];
+            [_nodeTitles addObject:title];
+            if (header) {
+                [_nodeHeaders addObject:header];
+            } else {
+                [_nodeHeaders addObject:@""];
+            }
+        }
+        [db close];
     }
-    
     return self;
 }
 
@@ -37,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_data count];
+    return [_nodeTitles count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,15 +74,12 @@
     cell.delegate = self.delegate;
 
     NSUInteger index = [indexPath row];
-    NSString *uri = [_data objectAtIndex:index];
+    NSString *uri = [_nodeURIs objectAtIndex:index];
     
-    FMResultSet *retSet = [_db executeQuery:@"SELECT * FROM nodes WHERE uri = ?",uri];
-    [retSet next];
-    
-    cell.nodeTitle.text = [retSet stringForColumn:@"title"];
-    cell.nodeHeader.text = [retSet stringForColumn:@"header"];
+    cell.nodeTitle.text = [_nodeTitles objectAtIndex:index];
+    cell.nodeHeader.text = [_nodeHeaders objectAtIndex:index];
     cell.nodeURI = uri;
-
+    
     return cell;
 }
 

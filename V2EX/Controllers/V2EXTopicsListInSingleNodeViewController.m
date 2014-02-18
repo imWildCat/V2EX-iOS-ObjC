@@ -17,35 +17,24 @@
 
 @implementation V2EXTopicsListInSingleNodeViewController
 
-//+ (V2EXTopicsListInSingleNodeViewController *)sharedController
-//{
-//    static V2EXTopicsListInSingleNodeViewController *_sharedTopicsListInSingleNodeViewControllerInstance = nil;
-//    static dispatch_once_t predicate;
-//    dispatch_once(&predicate, ^{
-//        _sharedTopicsListInSingleNodeViewControllerInstance = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
-//    });
-//    
-//    return _sharedTopicsListInSingleNodeViewControllerInstance;
-//}
-
-- (void)initDb {
-    if (!self.db) {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentDirectory = [paths objectAtIndex:0];
-        NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"db/v2ex_normal.db"];
-        _db = [FMDatabase databaseWithPath:dbPath];
-        [_db open];
-        NSLog(@"initdb");
-    }
++ (V2EXTopicsListInSingleNodeViewController *)sharedController
+{
+    static V2EXTopicsListInSingleNodeViewController *_sharedTopicsListInSingleNodeViewControllerInstance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        _sharedTopicsListInSingleNodeViewControllerInstance = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
+    });
+    
+    return _sharedTopicsListInSingleNodeViewControllerInstance;
 }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.tableView.rowHeight = 70; // TODO: Why don't storyboard support rowHeight?
-    
-    [self loadNewNode];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -53,14 +42,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self loadNewNode];
+    
+    // Scroll to the top
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    _uri = nil;
+}
+
 - (void)loadNewNode {
-    // Set title
-    [self initDb];
-    
-    FMResultSet *retSet = [_db executeQuery:@"SELECT title FROM nodes WHERE uri = ?",self.uri];
-    [retSet next];
-    self.navigationItem.title = [retSet stringForColumn:@"title"];
-    
     // Reload data
     [self requestDataSuccess:self.data];
 }
@@ -73,6 +66,20 @@
     self.data = [[NSMutableArray alloc] init];
     
     TFHpple *doc = [[TFHpple alloc]initWithHTMLData:dataObject];
+    
+    NSString *allHtml = [[[doc searchWithXPathQuery:@"//div[@class='header']"] objectAtIndex:0] raw];
+    NSString *delDiv = [[[doc searchWithXPathQuery:@"//div[@class='header']/div"] objectAtIndex:0] raw];
+    NSString *delA = [[[doc searchWithXPathQuery:@"//div[@class='header']/a"] objectAtIndex:0] raw];
+    NSString *delSpan = [[[doc searchWithXPathQuery:@"//div[@class='header']/span"] objectAtIndex:0] raw];
+    NSString *title = [[[[[allHtml stringByReplacingOccurrencesOfString:delDiv withString:@""]
+                       stringByReplacingOccurrencesOfString:delA withString:@""]
+                       stringByReplacingOccurrencesOfString:delSpan withString:@""]
+                       stringByReplacingOccurrencesOfString:@"\n    \n    </div>" withString:@""]
+                       stringByReplacingOccurrencesOfString:@"<div class=\"header\">  " withString:@""];
+    self.navigationItem.title = title;
+    
+    
+    // Data Rows
     NSArray *elements = [doc searchWithXPathQuery:@"//body/div[2]/div/div/div[@class='cell']/table[1]"];
     
     for (TFHppleElement *element in elements) {
@@ -105,7 +112,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSUInteger index = [indexPath row];
-    NSLog(@"%i",index);
     static NSString *CellIdentifier = @"topicsListCell";
     
     UINib *nib = [UINib nibWithNibName:@"V2EXTopicsListCell" bundle:nil];

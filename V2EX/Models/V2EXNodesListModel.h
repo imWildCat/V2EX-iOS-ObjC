@@ -12,8 +12,9 @@
 
 @interface V2EXNodesListModel : NSObject <UITableViewDelegate,UITableViewDataSource>
 {
-    NSArray *_data;
-    FMDatabase *_db;
+    NSArray *_nodeURIs;
+    NSMutableArray *_nodeTitles;
+    NSMutableArray *_nodeHeaders;
 }
 
 @property(nonatomic, assign) id<V2EXRequestDataDelegate> delegate;
