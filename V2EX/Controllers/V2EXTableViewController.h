@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "V2EXRequestDataDelegate.h"
 #import "UIViewController+MBProgressHUD.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface V2EXTableViewController : UITableViewController <V2EXRequestDataDelegate>
 

@@ -44,6 +44,7 @@
     [self.replies.layer setCornerRadius:8];
     [self.userAvatar.layer setCornerRadius:self.userAvatar.frame.size.width/5];
     self.userAvatar.layer.masksToBounds = YES;
+    
     self.layer.shouldRasterize = YES;
     self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
 }

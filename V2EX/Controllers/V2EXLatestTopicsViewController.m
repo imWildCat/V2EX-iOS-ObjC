@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 WildCat. All rights reserved.
 //
 
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "V2EXLatestTopicsViewController.h"
 #import "V2EXTopicsListCell.h"
 
@@ -55,17 +54,6 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return [self.receivedData count];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"topicsListCell";
@@ -97,6 +85,7 @@
     
     [cell.username setText:[[rowData objectForKey:@"member"] valueForKey:@"username"]];
     NSString *avatarUrl = [NSString stringWithFormat:@"http:%@",[[rowData objectForKey:@"member"] valueForKey:@"avatar_large"]];
+    //TODO: Support https
     [cell.userAvatar setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"avatar_large"]];
 
     return cell;

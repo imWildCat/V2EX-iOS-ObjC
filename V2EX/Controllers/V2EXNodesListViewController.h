@@ -20,6 +20,8 @@
 {
     CGFloat _segmentedControlX;
     V2EXNormalModel *_normalModel;
+    
+    NSMutableString *_uriClicked;
 }
 
 @property (strong, nonatomic) DRPaginatedScrollView * paginatedScrollView;
