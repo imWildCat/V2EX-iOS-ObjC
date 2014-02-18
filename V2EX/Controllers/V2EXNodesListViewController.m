@@ -221,7 +221,7 @@
 -(void)requestDataSuccess:(id)dataObject {
     V2EXTopicsListInSingleNodeViewController *topicsListInSingleNodeViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
 
-    topicsListInSingleNodeViewController.receivedData = dataObject;
+    topicsListInSingleNodeViewController.data = dataObject;
     topicsListInSingleNodeViewController.uri = _uriClicked;
 
     [self.navigationController pushViewController:topicsListInSingleNodeViewController animated:YES];

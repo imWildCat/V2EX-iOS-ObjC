@@ -40,6 +40,11 @@
     self.refreshControl = rc;
     
     self.tableView.separatorInset = UIEdgeInsetsZero;
+    
+    // Data model
+    if(!_model){
+        _model = [[V2EXNormalModel alloc]initWithDelegate:self];
+    }
 }
 
 - (void)refreshTableView {
@@ -62,7 +67,6 @@
 #pragma mark - LoadData
 
 -(void)requestDataSuccess:(NSDictionary *)dataObject {
-    [self setReceivedData:dataObject];
     [self.tableView reloadData];
     [self hideProgressView];
     
@@ -97,7 +101,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.receivedData count];
+    return [self.data count];
 }
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -13,9 +13,6 @@
 #import "V2EXNormalModel.h"
 
 @interface V2EXLatestTopicsViewController : V2EXTableViewController
-{
-    V2EXNormalModel *_normalModel;
-}
 
 + (V2EXLatestTopicsViewController *)sharedController;
 - (IBAction)showMenu:(id)sender;

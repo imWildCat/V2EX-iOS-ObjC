@@ -11,9 +11,6 @@
 #import "V2EXTableViewController.h"
 
 @interface V2EXTopicsListInSingleNodeViewController : V2EXTableViewController
-{
-    NSMutableArray *_dataArray;
-}
 
 @property (strong, nonatomic) FMDatabase *db;
 @property (strong, nonatomic) NSMutableString *uri;

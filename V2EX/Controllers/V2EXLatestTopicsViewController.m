@@ -35,9 +35,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    if(!_normalModel){
-        _normalModel = [[V2EXNormalModel alloc]initWithDelegate:self];
-    }
+
     [self showProgressView];
     [self loadData];
 }
@@ -49,7 +47,7 @@
 }
 
 - (void)loadData {
-    [_normalModel getLatestTopics];
+    [self.model getLatestTopics];
 }
 
 #pragma mark - Table view data source
@@ -74,7 +72,7 @@
 ////    cell.userAvatar.layer.masksToBounds = YES;
     
     NSUInteger row = [indexPath row];
-    id rowData = [self.receivedData objectAtIndex:row];
+    id rowData = [self.data objectAtIndex:row];
     
     [cell.title setText:[rowData valueForKey:@"title"]];
     [cell.nodeTitle setText:[[rowData objectForKey:@"node"] valueForKey:@"title"]];
@@ -98,11 +96,10 @@
     NSLog(@"%i",index);
 }
 
-//- (void)requestDataSuccess:(NSDictionary *)dataObject {
-//    [self setTopicsData:dataObject];
-//    [self.tableView reloadData];
-//    [self hideProgressView];
-//}
+- (void)requestDataSuccess:(id)dataObject {
+    self.data = dataObject;
+    [super requestDataSuccess:dataObject];
+}
 //
 //- (void)requestDataFailure:(NSString *)errorMessage {
 //    [self showMessage:errorMessage];

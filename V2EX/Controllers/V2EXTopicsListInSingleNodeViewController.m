@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 WildCat. All rights reserved.
 //
 
+#import <TFHpple.h>
 #import "V2EXTopicsListInSingleNodeViewController.h"
 #import "V2EXTopicsListCell.h"
-#import <TFHpple.h>
+#import "V2EXNormalModel.h"
 
 @interface V2EXTopicsListInSingleNodeViewController ()
 
@@ -61,11 +62,15 @@
     self.navigationItem.title = [retSet stringForColumn:@"title"];
     
     // Reload data
-    [self requestDataSuccess:self.receivedData];
+    [self requestDataSuccess:self.data];
+}
+
+- (void)loadData {
+    [self.model getTopicsList:self.uri];
 }
 
 - (void)requestDataSuccess:(id)dataObject {
-    _dataArray = [[NSMutableArray alloc] init];
+    self.data = [[NSMutableArray alloc] init];
     
     TFHpple *doc = [[TFHpple alloc]initWithHTMLData:dataObject];
     NSArray *elements = [doc searchWithXPathQuery:@"//body/div[2]/div/div/div[@class='cell']/table[1]"];
@@ -90,18 +95,12 @@
                               [userNameElement text], @"username",
                               replyCount, @"replies", nil
                               ];
-        [_dataArray addObject:dict];
+        [self.data addObject:dict];
     }
     [super requestDataSuccess:dataObject];
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return [_dataArray count];
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -114,7 +113,7 @@
     
     V2EXTopicsListCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    id rowData = [_dataArray objectAtIndex:index];
+    id rowData = [self.data objectAtIndex:index];
     
     cell.title.text = [rowData valueForKey:@"title"];
     cell.nodeTitle.text = @"";

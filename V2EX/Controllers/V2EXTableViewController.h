@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "V2EXRequestDataDelegate.h"
 #import "UIViewController+MBProgressHUD.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "V2EXNormalModel.h"
 
 @interface V2EXTableViewController : UITableViewController <V2EXRequestDataDelegate>
 
-@property (nonatomic,strong) id receivedData;
+@property (nonatomic,strong) NSMutableArray* data;
+@property (nonatomic,strong) V2EXNormalModel *model;
 
 @end
