@@ -223,8 +223,8 @@
 -(void)requestDataSuccess:(id)dataObject {
 //    _topicsListInSingleNodeViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
 
-    _topicsListInSingleNodeViewController.data = dataObject;
     _topicsListInSingleNodeViewController.uri = _uriClicked;
+    [_topicsListInSingleNodeViewController loadNewNodeWithData:dataObject];
 
     [self.navigationController pushViewController:_topicsListInSingleNodeViewController animated:YES];
     [self hideProgressView];

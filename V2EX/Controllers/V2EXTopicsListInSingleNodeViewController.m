@@ -10,6 +10,8 @@
 #import "V2EXTopicsListInSingleNodeViewController.h"
 #import "V2EXTopicsListCell.h"
 #import "V2EXNormalModel.h"
+#import "V2EXMBProgressHUDUtil.h"
+#import "V2EXStringUtil.h"
 
 @interface V2EXTopicsListInSingleNodeViewController ()
 
@@ -32,7 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.rowHeight = 70; // TODO: Why don't storyboard support rowHeight?
+    self.tableView.rowHeight = 70; // TODO: Why don't storyboard with identifiertopicListInSingleNodeController support rowHeight?
+    _loadingStatus = 1;
+    
+    self.singleTopicViewController = [V2EXSingleTopicViewController sharedController];
 }
 
 
@@ -42,27 +47,57 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self loadNewNode];
-    
-    // Scroll to the top
-    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//}
 
 - (void)viewDidDisappear:(BOOL)animated {
     _uri = nil;
 }
 
-- (void)loadNewNode {
+- (void)loadNewNodeWithData:(NSData *)data {
     // Reload data
-    [self requestDataSuccess:self.data];
+    _loadingStatus = 1;
+    [self requestDataSuccess:data];
+    
+    // Scroll to the top
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
 }
 
 - (void)loadData {
-    [self.model getTopicsList:self.uri];
+    if (_loadingStatus == 0) {
+        _loadingStatus = 1;
+        [self.model getTopicsList:self.uri];
+    }
+
+}
+
+- (void)loadTopic:(NSString *)URI {
+    if (_loadingStatus == 0) {
+        _loadingStatus = 2;
+        
+        [V2EXMBProgressHUDUtil showGlobalProgressHUDWithTitle:nil];
+        
+        [self.model getTopicWithLinkURI:URI];
+    }
 }
 
 - (void)requestDataSuccess:(id)dataObject {
+    if (_loadingStatus == 1) {
+        [self handleListData:dataObject];
+    } else {
+        [self.singleTopicViewController loadNewTopicWithData:dataObject];
+        [self.navigationController pushViewController:self.singleTopicViewController animated:YES];
+    }
+    [super requestDataSuccess:dataObject];
+    _loadingStatus = 0;
+}
+
+- (void)requestDataFailure:(NSString *)errorMessage {
+    [super requestDataFailure:errorMessage];
+    _loadingStatus = 0;
+}
+
+- (void) handleListData:(id)dataObject {
     self.data = [[NSMutableArray alloc] init];
     
     TFHpple *doc = [[TFHpple alloc]initWithHTMLData:dataObject];
@@ -72,9 +107,9 @@
     NSString *delA = [[[doc searchWithXPathQuery:@"//div[@class='header']/a"] objectAtIndex:0] raw];
     NSString *delSpan = [[[doc searchWithXPathQuery:@"//div[@class='header']/span"] objectAtIndex:0] raw];
     NSString *title = [[[[[allHtml stringByReplacingOccurrencesOfString:delDiv withString:@""]
-                       stringByReplacingOccurrencesOfString:delA withString:@""]
-                       stringByReplacingOccurrencesOfString:delSpan withString:@""]
-                       stringByReplacingOccurrencesOfString:@"\n    \n    </div>" withString:@""]
+                          stringByReplacingOccurrencesOfString:delA withString:@""]
+                         stringByReplacingOccurrencesOfString:delSpan withString:@""]
+                        stringByReplacingOccurrencesOfString:@"\n    \n    </div>" withString:@""]
                        stringByReplacingOccurrencesOfString:@"<div class=\"header\">  " withString:@""];
     self.navigationItem.title = title;
     
@@ -88,6 +123,7 @@
         TFHppleElement *userNameElement = [[element searchWithXPathQuery:@"//td[3]/span[@class='small fade']/strong"] objectAtIndex:0];
         NSArray *replyElements = [element searchWithXPathQuery:@"//td[4]/a"];
         
+        // Handle reply count
         NSString *replyCount;
         if ([replyElements count] > 0)
         {
@@ -96,15 +132,18 @@
         } else {
             replyCount = @"0";
         }
+        
+        NSString *link = [[[element searchWithXPathQuery:@"//td[3]/span[@class='item_title']/a"] objectAtIndex:0] objectForKey:@"href"];
+        
         NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                              [@"http:"stringByAppendingString: [avatarElement objectForKey:@"src"]], @"avatar",     //TODO: Support https
+                              [V2EXStringUtil hanldeAvatarURL:[avatarElement objectForKey:@"src"]], @"avatar",
                               [titleElement text], @"title",
                               [userNameElement text], @"username",
-                              replyCount, @"replies", nil
+                              replyCount, @"replies",
+                              link, @"link", nil
                               ];
         [self.data addObject:dict];
     }
-    [super requestDataSuccess:dataObject];
 }
 
 #pragma mark - Table view data source
@@ -128,6 +167,34 @@
     [cell.userAvatar setImageWithURL:[NSURL URLWithString:[rowData valueForKey:@"avatar"]] placeholderImage:[UIImage imageNamed:@"avatar_large"]];
     
     return cell;
+}
+
+- (NSString *)link2TopicID:(NSString *) urlString{
+    NSError *error;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"/t/[0-9]+#reply"
+                                                                           options:0
+                                                                            error:&error];
+    if (regex != nil) {
+        NSArray *array = [regex matchesInString: urlString
+                                        options: 0
+                                          range: NSMakeRange( 0, [urlString length])];
+        if ([array count] > 0) {
+            NSTextCheckingResult *match = [array objectAtIndex:0];
+            NSRange firstHalfRange = [match rangeAtIndex:0];
+            NSString *result = [[[urlString substringWithRange:firstHalfRange] stringByReplacingOccurrencesOfString:@"/t/" withString:@""] stringByReplacingOccurrencesOfString:@"#reply" withString:@""];
+            return result;
+        } else {
+            return nil;
+        }
+    } else {
+        return nil;
+    }
+}
+
+#pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger index = [indexPath row];
+    [self loadTopic:[[self.data objectAtIndex:index] objectForKey:@"link"]];
 }
 
 @end

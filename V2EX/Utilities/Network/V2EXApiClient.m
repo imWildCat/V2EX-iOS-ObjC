@@ -106,14 +106,11 @@
             }];
         }
     } else {
-        _isLoading = NO;
         NSError *error = [[NSError alloc] initWithDomain:@"V2EX" code:444 userInfo:nil];
         failure(error);
     }
 
 }
-
-
 
 
 - (void) _managerGetJson:(NSString *)uri parameters:(NSDictionary *)params success:(void (^)(NSDictionary *jsonData))success failure:(void (^)(NSString *errorMessage))failure

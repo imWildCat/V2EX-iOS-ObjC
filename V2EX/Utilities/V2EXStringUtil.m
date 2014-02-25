@@ -63,4 +63,16 @@
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@"\n"];
 }
 
+/**
+ *  Handle V2EX avatar URL
+ *
+ *  @param url avatar URL
+ *
+ *  @return avatar url with protocol name http or https(not implementation yet)
+ */
++ (NSString *)hanldeAvatarURL:(NSString *)url {
+    return [@"http:" stringByAppendingString:url];
+    //TODO: Support https.
+}
+
 @end

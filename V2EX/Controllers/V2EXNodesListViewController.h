@@ -24,12 +24,11 @@
     
     NSMutableString *_uriClicked;
     
-    __weak V2EXTopicsListInSingleNodeViewController *_topicsListInSingleNodeViewController;
+    V2EXTopicsListInSingleNodeViewController *_topicsListInSingleNodeViewController;
 }
 
 @property (strong, nonatomic) DRPaginatedScrollView * paginatedScrollView;
 @property (strong, nonatomic) HMSegmentedControl *segmentedControl;
-
 
 @property (nonatomic, retain) V2EXNodesListModel *nodesListModel0;
 @property (nonatomic, retain) V2EXNodesListModel *nodesListModel1;

@@ -13,6 +13,9 @@
 // API
 - (void)getIndex;
 - (void)getTopicsList:(NSString *)URI;
+- (void)getTopicWithLinkURI:(NSString *)URI;
+- (void)getTopicWithID:(NSString *)id;
+
 
 // JSON API
 - (void)getAllNodes;

@@ -40,6 +40,7 @@
 - (void)loadDataFailure:(NSError *)error {
     //TODO: To show user-friendly message.
     [_delegate requestDataFailure:[error description]];
+    NSLog(@"%@", [error description]);
 }
 
 @end

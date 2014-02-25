@@ -13,5 +13,6 @@
 + (NSString *)replaceUnicode:(NSString *)unicodeStr;
 + (NSString *)stringByStrippingHTML:(NSString *)inputString;
 + (NSString *)filterHTML:(NSString *)html;
++ (NSString *)hanldeAvatarURL:(NSString *)url;
 
 @end

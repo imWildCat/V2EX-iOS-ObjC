@@ -33,6 +33,14 @@
     [self getHTMLData:[@"go/" stringByAppendingString:URI] parameters:nil];
 }
 
+- (void)getTopicWithLinkURI:(NSString *)URI {
+    [self getHTMLData:[URI stringByReplacingOccurrencesOfString:@"/t/" withString:@"t/"] parameters:nil];
+}
+
+- (void)getTopicWithID:(NSString *)id {
+    [self getHTMLData:[@"t/" stringByAppendingString:id] parameters:nil];
+}
+
 
 // JSON API
 - (void)getLatestTopics {

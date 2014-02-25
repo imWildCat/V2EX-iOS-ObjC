@@ -8,6 +8,7 @@
 
 #import "V2EXLatestTopicsViewController.h"
 #import "V2EXTopicsListCell.h"
+#import "V2EXStringUtil.h"
 
 @interface V2EXLatestTopicsViewController ()
 
@@ -73,7 +74,6 @@
     
     NSUInteger row = [indexPath row];
     id rowData = [self.data objectAtIndex:row];
-    
     [cell.title setText:[rowData valueForKey:@"title"]];
     [cell.nodeTitle setText:[[rowData objectForKey:@"node"] valueForKey:@"title"]];
     
@@ -82,7 +82,7 @@
     [cell.replies setText:replies];
     
     [cell.username setText:[[rowData objectForKey:@"member"] valueForKey:@"username"]];
-    NSString *avatarUrl = [NSString stringWithFormat:@"http:%@",[[rowData objectForKey:@"member"] valueForKey:@"avatar_large"]];
+    NSString *avatarUrl = [V2EXStringUtil hanldeAvatarURL:[[rowData objectForKey:@"member"] valueForKey:@"avatar_large"]];
     //TODO: Support https
     [cell.userAvatar setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"avatar_large"]];
 
@@ -92,8 +92,7 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSUInteger index = indexPath.row;
-    NSLog(@"%i",index);
+//    NSUInteger index = indexPath.row;
 }
 
 - (void)requestDataSuccess:(id)dataObject {
