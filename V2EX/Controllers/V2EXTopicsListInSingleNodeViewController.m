@@ -19,16 +19,16 @@
 
 @implementation V2EXTopicsListInSingleNodeViewController
 
-+ (V2EXTopicsListInSingleNodeViewController *)sharedController
-{
-    static V2EXTopicsListInSingleNodeViewController *_sharedTopicsListInSingleNodeViewControllerInstance = nil;
-    static dispatch_once_t predicate;
-    dispatch_once(&predicate, ^{
-        _sharedTopicsListInSingleNodeViewControllerInstance = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
-    });
-    
-    return _sharedTopicsListInSingleNodeViewControllerInstance;
-}
+//+ (V2EXTopicsListInSingleNodeViewController *)sharedController
+//{
+//    static V2EXTopicsListInSingleNodeViewController *_sharedTopicsListInSingleNodeViewControllerInstance = nil;
+//    static dispatch_once_t predicate;
+//    dispatch_once(&predicate, ^{
+//        _sharedTopicsListInSingleNodeViewControllerInstance = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
+//    });
+//    
+//    return _sharedTopicsListInSingleNodeViewControllerInstance;
+//}
 
 
 - (void)viewDidLoad
@@ -61,18 +61,16 @@
 }
 
 - (void)loadData {
-    if (_loadingStatus == 0) {
+    if ([self canStartNewLoading]) {
         _loadingStatus = 1;
-         NSLog(@"load list");
         [self.model getTopicsList:self.uri];
     }
 }
 
 - (void)loadTopic:(NSString *)URI {
-    if (_loadingStatus == 0) {
+    if ([self canStartNewLoading]) {
         _loadingStatus = 2;
-        NSLog(@"load Topic");
-        [V2EXMBProgressHUDUtil showGlobalProgressHUDWithTitle:nil];
+        [self showProgressView];
         
         [self.model getTopicWithLinkURI:URI];
     }
@@ -98,7 +96,7 @@
         }
     }
     [super requestDataSuccess:dataObject];
-    _loadingStatus = 0;
+
 }
 
 - (void)pushToSingleTopicViewController:(NSData *)dataObject {
@@ -109,7 +107,6 @@
 
 - (void)requestDataFailure:(NSString *)errorMessage {
     [super requestDataFailure:errorMessage];
-    _loadingStatus = 0;
 }
 
 - (void) handleListData:(id)dataObject {

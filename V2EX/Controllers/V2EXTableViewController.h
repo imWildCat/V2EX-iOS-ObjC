@@ -20,4 +20,6 @@
 @property (nonatomic, strong) NSMutableArray* data;
 @property (nonatomic, strong) V2EXNormalModel *model;
 
+- (BOOL)canStartNewLoading;
+
 @end

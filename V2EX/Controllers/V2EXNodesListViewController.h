@@ -24,7 +24,6 @@
     
     NSMutableString *_uriClicked;
     
-    V2EXTopicsListInSingleNodeViewController *_topicsListInSingleNodeViewController;
 }
 
 @property (strong, nonatomic) DRPaginatedScrollView * paginatedScrollView;

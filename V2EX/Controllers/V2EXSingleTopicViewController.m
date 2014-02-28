@@ -110,11 +110,12 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
 {
 	NSDictionary *rowData = [self.data objectAtIndex:indexPath.row];
 	
-    NSString *formattedContent = [NSString stringWithFormat:@"<div style=\"padding-top:50px;\">%@</div>", [rowData objectForKey:@"content"]];
+    NSString *formattedContent = [NSString stringWithFormat:@"<div style=\"font-size:15px;padding-top:50px;\">%@</div>", [rowData objectForKey:@"content"]];
 	[cell setHTMLString:formattedContent];
 	
     cell.accessoryType = UITableViewCellAccessoryNone;
 	cell.attributedTextContextView.shouldDrawImages = YES;
+    // TODO: support to display images in topics
     
     // Set user avatar
     UIImageView *userAvatarImgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 45, 45)];

@@ -32,7 +32,6 @@
 {
     [super viewDidLoad];
     
-    _topicsListInSingleNodeViewController = [V2EXTopicsListInSingleNodeViewController sharedController];
     
 //    if (!self.navigationBar) {
 //        self.navigationBar = [UINavigationBar new];
@@ -221,8 +220,7 @@
 }
 
 -(void)requestDataSuccess:(id)dataObject {
-//    _topicsListInSingleNodeViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
-
+    V2EXTopicsListInSingleNodeViewController *_topicsListInSingleNodeViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
     _topicsListInSingleNodeViewController.uri = _uriClicked;
     [_topicsListInSingleNodeViewController loadNewNodeWithData:dataObject];
 

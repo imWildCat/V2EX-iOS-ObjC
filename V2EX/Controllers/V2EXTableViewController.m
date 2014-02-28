@@ -66,11 +66,13 @@
 
 #pragma mark - LoadData
 
--(void)requestDataSuccess:(NSDictionary *)dataObject {
+- (void)requestDataSuccess:(NSDictionary *)dataObject {
+
     [self.tableView reloadData];
     [self hideProgressView];
     
     [self finishRefresh];
+    _loadingStatus = 0;
 }
 
 - (void)requestDataFailure:(NSString *)errorMessage {
@@ -78,6 +80,11 @@
     [self showMessage:errorMessage];
     
     [self finishRefresh];
+    _loadingStatus = 0;
+}
+
+- (BOOL)canStartNewLoading {
+    return _loadingStatus == 0;
 }
 
 - (void)finishRefresh {

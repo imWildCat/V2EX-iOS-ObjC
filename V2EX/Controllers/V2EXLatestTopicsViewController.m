@@ -48,8 +48,20 @@
 }
 
 - (void)loadData {
+    if ([self canStartNewLoading]) {
+        _loadingStatus = 1;
+        [self loadListData];
+    }
+}
+
+- (void)loadListData {
     [self.model getLatestTopics];
 }
+
+- (void)loadTopicData:(NSString *)ID {
+    [self.mutableCopy getTopicWithID:ID];
+}
+
 
 #pragma mark - Table view data source
 
