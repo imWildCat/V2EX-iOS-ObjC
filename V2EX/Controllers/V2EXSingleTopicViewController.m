@@ -131,9 +131,9 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     cell.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
     // Set username
-    UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(73, 6, 240, 15)];
+    UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(73, 6, 240, 18)];
     usernameLabel.text = [rowData objectForKey:@"username"];
-    usernameLabel.font = [UIFont systemFontOfSize:13];
+    usernameLabel.font = [UIFont systemFontOfSize:15];
     usernameLabel.textAlignment = NSTextAlignmentRight;
     usernameLabel.textColor = [UIColor darkGrayColor];
     [cell addSubview:usernameLabel];
