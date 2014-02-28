@@ -40,7 +40,8 @@
     hud.labelText = msg;
     hud.hidden = NO;
     hud.alpha = ALPHA;
-    [hud hide:YES afterDelay:3.0f];
+    [hud hide:YES afterDelay:2.5f];
+    hud.userInteractionEnabled = NO;
     return hud;
 }
 

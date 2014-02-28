@@ -13,6 +13,9 @@
 #import "V2EXNormalModel.h"
 
 @interface V2EXTableViewController : UITableViewController <V2EXRequestDataDelegate>
+{
+    NSUInteger _loadingStatus; // 0 - No loading ; 1 - Loading topic list ; 2 - Loading single topic
+}
 
 @property (nonatomic, strong) NSMutableArray* data;
 @property (nonatomic, strong) V2EXNormalModel *model;

@@ -8,7 +8,14 @@
 
 #import "V2EXTableViewController.h"
 
-@interface V2EXSingleTopicViewController : V2EXTableViewController
+#import <DTAttributedTextView.h>
+#import <DTLazyImageView.h>
+
+@interface V2EXSingleTopicViewController : V2EXTableViewController <UIActionSheetDelegate, DTAttributedTextContentViewDelegate, DTLazyImageViewDelegate>
+{
+//    NSMutableArray *_cellHeightArray;
+    NSCache *_cellCache;
+}
 
 + (V2EXSingleTopicViewController *)sharedController;
 

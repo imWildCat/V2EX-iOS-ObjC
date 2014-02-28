@@ -9,19 +9,32 @@
 #import "V2EXSingleTopicViewController.h"
 #import <TFHpple.h>
 #import "V2EXStringUtil.h"
-#import "V2EXSingleTopicCell.h"
+#import "UIView+FrameMethods.h"
+#import <NSAttributedString+HTML.h>
+
+
+#import <DTAttributedTextCell.h>
+#import <UIImageView+WebCache.h>
+
+// identifier for cell reuse
+NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseIdentifier";
 
 @interface V2EXSingleTopicViewController ()
 
 @end
 
-@implementation V2EXSingleTopicViewController
+@implementation V2EXSingleTopicViewController {
+    BOOL _useStaticRowHeight;
+}
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+//    self.tableView.rowHeight = 70; // TODO: Why don't storyboard with identifiertopicListInSingleNodeController support rowHeight?
+    
+//    _cellCache = [[NSCache alloc] init];
 }
 
 + (V2EXSingleTopicViewController *)sharedController
@@ -40,7 +53,7 @@
 }
 
 - (void)loadNewTopicWithID:(NSUInteger *)ID {
-    //TODO:not implementation yet
+    //TODO: not implementation yet
 }
 
 - (void)requestDataSuccess:(id)dataObject {
@@ -92,26 +105,191 @@
     }
 }
 
-#pragma mark - Table view data source
+#pragma mark UITableViewDataSource
+- (void)configureCell:(DTAttributedTextCell *)cell forIndexPath:(NSIndexPath *)indexPath
+{
+	NSDictionary *rowData = [self.data objectAtIndex:indexPath.row];
+	
+    NSString *formattedContent = [NSString stringWithFormat:@"<div style=\"padding-top:50px;\">%@</div>", [rowData objectForKey:@"content"]];
+	[cell setHTMLString:formattedContent];
+	
+    cell.accessoryType = UITableViewCellAccessoryNone;
+	cell.attributedTextContextView.shouldDrawImages = YES;
+    
+    // Set user avatar
+    UIImageView *userAvatarImgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 45, 45)];
+    [userAvatarImgView setImageWithURL:[rowData objectForKey:@"avatar"] placeholderImage:[UIImage imageNamed:@"avatar_large"]];
+    
+//    [cell.imageView setImageWithURL:[rowData objectForKey:@"avatar"] placeholderImage:[UIImage imageNamed:@"avatar_large"]];
+//    [userAvatarImgView setWidth:50 height:50];
+    [userAvatarImgView.layer setCornerRadius:userAvatarImgView.frame.size.width/5];
+    userAvatarImgView.layer.masksToBounds = YES;
+    [cell addSubview:userAvatarImgView];
+    
+    cell.layer.shouldRasterize = YES;
+    cell.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+    
+    // Set username
+    UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(73, 6, 240, 15)];
+    usernameLabel.text = [rowData objectForKey:@"username"];
+    usernameLabel.font = [UIFont systemFontOfSize:13];
+    usernameLabel.textAlignment = NSTextAlignmentRight;
+    usernameLabel.textColor = [UIColor darkGrayColor];
+    [cell addSubview:usernameLabel];
+    
+    // Set other info
+    UILabel *otherInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(73, 38, 240, 11)];
+    otherInfoLabel.text = [rowData objectForKey:@"time"];
+    otherInfoLabel.font = [UIFont systemFontOfSize:9];
+    otherInfoLabel.textAlignment = NSTextAlignmentRight;
+    otherInfoLabel.textColor = [UIColor darkGrayColor];
+    [cell addSubview:otherInfoLabel];
+}
+
+- (BOOL)_canReuseCells
+{
+	// reuse does not work for variable height
+	
+	if ([self respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)])
+	{
+		return NO;
+	}
+	
+	// only reuse cells with fixed height
+	return YES;
+}
+
+- (DTAttributedTextCell *)tableView:(UITableView *)tableView preparedCellForIndexPath:(NSIndexPath *)indexPath
+{
+	// workaround for iOS 5 bug
+	NSString *key = [NSString stringWithFormat:@"%ld-%ld", (long)indexPath.section, (long)indexPath.row];
+	
+	DTAttributedTextCell *cell = [_cellCache objectForKey:key];
+    
+	if (!cell)
+	{
+		if ([self _canReuseCells])
+		{
+			cell = (DTAttributedTextCell *)[tableView dequeueReusableCellWithIdentifier:AttributedTextCellReuseIdentifier];
+		}
+        
+		if (!cell)
+		{
+			cell = [[DTAttributedTextCell alloc] initWithReuseIdentifier:AttributedTextCellReuseIdentifier];
+		}
+		
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		cell.hasFixedRowHeight = NO;
+		
+		// cache it, if there is a cache
+		[_cellCache setObject:cell forKey:key];
+	}
+	
+	[self configureCell:cell forIndexPath:indexPath];
+	
+	return cell;
+}
+
+// disable this method to get static height = better performance
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (_useStaticRowHeight)
+	{
+		return tableView.rowHeight;
+	}
+	
+	DTAttributedTextCell *cell = (DTAttributedTextCell *)[self tableView:tableView preparedCellForIndexPath:indexPath];
+    
+	return [cell requiredRowHeightInTableView:tableView];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSUInteger index = [indexPath row];
-    static NSString *CellIdentifier = @"replyCell";
-    
-    UINib *nib = [UINib nibWithNibName:@"V2EXSingleTopicCell" bundle:nil];
-    [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
-    
-    V2EXSingleTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    NSDictionary *rowData = [self.data objectAtIndex:index];
-    
-    cell.userName.text = [rowData objectForKey:@"username"];
-    cell.replyTime.text = [rowData objectForKey:@"time"];
-    [cell.avatar setImageWithURL:[rowData objectForKey:@"avatar"] placeholderImage:[UIImage imageNamed:@"avatar_large"]];
-    cell.content.text = [rowData objectForKey:@"content"];
-    
-    return cell;
+	DTAttributedTextCell *cell = (DTAttributedTextCell *)[self tableView:tableView preparedCellForIndexPath:indexPath];
+	
+	return cell;
 }
+
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSUInteger index = [indexPath row];
+//    static NSString *CellIdentifier = @"replyCell";
+//    
+//    UINib *nib = [UINib nibWithNibName:@"V2EXSingleTopicCell" bundle:nil];
+//    [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
+//
+//    V2EXSingleTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+//    
+//    NSDictionary *rowData = [self.data objectAtIndex:index];
+//    
+//    cell.userName.text = [rowData objectForKey:@"username"];
+//    cell.replyTime.text = [rowData objectForKey:@"time"];
+//    [cell.avatar setImageWithURL:[rowData objectForKey:@"avatar"] placeholderImage:[UIImage imageNamed:@"avatar_large"]];
+//    
+//
+//	NSAttributedString *attributedString = [[NSAttributedString alloc] initWithHTMLData:[[rowData objectForKey:@"content"] dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:NULL];
+//    cell.content.shouldDrawImages = YES;
+//    // Don't use cell.content.delegate (But I don't know why not)
+//    cell.content.textDelegate = self;
+//    cell.content.attributedString = attributedString;
+//    CGRect frame = cell.content.attributedTextContentView.frame;
+//    CGSize size = cell.content.contentSize;
+//    frame.size.height = size.height;
+//    cell.content.frame = frame;
+//    
+//    return cell;
+//}
+
+
+
+//
+
+#pragma mark Custom Views on Text
+
+
+//- (UIView *)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView viewForAttachment:(DTTextAttachment *)attachment frame:(CGRect)frame{
+//    NSLog(@"attachment");
+//    if([attachment isKindOfClass:[DTImageTextAttachment class]]){
+//        
+//        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+////        imageView.contextView = attributedTextContentView;
+////        imageView.delegate = self;
+//        
+//        // url for deferred loading
+//        [imageView setImageWithURL:attachment.contentURL];
+//        return imageView;
+//    }
+//    return nil;
+//}
+
+//- (UIView *)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView viewForAttachment:(DTTextAttachment *)attachment frame:(CGRect)frame
+//{
+//    if ([attachment isKindOfClass:[DTImageTextAttachment class]])
+//	{
+//        NSLog(@"draw image");
+//		// if the attachment has a hyperlinkURL then this is currently ignored
+//		DTLazyImageView *imageView = [[DTLazyImageView alloc] initWithFrame:frame];
+//		imageView.delegate = self;
+//		
+//		// sets the image if there is one
+//		imageView.image = [(DTImageTextAttachment *)attachment image];
+//		
+//		// url for deferred loading
+//		imageView.url = attachment.contentURL;
+//		
+//		
+//		return imageView;
+//	}
+//	else if ([attachment isKindOfClass:[DTIframeTextAttachment class]])
+//	{
+//		DTWebVideoView *videoView = [[DTWebVideoView alloc] initWithFrame:frame];
+//		videoView.attachment = attachment;
+//		
+//		return videoView;
+//	}
+//	
+//	return nil;
+//}
 
 @end

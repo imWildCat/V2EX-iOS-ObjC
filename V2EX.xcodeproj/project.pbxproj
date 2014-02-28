@@ -14,13 +14,12 @@
 		5E0553D5189F3682002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553D3189E7310002CEAAA /* V2EXMBProgressHUDUtil.m */; };
 		5E0553D9189F3E77002CEAAA /* V2EXTopicsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E0553D8189F3E77002CEAAA /* V2EXTopicsListCell.xib */; };
 		5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */; };
+		5E0880CB18BC923600F88F18 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0880CA18BC923600F88F18 /* UIView+FrameMethods.m */; };
 		5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */; };
 		5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */; };
 		5E23700F18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */; };
 		5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
 		5E2BAE2218A539680039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
-		5E2EF33218BB947B001CAB25 /* V2EXSingleTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2EF33118BB947B001CAB25 /* V2EXSingleTopicCell.m */; };
-		5E2EF33418BB949E001CAB25 /* V2EXSingleTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2EF33318BB949E001CAB25 /* V2EXSingleTopicCell.xib */; };
 		5E54EF3618A5C1E300D88308 /* V2EXNormalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */; };
 		5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6769189B518B00EDF8FD /* V2EXApiClient.m */; };
 		5E5A6187189D593B00E29C6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5A6186189D593B00E29C6B /* libPods.a */; };
@@ -84,6 +83,8 @@
 		5E0553E2189F4DF4002CEAAA /* V2EXAbstractModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXAbstractModel.h; sourceTree = "<group>"; };
 		5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXAbstractModel.m; sourceTree = "<group>"; };
 		5E0553E9189F4FD7002CEAAA /* V2EXRequestDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2EXRequestDataDelegate.h; sourceTree = "<group>"; };
+		5E0880C918BC923600F88F18 /* UIView+FrameMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameMethods.h"; sourceTree = "<group>"; };
+		5E0880CA18BC923600F88F18 /* UIView+FrameMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameMethods.m"; sourceTree = "<group>"; };
 		5E1398B7189E0C0C00384FF9 /* V2EXLatestTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXLatestTopicsViewController.h; sourceTree = "<group>"; };
 		5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXLatestTopicsViewController.m; sourceTree = "<group>"; };
 		5E1398BE189E172800384FF9 /* V2EXTopicsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXTopicsListCell.h; sourceTree = "<group>"; };
@@ -92,9 +93,6 @@
 		5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTopicsListInSingleNodeViewController.m; sourceTree = "<group>"; };
 		5E2BAE1F18A5302C0039FFB0 /* V2EXHttpRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXHttpRequestSerializer.h; sourceTree = "<group>"; };
 		5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXHttpRequestSerializer.m; sourceTree = "<group>"; };
-		5E2EF33018BB947B001CAB25 /* V2EXSingleTopicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXSingleTopicCell.h; sourceTree = "<group>"; };
-		5E2EF33118BB947B001CAB25 /* V2EXSingleTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXSingleTopicCell.m; sourceTree = "<group>"; };
-		5E2EF33318BB949E001CAB25 /* V2EXSingleTopicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = V2EXSingleTopicCell.xib; sourceTree = "<group>"; };
 		5E54EF3418A5C1E300D88308 /* V2EXNormalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNormalModel.h; sourceTree = "<group>"; };
 		5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNormalModel.m; sourceTree = "<group>"; };
 		5E54EF3718A5C2C100D88308 /* JSONAPIURI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONAPIURI.h; sourceTree = "<group>"; };
@@ -190,6 +188,8 @@
 				5E0553D3189E7310002CEAAA /* V2EXMBProgressHUDUtil.m */,
 				5E7EDC6B18A74EAC0085628E /* V2EXAppSize.h */,
 				5E7EDC6C18A74EAC0085628E /* V2EXAppSize.m */,
+				5E0880C918BC923600F88F18 /* UIView+FrameMethods.h */,
+				5E0880CA18BC923600F88F18 /* UIView+FrameMethods.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -203,9 +203,6 @@
 				5E98FF2418B0AD5000D9D2C2 /* V2EXNodesListCell.h */,
 				5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */,
 				5E98FF2A18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib */,
-				5E2EF33018BB947B001CAB25 /* V2EXSingleTopicCell.h */,
-				5E2EF33118BB947B001CAB25 /* V2EXSingleTopicCell.m */,
-				5E2EF33318BB949E001CAB25 /* V2EXSingleTopicCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -518,7 +515,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E98FF2B18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib in Resources */,
-				5E2EF33418BB949E001CAB25 /* V2EXSingleTopicCell.xib in Resources */,
 				5E66EB05189A324700500B35 /* Images.xcassets in Resources */,
 				5EE2A27D18ADB83B00A63885 /* NodesAll.json in Resources */,
 				5EFDE766189BBB48007D8AE1 /* Default-568h@2x.png in Resources */,
@@ -618,7 +614,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E2EF33218BB947B001CAB25 /* V2EXSingleTopicCell.m in Sources */,
 				5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */,
 				5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */,
 				5E66EAF9189A324700500B35 /* main.m in Sources */,
@@ -641,6 +636,7 @@
 				5E5B6760189A42BA00EDF8FD /* V2EXNodesListViewController.m in Sources */,
 				5E66EB03189A324700500B35 /* V2EXRootViewController.m in Sources */,
 				5EE2A28018ADBB1C00A63885 /* V2EXStringUtil.m in Sources */,
+				5E0880CB18BC923600F88F18 /* UIView+FrameMethods.m in Sources */,
 				5E66EAFD189A324700500B35 /* V2EXAppDelegate.m in Sources */,
 				5E54EF3618A5C1E300D88308 /* V2EXNormalModel.m in Sources */,
 			);

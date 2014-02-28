@@ -3,6 +3,7 @@
 <plist version="1.0">
 <array>
 	<array>
+		<string>draw</string>
 		<string>qna</string>
 		<string>share</string>
 		<string>create</string>

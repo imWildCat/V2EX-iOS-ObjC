@@ -81,8 +81,6 @@
 - (void)testString {
     NSString *staString = [NSString stringWithUTF8String:"link = \"/t/100977#reply25\";"];
     NSString *parten = @"/t/\d{0,16}#reply";
- 
-        //组装一个字符串，需要把里面的网址解析出来
         NSString *urlString= [NSString stringWithUTF8String:"link = \"/t/100977#reply25\";"];
         
         NSError *error;

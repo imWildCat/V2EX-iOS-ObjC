@@ -12,12 +12,8 @@
 #import "V2EXSingleTopicViewController.h"
 
 @interface V2EXTopicsListInSingleNodeViewController : V2EXTableViewController
-{
-    NSUInteger _loadingStatus; // 0 - No loading ; 1 - Loading topic list ; 2 - Loading single topic
-}
 
 @property (weak, nonatomic) NSMutableString *uri;
-@property (weak, nonatomic) V2EXSingleTopicViewController *singleTopicViewController;
 
 + (V2EXTopicsListInSingleNodeViewController *)sharedController;
 - (void)loadNewNodeWithData:(NSData*)data;

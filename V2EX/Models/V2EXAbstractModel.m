@@ -39,7 +39,11 @@
 
 - (void)loadDataFailure:(NSError *)error {
     //TODO: To show user-friendly message.
-    [_delegate requestDataFailure:[error description]];
+    if ([error code] == 444) {
+         [_delegate requestDataFailure:@"抱歉，请等待上一次请求完成"];
+    } else {
+        [_delegate requestDataFailure:@"网络错误，加载失败"];
+    }
     NSLog(@"%@", [error description]);
 }
 

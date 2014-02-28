@@ -37,7 +37,7 @@
     self.tableView.rowHeight = 70; // TODO: Why don't storyboard with identifiertopicListInSingleNodeController support rowHeight?
     _loadingStatus = 1;
     
-    self.singleTopicViewController = [V2EXSingleTopicViewController sharedController];
+//    self.singleTopicViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"singleTopicController"];
 }
 
 
@@ -50,9 +50,6 @@
 //- (void)viewWillAppear:(BOOL)animated {
 //}
 
-- (void)viewDidDisappear:(BOOL)animated {
-    _uri = nil;
-}
 
 - (void)loadNewNodeWithData:(NSData *)data {
     // Reload data
@@ -60,21 +57,21 @@
     [self requestDataSuccess:data];
     
     // Scroll to the top
-    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+//    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
 }
 
 - (void)loadData {
     if (_loadingStatus == 0) {
         _loadingStatus = 1;
+         NSLog(@"load list");
         [self.model getTopicsList:self.uri];
     }
-
 }
 
 - (void)loadTopic:(NSString *)URI {
     if (_loadingStatus == 0) {
         _loadingStatus = 2;
-        
+        NSLog(@"load Topic");
         [V2EXMBProgressHUDUtil showGlobalProgressHUDWithTitle:nil];
         
         [self.model getTopicWithLinkURI:URI];
@@ -82,14 +79,32 @@
 }
 
 - (void)requestDataSuccess:(id)dataObject {
+    NSLog(@"test");
     if (_loadingStatus == 1) {
         [self handleListData:dataObject];
     } else {
-        [self.singleTopicViewController loadNewTopicWithData:dataObject];
-        [self.navigationController pushViewController:self.singleTopicViewController animated:YES];
+        // Check if need to log in
+        TFHpple *doc = [[TFHpple alloc] initWithHTMLData:dataObject];
+        NSArray *messageArray = [doc searchWithXPathQuery:@"//div[@id='Wrapper']/div[@class='content']/div[@class='box']/div[@class='message']"];
+        if ([messageArray count] > 0) {
+            if ([[[messageArray objectAtIndex:0] text] isEqualToString:@"查看本主题需要登录"]) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"查看本主题需要登录" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                [alert show];
+            } else {
+                [self pushToSingleTopicViewController:dataObject];
+            }
+        } else {
+                [self pushToSingleTopicViewController:dataObject];
+        }
     }
     [super requestDataSuccess:dataObject];
     _loadingStatus = 0;
+}
+
+- (void)pushToSingleTopicViewController:(NSData *)dataObject {
+    V2EXSingleTopicViewController *singleTopicController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"singleTopicController"];
+    [singleTopicController loadNewTopicWithData:dataObject];
+    [self.navigationController pushViewController:singleTopicController animated:YES];
 }
 
 - (void)requestDataFailure:(NSString *)errorMessage {
