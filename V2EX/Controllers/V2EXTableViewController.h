@@ -21,5 +21,6 @@
 @property (nonatomic, strong) V2EXNormalModel *model;
 
 - (BOOL)canStartNewLoading;
+- (void)pushToSingleTopicViewController:(NSData *)dataObject;
 
 @end

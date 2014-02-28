@@ -59,7 +59,11 @@
 }
 
 - (void)loadTopicData:(NSString *)ID {
-    [self.mutableCopy getTopicWithID:ID];
+    if ([self canStartNewLoading]) {
+        _loadingStatus = 2;
+        [self.model getTopicWithID:ID];
+        [self showProgressView];
+    }
 }
 
 
@@ -104,11 +108,19 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSUInteger index = indexPath.row;
+    NSString *ID = [[[self.data objectAtIndex:indexPath.row] valueForKey:@"id"] stringValue];
+    [self loadTopicData:ID];
 }
 
 - (void)requestDataSuccess:(id)dataObject {
-    self.data = dataObject;
+    if (_loadingStatus == 1) {
+        self.data = dataObject;
+    } else if (_loadingStatus == 2) {
+        // Push to new single topic controller
+        
+        [self pushToSingleTopicViewController:dataObject];
+    }
+    
     [super requestDataSuccess:dataObject];
 }
 //

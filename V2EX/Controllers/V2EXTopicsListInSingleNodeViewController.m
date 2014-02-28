@@ -77,33 +77,16 @@
 }
 
 - (void)requestDataSuccess:(id)dataObject {
-    NSLog(@"test");
     if (_loadingStatus == 1) {
         [self handleListData:dataObject];
     } else {
-        // Check if need to log in
-        TFHpple *doc = [[TFHpple alloc] initWithHTMLData:dataObject];
-        NSArray *messageArray = [doc searchWithXPathQuery:@"//div[@id='Wrapper']/div[@class='content']/div[@class='box']/div[@class='message']"];
-        if ([messageArray count] > 0) {
-            if ([[[messageArray objectAtIndex:0] text] isEqualToString:@"查看本主题需要登录"]) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"查看本主题需要登录" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-                [alert show];
-            } else {
-                [self pushToSingleTopicViewController:dataObject];
-            }
-        } else {
-                [self pushToSingleTopicViewController:dataObject];
-        }
+        [self pushToSingleTopicViewController:dataObject];
     }
     [super requestDataSuccess:dataObject];
 
 }
 
-- (void)pushToSingleTopicViewController:(NSData *)dataObject {
-    V2EXSingleTopicViewController *singleTopicController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"singleTopicController"];
-    [singleTopicController loadNewTopicWithData:dataObject];
-    [self.navigationController pushViewController:singleTopicController animated:YES];
-}
+
 
 - (void)requestDataFailure:(NSString *)errorMessage {
     [super requestDataFailure:errorMessage];
