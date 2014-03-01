@@ -48,12 +48,27 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     return _sharedSingleTopicViewControllerInstance;
 }
 
-- (void)loadNewTopicWithData:(NSData *)data {
+- (void)loadNewTopicWithID:(NSUInteger)ID andData:(NSData *)data {
+    _topicID = ID;
     [self requestDataSuccess:data];
 }
 
-- (void)loadNewTopicWithID:(NSUInteger *)ID {
-    //TODO: not implementation yet
+- (void)loadNewTopicWithID:(NSUInteger)ID {
+    if (!self.data) {
+        [self showProgressView];
+    } else {
+        [self setData:nil];
+        _cellCache = nil;
+        
+        self.data = [[NSMutableArray alloc] init];
+        _cellCache = [[NSCache alloc] init];
+    }
+    
+    [self.model getTopicWithID:ID];
+}
+
+- (void)loadData {
+    [self loadNewTopicWithID:_topicID];
 }
 
 - (void)requestDataSuccess:(id)dataObject {

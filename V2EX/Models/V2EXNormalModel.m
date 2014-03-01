@@ -33,12 +33,12 @@
     [self getHTMLData:[@"go/" stringByAppendingString:URI] parameters:nil];
 }
 
-- (void)getTopicWithLinkURI:(NSString *)URI {
-    [self getHTMLData:[URI stringByReplacingOccurrencesOfString:@"/t/" withString:@"t/"] parameters:nil];
-}
+//- (void)getTopicWithLinkURI:(NSString *)URI {
+//    [self getHTMLData:[URI stringByReplacingOccurrencesOfString:@"/t/" withString:@"t/"] parameters:nil];
+//}
 
-- (void)getTopicWithID:(NSString *)id {
-    [self getHTMLData:[@"t/" stringByAppendingString:id] parameters:nil];
+- (void)getTopicWithID:(NSUInteger)ID {
+    [self getHTMLData:[NSString stringWithFormat:@"t/%i", (unsigned int)ID] parameters:nil];
 }
 
 

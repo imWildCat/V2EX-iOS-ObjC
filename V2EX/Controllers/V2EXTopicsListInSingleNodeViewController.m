@@ -67,12 +67,12 @@
     }
 }
 
-- (void)loadTopic:(NSString *)URI {
+- (void)loadTopic:(NSUInteger)ID {
     if ([self canStartNewLoading]) {
         _loadingStatus = 2;
         [self showProgressView];
         
-        [self.model getTopicWithLinkURI:URI];
+        [self.model getTopicWithID:ID];
     }
 }
 
@@ -85,7 +85,6 @@
     [super requestDataSuccess:dataObject];
 
 }
-
 
 
 - (void)requestDataFailure:(NSString *)errorMessage {
@@ -164,7 +163,7 @@
     return cell;
 }
 
-- (NSString *)link2TopicID:(NSString *) urlString{
+- (NSUInteger)link2TopicID:(NSString *) urlString{
     NSError *error;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"/t/[0-9]+#reply"
                                                                            options:0
@@ -177,19 +176,20 @@
             NSTextCheckingResult *match = [array objectAtIndex:0];
             NSRange firstHalfRange = [match rangeAtIndex:0];
             NSString *result = [[[urlString substringWithRange:firstHalfRange] stringByReplacingOccurrencesOfString:@"/t/" withString:@""] stringByReplacingOccurrencesOfString:@"#reply" withString:@""];
-            return result;
+            return (NSUInteger)[result integerValue];
         } else {
-            return nil;
+            return 0;
         }
     } else {
-        return nil;
+        return 0;
     }
 }
 
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSUInteger index = [indexPath row];
-    [self loadTopic:[[self.data objectAtIndex:index] objectForKey:@"link"]];
+    NSUInteger topicID = [self link2TopicID:[[self.data objectAtIndex:[indexPath row]] objectForKey:@"link"]];
+    _topicIDWillBePushedTo = topicID;
+    [self loadTopic:topicID];
 }
 
 @end

@@ -15,6 +15,7 @@
 @interface V2EXTableViewController : UITableViewController <V2EXRequestDataDelegate>
 {
     NSUInteger _loadingStatus; // 0 - No loading ; 1 - Loading topic list ; 2 - Loading single topic
+    NSUInteger _topicIDWillBePushedTo;
 }
 
 @property (nonatomic, strong) NSMutableArray* data;

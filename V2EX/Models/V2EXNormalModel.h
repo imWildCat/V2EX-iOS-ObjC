@@ -13,8 +13,8 @@
 // API
 - (void)getIndex;
 - (void)getTopicsList:(NSString *)URI;
-- (void)getTopicWithLinkURI:(NSString *)URI;
-- (void)getTopicWithID:(NSString *)id;
+//- (void)getTopicWithLinkURI:(NSString *)URI;
+- (void)getTopicWithID:(NSUInteger)ID;
 
 
 // JSON API

@@ -16,6 +16,6 @@
 @property (weak, nonatomic) NSMutableString *uri;
 
 //+ (V2EXTopicsListInSingleNodeViewController *)sharedController;
-- (void)loadNewNodeWithData:(NSData*)data;
+- (void)loadNewNodeWithData:(NSData *)data;
 
 @end

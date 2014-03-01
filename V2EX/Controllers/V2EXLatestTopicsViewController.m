@@ -58,7 +58,7 @@
     [self.model getLatestTopics];
 }
 
-- (void)loadTopicData:(NSString *)ID {
+- (void)loadTopicData:(NSUInteger)ID {
     if ([self canStartNewLoading]) {
         _loadingStatus = 2;
         [self.model getTopicWithID:ID];
@@ -108,7 +108,8 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *ID = [[[self.data objectAtIndex:indexPath.row] valueForKey:@"id"] stringValue];
+    NSUInteger ID = [[[self.data objectAtIndex:indexPath.row] valueForKey:@"id"] intValue];
+    _topicIDWillBePushedTo = ID;
     [self loadTopicData:ID];
 }
 

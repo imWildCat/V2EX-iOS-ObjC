@@ -49,6 +49,7 @@
 		5E98FF2618B0AD5000D9D2C2 /* V2EXNodesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */; };
 		5E98FF2718B0AD5000D9D2C2 /* V2EXNodesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */; };
 		5E98FF2B18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E98FF2A18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib */; };
+		5ED82F0218C1788A00ADE079 /* V2EXSelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED82F0118C1788A00ADE079 /* V2EXSelfViewController.m */; };
 		5EDEFF3318B43C7700241C3F /* V2EXSingleTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEFF3218B43C7700241C3F /* V2EXSingleTopicViewController.m */; };
 		5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */; };
 		5EE2A26C18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26B18ADAAA000A63885 /* V2EXNodesListModel.m */; };
@@ -136,6 +137,8 @@
 		5E98FF2418B0AD5000D9D2C2 /* V2EXNodesListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNodesListCell.h; sourceTree = "<group>"; };
 		5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNodesListCell.m; sourceTree = "<group>"; };
 		5E98FF2A18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = V2EXNodesListCell.xib; sourceTree = "<group>"; };
+		5ED82F0018C1788A00ADE079 /* V2EXSelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXSelfViewController.h; sourceTree = "<group>"; };
+		5ED82F0118C1788A00ADE079 /* V2EXSelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXSelfViewController.m; sourceTree = "<group>"; };
 		5EDEFF3118B43C7700241C3F /* V2EXSingleTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXSingleTopicViewController.h; sourceTree = "<group>"; };
 		5EDEFF3218B43C7700241C3F /* V2EXSingleTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXSingleTopicViewController.m; sourceTree = "<group>"; };
 		5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameMethods.m"; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */,
 				5EDEFF3118B43C7700241C3F /* V2EXSingleTopicViewController.h */,
 				5EDEFF3218B43C7700241C3F /* V2EXSingleTopicViewController.m */,
+				5ED82F0018C1788A00ADE079 /* V2EXSelfViewController.h */,
+				5ED82F0118C1788A00ADE079 /* V2EXSelfViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -619,6 +624,7 @@
 				5E66EAF9189A324700500B35 /* main.m in Sources */,
 				5E5B6763189A4CBF00EDF8FD /* V2EXSettingsViewController.m in Sources */,
 				5E0553D4189E7310002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */,
+				5ED82F0218C1788A00ADE079 /* V2EXSelfViewController.m in Sources */,
 				5E98FED818B085B500D9D2C2 /* DRPaginatedScrollView.m in Sources */,
 				5E72BFBF18A4663D00BB88DD /* V2EXTableViewController.m in Sources */,
 				5EDEFF3318B43C7700241C3F /* V2EXSingleTopicViewController.m in Sources */,
