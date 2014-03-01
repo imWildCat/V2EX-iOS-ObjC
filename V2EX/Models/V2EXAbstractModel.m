@@ -38,12 +38,22 @@
 }
 
 - (void)loadDataFailure:(NSError *)error {
-    //TODO: To show user-friendly message.
-    if ([error code] == 444) {
-         [_delegate requestDataFailure:@"抱歉，请等待上一次请求完成"];
-    } else {
-        [_delegate requestDataFailure:@"网络错误，加载失败"];
+    NSString *errorMessage;
+    switch ([error code]) {
+        case 444:
+            errorMessage = @"抱歉，请等待上一次请求完成";
+            break;
+        case -1009:
+            errorMessage = @"加载失败，似乎没有连接到网络";
+            break;
+        default:
+            errorMessage = @"网络错误，加载失败";
+            break;
     }
+    
+    [_delegate requestDataFailure:errorMessage];
+    NSLog(@"%i", [error code]);
+
     NSLog(@"%@", [error description]);
 }
 

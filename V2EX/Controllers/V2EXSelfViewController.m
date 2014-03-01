@@ -35,4 +35,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)showMenu:(id)sender {
+    [self.sideMenuViewController presentMenuViewController];
+}
 @end

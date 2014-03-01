@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -33,6 +33,7 @@
                         <segue destination="UI8-2P-H1z" kind="push" identifier="settings" id="f9L-yc-PH4"/>
                         <segue destination="t59-zd-IQ1" kind="relationship" relationship="rootViewController" id="0ea-rb-oq5"/>
                         <segue destination="zCm-Zc-r8o" kind="push" identifier="nodesList" id="tb7-5S-GDX"/>
+                        <segue destination="DW6-8a-KDI" kind="push" identifier="self" id="Z6R-R8-XQI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQk-1S-mq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -184,7 +185,32 @@
             </objects>
             <point key="canvasLocation" x="-615" y="121"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Self View Controller - 我的-->
+        <scene sceneID="HPP-cQ-plx">
+            <objects>
+                <viewController storyboardIdentifier="selfController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DW6-8a-KDI" customClass="V2EXSelfViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ltm-V0-jBf"/>
+                        <viewControllerLayoutGuide type="bottom" id="7tz-C8-rbt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ozk-KQ-B7y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的" id="L7W-sS-mgI">
+                        <barButtonItem key="leftBarButtonItem" image="IconMenu" id="BM7-0Q-r1Z">
+                            <connections>
+                                <action selector="showMenu:" destination="DW6-8a-KDI" id="DnZ-cN-SFK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rGo-q7-iqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="121"/>
+        </scene>
+        <!--Settings View Controller - 设置-->
         <scene sceneID="I9D-go-bbx">
             <objects>
                 <viewController storyboardIdentifier="settingsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UI8-2P-H1z" customClass="V2EXSettingsViewController" sceneMemberID="viewController">
@@ -205,7 +231,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wVb-8N-9tT">
+                    <navigationItem key="navigationItem" title="设置" id="wVb-8N-9tT">
                         <barButtonItem key="leftBarButtonItem" image="IconMenu" id="RDx-Ig-JJ7">
                             <connections>
                                 <action selector="showMenu:" destination="UI8-2P-H1z" id="1oZ-cC-N1j"/>
@@ -215,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tO8-4o-A6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="121"/>
+            <point key="canvasLocation" x="-55" y="823"/>
         </scene>
     </scenes>
     <resources>

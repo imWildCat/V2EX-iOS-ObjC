@@ -9,7 +9,7 @@
 #import "V2EXMenuViewController.h"
 #import "V2EXAppDelegate.h"
 
-#define MENU_BUTTON_COUNT 5
+#define MENU_BUTTON_COUNT 2
 
 @interface V2EXMenuViewController ()
 
@@ -116,8 +116,8 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
     }
     
-    NSArray *titles = @[@"社区", @"最新", @"我的", @"设置", @"登出"];
-    NSArray *images = @[@"IconHome", @"IconHome", @"IconProfile", @"IconSettings", @"IconEmpty"];
+    NSArray *titles = @[@"社区", @"最新"/*, @"我的", @"设置", @"登出"*/];
+    NSArray *images = @[/*@"IconHome", @"IconHome",*/@"IconEmpty", @"IconEmpty", @"IconProfile", @"IconSettings", @"IconEmpty"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     

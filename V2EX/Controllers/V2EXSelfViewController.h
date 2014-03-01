@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RESideMenu.h"
 
 @interface V2EXSelfViewController : UIViewController
+- (IBAction)showMenu:(id)sender;
 
 @end

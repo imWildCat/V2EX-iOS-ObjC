@@ -33,9 +33,9 @@
 //    [MBProgressHUD hideAllHUDsForView:window animated:YES];
     
     static MBProgressHUD* hud = nil;
-    if (!hud) {
+//    if (!hud) {
         hud = [MBProgressHUD showHUDAddedTo:window animated:YES];
-    }
+//    }
     hud.mode = MBProgressHUDModeText;
     hud.labelText = msg;
     hud.hidden = NO;
