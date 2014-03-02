@@ -15,6 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.cache = [V2EXGlobalCache cache];
     [self prepareForLaunching];
     return YES;
 }

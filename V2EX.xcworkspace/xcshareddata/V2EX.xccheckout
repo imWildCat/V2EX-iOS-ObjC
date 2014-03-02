@@ -10,6 +10,8 @@
 	<string>V2EX</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>31FB247D-598F-41B1-A4F5-E75D1F035604</key>
+		<string>file:///Users/WildCat/Library/Caches/CocoaPods/GitHub/b950e0b31a1d99b68df85d2c63a4ad3e774cc0c5</string>
 		<key>CF0B353A-D8A3-4BCD-B987-321443E300F4</key>
 		<string>https://github.com/imWildCat/V2EX-iOS.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>V2EX.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>31FB247D-598F-41B1-A4F5-E75D1F035604</key>
+		<string>../Pods/hpple</string>
 		<key>CF0B353A-D8A3-4BCD-B987-321443E300F4</key>
 		<string>..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>CF0B353A-D8A3-4BCD-B987-321443E300F4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>31FB247D-598F-41B1-A4F5-E75D1F035604</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hpple</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

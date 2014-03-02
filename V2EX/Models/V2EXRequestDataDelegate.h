@@ -8,15 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol V2EXRequestDataDelegate
+@protocol V2EXRequestDataDelegate <NSObject>
 
 @required
 
 - (void)requestDataSuccess:(id)dataObject;
-- (void)requestDataFailure:(NSString *)errorMessage;
 
 @optional
-
+- (void)requestDataFailure:(NSString *)errorMessage;
 - (void)requestTopicsList:(NSString *)URI;
 
 @end

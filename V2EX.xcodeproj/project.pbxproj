@@ -49,6 +49,8 @@
 		5E98FF2618B0AD5000D9D2C2 /* V2EXNodesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */; };
 		5E98FF2718B0AD5000D9D2C2 /* V2EXNodesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */; };
 		5E98FF2B18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E98FF2A18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib */; };
+		5EA83BF818C312B200D4DA13 /* V2EXGlobalCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA83BF718C312B200D4DA13 /* V2EXGlobalCache.m */; };
+		5EA83BFB18C3150000D4DA13 /* V2EXUserUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA83BFA18C3150000D4DA13 /* V2EXUserUtil.m */; };
 		5ED82F0218C1788A00ADE079 /* V2EXSelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED82F0118C1788A00ADE079 /* V2EXSelfViewController.m */; };
 		5EDEFF3318B43C7700241C3F /* V2EXSingleTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEFF3218B43C7700241C3F /* V2EXSingleTopicViewController.m */; };
 		5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */; };
@@ -60,7 +62,7 @@
 		5EE2A28318ADCEF300A63885 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2A28218ADCEF300A63885 /* CoreData.framework */; };
 		5EE2A28C18ADF7AB00A63885 /* V2EXNormalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */; };
 		5EE2A29018AE05CA00A63885 /* NodesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EE2A28F18AE05CA00A63885 /* NodesList.plist */; };
-		5EFDE766189BBB48007D8AE1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */; };
+		5EF7729D18C20AF1006F3852 /* V2EXUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7729C18C20AF1006F3852 /* V2EXUserLoginViewController.m */; };
 		AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01641A634A3C4DD4AD34110A /* MyTest.m */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +139,10 @@
 		5E98FF2418B0AD5000D9D2C2 /* V2EXNodesListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNodesListCell.h; sourceTree = "<group>"; };
 		5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNodesListCell.m; sourceTree = "<group>"; };
 		5E98FF2A18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = V2EXNodesListCell.xib; sourceTree = "<group>"; };
+		5EA83BF618C312B200D4DA13 /* V2EXGlobalCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXGlobalCache.h; sourceTree = "<group>"; };
+		5EA83BF718C312B200D4DA13 /* V2EXGlobalCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXGlobalCache.m; sourceTree = "<group>"; };
+		5EA83BF918C3150000D4DA13 /* V2EXUserUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXUserUtil.h; sourceTree = "<group>"; };
+		5EA83BFA18C3150000D4DA13 /* V2EXUserUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXUserUtil.m; sourceTree = "<group>"; };
 		5ED82F0018C1788A00ADE079 /* V2EXSelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXSelfViewController.h; sourceTree = "<group>"; };
 		5ED82F0118C1788A00ADE079 /* V2EXSelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXSelfViewController.m; sourceTree = "<group>"; };
 		5EDEFF3118B43C7700241C3F /* V2EXSingleTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXSingleTopicViewController.h; sourceTree = "<group>"; };
@@ -150,7 +156,8 @@
 		5EE2A27F18ADBB1C00A63885 /* V2EXStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXStringUtil.m; sourceTree = "<group>"; };
 		5EE2A28218ADCEF300A63885 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		5EE2A28F18AE05CA00A63885 /* NodesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodesList.plist; sourceTree = "<group>"; };
-		5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5EF7729B18C20AF1006F3852 /* V2EXUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXUserLoginViewController.h; sourceTree = "<group>"; };
+		5EF7729C18C20AF1006F3852 /* V2EXUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXUserLoginViewController.m; sourceTree = "<group>"; };
 		6B6E4DB549C04343BF3F0323 /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
 		74300964D351441AA8933272 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		81DC5CBE67FD47A2A209B4DE /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,10 +220,9 @@
 		5E5B6759189A3BD900EDF8FD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5EF7729A18C20AB9006F3852 /* UserControl */,
 				5E9CF48718B1FBF200B6D577 /* MainControllers */,
 				5E72BFAB18A206DE00BB88DD /* Categories */,
-				5E5B6761189A4CBF00EDF8FD /* V2EXSettingsViewController.h */,
-				5E5B6762189A4CBF00EDF8FD /* V2EXSettingsViewController.m */,
 				5E1398B7189E0C0C00384FF9 /* V2EXLatestTopicsViewController.h */,
 				5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */,
 				5E5B675E189A42BA00EDF8FD /* V2EXNodesListViewController.h */,
@@ -225,8 +231,6 @@
 				5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */,
 				5EDEFF3118B43C7700241C3F /* V2EXSingleTopicViewController.h */,
 				5EDEFF3218B43C7700241C3F /* V2EXSingleTopicViewController.m */,
-				5ED82F0018C1788A00ADE079 /* V2EXSelfViewController.h */,
-				5ED82F0118C1788A00ADE079 /* V2EXSelfViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -252,6 +256,10 @@
 				5E5B6767189B514800EDF8FD /* Network */,
 				5EE2A27E18ADBB1C00A63885 /* V2EXStringUtil.h */,
 				5EE2A27F18ADBB1C00A63885 /* V2EXStringUtil.m */,
+				5EA83BF618C312B200D4DA13 /* V2EXGlobalCache.h */,
+				5EA83BF718C312B200D4DA13 /* V2EXGlobalCache.m */,
+				5EA83BF918C3150000D4DA13 /* V2EXUserUtil.h */,
+				5EA83BFA18C3150000D4DA13 /* V2EXUserUtil.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -289,7 +297,6 @@
 		5E66EAE0189A324700500B35 = {
 			isa = PBXGroup;
 			children = (
-				5EFDE765189BBB48007D8AE1 /* Default-568h@2x.png */,
 				5E66EAF2189A324700500B35 /* V2EX */,
 				5E66EAEB189A324700500B35 /* Frameworks */,
 				5E66EAEA189A324700500B35 /* Products */,
@@ -421,6 +428,19 @@
 			path = NodesList;
 			sourceTree = "<group>";
 		};
+		5EF7729A18C20AB9006F3852 /* UserControl */ = {
+			isa = PBXGroup;
+			children = (
+				5E5B6761189A4CBF00EDF8FD /* V2EXSettingsViewController.h */,
+				5E5B6762189A4CBF00EDF8FD /* V2EXSettingsViewController.m */,
+				5ED82F0018C1788A00ADE079 /* V2EXSelfViewController.h */,
+				5ED82F0118C1788A00ADE079 /* V2EXSelfViewController.m */,
+				5EF7729B18C20AF1006F3852 /* V2EXUserLoginViewController.h */,
+				5EF7729C18C20AF1006F3852 /* V2EXUserLoginViewController.m */,
+			);
+			name = UserControl;
+			sourceTree = "<group>";
+		};
 		7AE34B76E8884B81903380CC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,7 +543,6 @@
 				5E98FF2B18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib in Resources */,
 				5E66EB05189A324700500B35 /* Images.xcassets in Resources */,
 				5EE2A27D18ADB83B00A63885 /* NodesAll.json in Resources */,
-				5EFDE766189BBB48007D8AE1 /* Default-568h@2x.png in Resources */,
 				5E0553D9189F3E77002CEAAA /* V2EXTopicsListCell.xib in Resources */,
 				5E66EAF7189A324700500B35 /* InfoPlist.strings in Resources */,
 				5E66EB00189A324700500B35 /* Main.storyboard in Resources */,
@@ -649,9 +668,12 @@
 				5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */,
 				5E7EDC6D18A74EAC0085628E /* V2EXAppSize.m in Sources */,
 				5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */,
+				5EA83BFB18C3150000D4DA13 /* V2EXUserUtil.m in Sources */,
 				5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */,
 				5E7EDC7118A762C60085628E /* UIViewController+Size.m in Sources */,
 				5EE2A26C18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */,
+				5EA83BF818C312B200D4DA13 /* V2EXGlobalCache.m in Sources */,
+				5EF7729D18C20AF1006F3852 /* V2EXUserLoginViewController.m in Sources */,
 				5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */,
 				5E5B6760189A42BA00EDF8FD /* V2EXNodesListViewController.m in Sources */,
 				5E66EB03189A324700500B35 /* V2EXRootViewController.m in Sources */,

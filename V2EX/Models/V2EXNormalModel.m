@@ -11,20 +11,6 @@
 
 @implementation V2EXNormalModel
 
-// Base Data
-- (void)getJSONData:(NSString *)uri parameters:(NSDictionary *)parameter {
-    [self loadData:uri isGetMethod:YES isJsonApi:YES parameters:parameter];
-}
-
-- (void)getHTMLData:(NSString *)uri parameters:(NSDictionary *)parameter {
-    [self loadData:uri isGetMethod:YES isJsonApi:NO parameters:parameter];
-}
-
-// HTML Data
-- (void)postData:(NSString *)uri parameters:(NSDictionary *)parameter {
-    [self loadData:uri isGetMethod:NO isJsonApi:NO parameters:parameter];
-}
-
 - (void)getIndex {
     [self getHTMLData:@"" parameters:nil];
 }
@@ -39,6 +25,11 @@
 
 - (void)getTopicWithID:(NSUInteger)ID {
     [self getHTMLData:[NSString stringWithFormat:@"t/%i", (unsigned int)ID] parameters:nil];
+}
+
+// User
+- (void)getUserInfo:(NSString *)username {
+    [self getHTMLData:[NSString stringWithFormat:@"member/%@", username] parameters:nil];
 }
 
 

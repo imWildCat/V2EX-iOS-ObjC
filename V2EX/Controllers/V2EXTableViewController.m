@@ -79,7 +79,6 @@
 
 - (void)requestDataFailure:(NSString *)errorMessage {
     [self hideProgressView];
-    [self showMessage:errorMessage];
     
     [self finishRefresh];
     _loadingStatus = 0;

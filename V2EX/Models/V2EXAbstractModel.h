@@ -26,6 +26,13 @@
 // If not, 
 
 
-- (void)loadData:(NSString *)uri isGetMethod:(BOOL)isGetMethod isJsonApi:(BOOL)isJsonApi parameters:(NSDictionary *)parameters;
+//- (void)loadData:(NSString *)uri isGetMethod:(BOOL)isGetMethod isJsonApi:(BOOL)isJsonApi parameters:(NSDictionary *)parameters;
+// Base Data
+- (void)getJSONData:(NSString *)uri parameters:(NSDictionary *)parameter;
+
+// HTML Data
+- (void)getHTMLData:(NSString *)uri parameters:(NSDictionary *)parameter;
+
+- (void)postData:(NSString *)uri parameters:(NSDictionary *)parameter;
 
 @end

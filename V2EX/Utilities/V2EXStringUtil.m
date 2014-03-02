@@ -14,7 +14,7 @@
 {
     NSScanner * scanner = [NSScanner scannerWithString:html];
     NSString * text = nil;
-    while([scanner isAtEnd]==NO)
+    while([scanner isAtEnd] == NO)
     {
         [scanner scanUpToString:@"<" intoString:nil];
         [scanner scanUpToString:@">" intoString:&text];

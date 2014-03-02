@@ -11,8 +11,6 @@
 #import "V2EXStringUtil.h"
 #import "UIView+FrameMethods.h"
 #import <NSAttributedString+HTML.h>
-
-
 #import <DTAttributedTextCell.h>
 #import <UIImageView+WebCache.h>
 

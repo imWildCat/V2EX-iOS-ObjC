@@ -4,7 +4,7 @@
 #import <GHUnit/GHUnit.h>
 #import <Foundation/Foundation.h>
 #import <TFHpple.h>
-
+#import <AFNetworking.h>
 #import "V2EXNormalModel.h"
 #import "V2EXRequestDataDelegate.h"
 
@@ -101,6 +101,13 @@
         }
     
 }
+
+- (void)testNetWorking {
+    NSLog(@"%i", (NSUInteger)[[NSDate date] timeIntervalSince1970]);
+  
+}
+
+
 
 
 

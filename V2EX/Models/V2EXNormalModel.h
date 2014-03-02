@@ -16,6 +16,8 @@
 //- (void)getTopicWithLinkURI:(NSString *)URI;
 - (void)getTopicWithID:(NSUInteger)ID;
 
+// User
+- (void)getUserInfo:(NSString *)username;
 
 // JSON API
 - (void)getAllNodes;

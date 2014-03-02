@@ -13,7 +13,7 @@
 #define HTTPS_ROOT_URL @"https://www.v2ex.com/"
 #define JSONAPI_URI @"api/"
 //TODO: Adding more support for user agent.
-#define DEFAULT_USET_AGENT @"5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16"
+
 
 @implementation V2EXApiClient
 
@@ -82,7 +82,7 @@
     }
 }
 
-- (void) managerRequestData:(NSString *)uri isGetMethod:(BOOL)isGetMethod isJsonApi:(BOOL)isJsonApi parameters:(NSDictionary *)params success:(void (^)(id dataObject))success failure:(void (^)(NSError *error))failure
+- (void)managerRequestData:(NSString *)uri isGetMethod:(BOOL)isGetMethod isJsonApi:(BOOL)isJsonApi parameters:(NSDictionary *)params success:(void (^)(id dataObject))success failure:(void (^)(NSError *error))failure
 {
     [self _setSerializer:isJsonApi];
     NSString *url = [[self _getBaseUrl:isJsonApi] stringByAppendingString:uri];
@@ -97,7 +97,7 @@
                 failure(error);
             }];
         } else {
-            [_manager POST:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+            [_manager POST:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
                 _isLoading = NO;
                 success(responseObject);
             } failure:^(NSURLSessionDataTask *task, NSError *error) {

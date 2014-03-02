@@ -8,8 +8,10 @@
 
 #import "V2EXMenuViewController.h"
 #import "V2EXAppDelegate.h"
+#import "V2EXUserLoginViewController.h"
+#import "UIViewController+MBProgressHUD.h"
 
-#define MENU_BUTTON_COUNT 2
+#define MENU_BUTTON_COUNT 5
 
 @interface V2EXMenuViewController ()
 
@@ -75,8 +77,15 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 2:
+            navigationController.viewControllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"selfController"]];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+        case 3:
             navigationController.viewControllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"settingsController"]];
             [self.sideMenuViewController hideMenuViewController];
+            break;
+        case 4:
+            [self doLogout];
             break;
         default:
             break;
@@ -116,8 +125,8 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
     }
     
-    NSArray *titles = @[@"社区", @"最新"/*, @"我的", @"设置", @"登出"*/];
-    NSArray *images = @[/*@"IconHome", @"IconHome",*/@"IconEmpty", @"IconEmpty", @"IconProfile", @"IconSettings", @"IconEmpty"];
+    NSArray *titles = @[@"社区节点", @"最新话题", @"个人中心", @"用户设置", @"注销登录"];
+    NSArray *images = @[@"IconHome", @"IconRecent", @"IconProfile", @"IconSettings", @"IconBack"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     
@@ -128,6 +137,16 @@
 {
     return UIStatusBarStyleLightContent;
 }
+
+- (void)doLogout {
+    [V2EXUserLoginViewController logout];
+    NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
+    [userDefaultes setObject:nil forKey:@"saved_username"];
+    [userDefaultes setObject:nil forKey:@"saved_password"];
+    [userDefaultes synchronize];
+    [self showMessage:@"您已登出"];
+}
+
 
 #pragma mark -
 #pragma mark RESideMenu Delegate

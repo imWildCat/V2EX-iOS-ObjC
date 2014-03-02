@@ -7,11 +7,17 @@
 //
 
 #import "V2EXAbstractModel.h"
+#import "V2EXMBProgressHUDUtil.h"
 
 @implementation V2EXAbstractModel
 
+- (id)init {
+    [NSException raise:@"V2EXAbstractModel Exception" format:@"can't use init method"];
+    return self;
+}
+
 - (id)initWithDelegate:(id <V2EXRequestDataDelegate>)delegate {
-    self = [self init];
+    self = [super init];
     if(self){
         _delegate = delegate;
         self.apiClient = [V2EXApiClient sharedClient];
@@ -34,6 +40,7 @@
 }
 
 - (void)loadDataSuccess:(id)dataObject {
+    [V2EXMBProgressHUDUtil dismissGlobalHUD];
     [_delegate requestDataSuccess:dataObject];
 }
 
@@ -50,11 +57,46 @@
             errorMessage = @"网络错误，加载失败";
             break;
     }
+    [V2EXMBProgressHUDUtil dismissGlobalHUD];
     
-    [_delegate requestDataFailure:errorMessage];
-    NSLog(@"%i", [error code]);
+    [V2EXMBProgressHUDUtil showMessage:errorMessage];
+    if ([_delegate respondsToSelector:@selector(requestDataFailure:)]) {
+        [_delegate requestDataFailure:errorMessage];
+    }
+    
+    NSLog(@"[ERROR] Network: %@", [error description]);
+}
 
-    NSLog(@"%@", [error description]);
+
+// Base Data
+- (void)getJSONData:(NSString *)uri parameters:(NSDictionary *)parameter {
+    [self loadData:uri isGetMethod:YES isJsonApi:YES parameters:parameter];
+}
+
+// HTML Data
+- (void)getHTMLData:(NSString *)uri parameters:(NSDictionary *)parameter {
+    [self loadData:uri isGetMethod:YES isJsonApi:NO parameters:parameter];
+}
+
+- (void)postData:(NSString *)uri parameters:(NSDictionary *)parameter {
+//    NSMutableString *uriWithParam = [uri mutableCopy];
+//    if ([parameter count] > 0) {
+//        [uriWithParam appendString:@"?"];
+//        BOOL isFirst = YES;
+//
+//        for (NSString *key in [parameter allKeys] ) {
+//            NSString *value = [parameter objectForKey:key];
+//            
+//            if (!isFirst) {
+//                [uriWithParam appendString:@"&"];
+//            }
+//            
+//            [uriWithParam appendString:[NSString stringWithFormat:@"%@=%@", key, value]];
+//        }
+//    }
+
+//    [self loadData:uriWithParam isGetMethod:NO isJsonApi:NO parameters:nil];
+    [self loadData:uri isGetMethod:NO isJsonApi:NO parameters:parameter];
 }
 
 @end
