@@ -9,6 +9,7 @@
 #import "V2EXTableViewController.h"
 #import "V2EXSingleTopicViewController.h"
 #import <TFHpple.h>
+#import "V2EXUserLoginViewController.h"
 
 @interface V2EXTableViewController ()
 
@@ -119,9 +120,10 @@
     NSArray *messageArray = [doc searchWithXPathQuery:@"//div[@id='Wrapper']/div[@class='content']/div[@class='box']/div[@class='message']"];
     if ([messageArray count] > 0) {
         if ([[[messageArray objectAtIndex:0] text] isEqualToString:@"查看本主题需要登录"]) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"查看本主题需要登录" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"查看本主题需要登录" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
             [alert show];
             // If not login, show alert
+            // TODO: still request to login if has logged in
             return;
         }
     }
@@ -129,6 +131,15 @@
     V2EXSingleTopicViewController *singleTopicController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"singleTopicController"];
     [singleTopicController loadNewTopicWithID:_topicIDWillBePushedTo andData:dataObject];
     [self.navigationController pushViewController:singleTopicController animated:YES];
+}
+
+#pragma marks -- UIAlertViewDelegate --
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        V2EXUserLoginViewController *userLoginController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"userLoginController"];
+        [self.navigationController pushViewController:userLoginController animated:YES];
+    }
 }
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

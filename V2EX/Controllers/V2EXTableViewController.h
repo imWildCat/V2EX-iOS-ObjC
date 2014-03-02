@@ -12,7 +12,7 @@
 #import "UIViewController+MBProgressHUD.h"
 #import "V2EXNormalModel.h"
 
-@interface V2EXTableViewController : UITableViewController <V2EXRequestDataDelegate>
+@interface V2EXTableViewController : UITableViewController <V2EXRequestDataDelegate, UIAlertViewDelegate>
 {
     NSUInteger _loadingStatus; // 0 - No loading ; 1 - Loading topic list ; 2 - Loading single topic
     NSUInteger _topicIDWillBePushedTo;
