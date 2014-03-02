@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "V2EXApiClient.h"
 
-@interface V2EXUserLoginViewController : UIViewController
+@interface V2EXUserLoginViewController : UIViewController <UITextFieldDelegate>
 {
     //AFNetWorking
     AFHTTPSessionManager *_manager;

@@ -50,7 +50,22 @@
         self.navigationItem.leftBarButtonItem = btn;
     }
 	
-    // Do any additional setup after loading the view.
+    //To hide the keyboard when empty area is touched
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
+                                             initWithTarget:self action:@selector(handleBackgroundTap:)];
+    tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapRecognizer];
+}
+
+- (void) handleBackgroundTap:(UITapGestureRecognizer*)sender
+{
+    [self.usernameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+	[textField resignFirstResponder];
+	return YES;
 }
 
 - (void)showMenu:(id)sender {
