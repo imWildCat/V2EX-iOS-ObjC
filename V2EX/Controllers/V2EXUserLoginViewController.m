@@ -135,6 +135,7 @@
         // TODO: Handle 302 redirect
         if (YES/*[headers objectForKey:@"Location"]*/) {
             [_manager GET:@"http://v2ex.com/signin" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+//                [task response
                 [self validateLogin:responseObject];
             } failure:^(NSURLSessionDataTask *task, NSError *error) {
                 [self showLoginNetworkError:error];

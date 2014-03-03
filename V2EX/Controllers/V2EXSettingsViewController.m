@@ -7,6 +7,7 @@
 //
 
 #import "V2EXSettingsViewController.h"
+#import <V2EXNormalModel.h>
 
 @interface V2EXSettingsViewController ()
 
@@ -27,6 +28,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    V2EXNormalModel *model = [[V2EXNormalModel alloc] initWithDelegate:self];
+    [model getIndex];
+}
+
+- (void)requestDataSuccess:(id)dataObject {
+    NSLog(@"%@", [[NSString alloc] initWithData:dataObject encoding:NSUTF8StringEncoding]);
 }
 
 - (void)didReceiveMemoryWarning
