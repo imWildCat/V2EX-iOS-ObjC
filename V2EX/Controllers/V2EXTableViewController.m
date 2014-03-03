@@ -70,7 +70,6 @@
 #pragma mark - LoadData
 
 - (void)requestDataSuccess:(NSDictionary *)dataObject {
-
     [self.tableView reloadData];
     [self hideProgressView];
     
@@ -79,8 +78,6 @@
 }
 
 - (void)requestDataFailure:(NSString *)errorMessage {
-    [self hideProgressView];
-    
     [self finishRefresh];
     _loadingStatus = 0;
 }
