@@ -13,6 +13,7 @@
 #import <NSAttributedString+HTML.h>
 #import <DTAttributedTextCell.h>
 #import <UIImageView+WebCache.h>
+//#import "UIViewController+V2EXJump.h"
 
 // identifier for cell reuse
 NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseIdentifier";
@@ -44,6 +45,10 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     });
     
     return _sharedSingleTopicViewControllerInstance;
+}
+
+- (IBAction)test:(id)sender {
+//    [self pushToUserLoginController];
 }
 
 - (void)loadNewTopicWithID:(NSUInteger)ID andData:(NSData *)data {

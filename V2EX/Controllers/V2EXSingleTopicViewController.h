@@ -16,6 +16,7 @@
 }
 
 + (V2EXSingleTopicViewController *)sharedController;
+- (IBAction)test:(id)sender;
 
 - (void)loadNewTopicWithID:(NSUInteger)ID;
 - (void)loadNewTopicWithID:(NSUInteger)ID andData:(NSData *)data;

@@ -10,6 +10,7 @@
 #import "V2EXSingleTopicViewController.h"
 #import <TFHpple.h>
 #import "V2EXUserLoginViewController.h"
+#import "UIViewController+V2EXJump.h"
 
 @interface V2EXTableViewController ()
 
@@ -41,7 +42,7 @@
     rc.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
     [rc addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = rc;
-    
+    NSLog(@"did load");
     self.tableView.separatorInset = UIEdgeInsetsZero;
     
     // Data model
@@ -134,8 +135,7 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
-        V2EXUserLoginViewController *userLoginController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"userLoginController"];
-        [self.navigationController pushViewController:userLoginController animated:YES];
+        [self pushToUserLoginController];
     }
 }
 

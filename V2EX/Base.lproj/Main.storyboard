@@ -162,7 +162,14 @@
                             <outlet property="delegate" destination="QQH-Yc-tvh" id="kxf-es-dOj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="c60-JG-jcr"/>
+                    <navigationItem key="navigationItem" id="c60-JG-jcr">
+                        <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="O9c-u8-mhy">
+                            <connections>
+                                <action selector="test:" destination="QQH-Yc-tvh" id="7dJ-kp-dgi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hO7-6M-4bQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

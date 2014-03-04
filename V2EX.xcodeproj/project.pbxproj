@@ -20,6 +20,7 @@
 		5E23700F18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */; };
 		5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
 		5E2BAE2218A539680039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
+		5E3C0B9518C4C9C2001E8033 /* UIViewController+V2EXJump.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C0B9418C4C9C2001E8033 /* UIViewController+V2EXJump.m */; };
 		5E54EF3618A5C1E300D88308 /* V2EXNormalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */; };
 		5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6769189B518B00EDF8FD /* V2EXApiClient.m */; };
 		5E5A6187189D593B00E29C6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5A6186189D593B00E29C6B /* libPods.a */; };
@@ -96,6 +97,8 @@
 		5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTopicsListInSingleNodeViewController.m; sourceTree = "<group>"; };
 		5E2BAE1F18A5302C0039FFB0 /* V2EXHttpRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXHttpRequestSerializer.h; sourceTree = "<group>"; };
 		5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXHttpRequestSerializer.m; sourceTree = "<group>"; };
+		5E3C0B9318C4C9C2001E8033 /* UIViewController+V2EXJump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+V2EXJump.h"; sourceTree = "<group>"; };
+		5E3C0B9418C4C9C2001E8033 /* UIViewController+V2EXJump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+V2EXJump.m"; sourceTree = "<group>"; };
 		5E54EF3418A5C1E300D88308 /* V2EXNormalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNormalModel.h; sourceTree = "<group>"; };
 		5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNormalModel.m; sourceTree = "<group>"; };
 		5E54EF3718A5C2C100D88308 /* JSONAPIURI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONAPIURI.h; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 				5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */,
 				5E7EDC6F18A762C60085628E /* UIViewController+Size.h */,
 				5E7EDC7018A762C60085628E /* UIViewController+Size.m */,
+				5E3C0B9318C4C9C2001E8033 /* UIViewController+V2EXJump.h */,
+				5E3C0B9418C4C9C2001E8033 /* UIViewController+V2EXJump.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -665,6 +670,7 @@
 				5E5B676A189B518B00EDF8FD /* V2EXApiClient.m in Sources */,
 				5E23700F18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m in Sources */,
 				5E98FF2618B0AD5000D9D2C2 /* V2EXNodesListCell.m in Sources */,
+				5E3C0B9518C4C9C2001E8033 /* UIViewController+V2EXJump.m in Sources */,
 				5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */,
 				5E7EDC6D18A74EAC0085628E /* V2EXAppSize.m in Sources */,
 				5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */,
