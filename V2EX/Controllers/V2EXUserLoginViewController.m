@@ -151,9 +151,9 @@
 - (void)validateLogin:(NSData *)responseObject {
     TFHpple *doc = [[TFHpple alloc] initWithHTMLData:responseObject];
     if ([self checkLogin:doc]) {
-        [self showMessage:@"登录成功"];
         [self afterLogin];
         [self.navigationController popViewControllerAnimated:YES];
+        [self showMessage:@"登录成功"];
     } else {
         //            NSLog(@"data:%@", [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
         [self showLoginPasswordError];
@@ -216,7 +216,7 @@
 
 - (void)showLoginPasswordError {
     [self finishLoginRequest];
-    [self showMessage:@"登录失败，密码错误"];
+    [self showMessage:@"登录失败，用户名或密码错误"];
     [V2EXUserLoginViewController logout];
 }
 

@@ -42,7 +42,6 @@
     rc.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
     [rc addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = rc;
-    NSLog(@"did load");
     self.tableView.separatorInset = UIEdgeInsetsZero;
     
     // Data model
@@ -50,6 +49,7 @@
         _model = [[V2EXNormalModel alloc]initWithDelegate:self];
     }
 }
+
 
 - (void)refreshTableView {
     if(self.refreshControl.refreshing){
