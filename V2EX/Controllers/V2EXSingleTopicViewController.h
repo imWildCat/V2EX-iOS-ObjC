@@ -7,11 +7,13 @@
 //
 
 #import "V2EXTableViewController.h"
+#import "V2EXAfterTopicActionDelegate.h"
 
-@interface V2EXSingleTopicViewController : V2EXTableViewController
+@interface V2EXSingleTopicViewController : V2EXTableViewController <V2EXAfterTopicActionDelegate>
 {
 //    NSMutableArray *_cellHeightArray;
     NSUInteger _topicID;
+    NSUInteger _onceCode;
     NSCache *_cellCache;
 }
 

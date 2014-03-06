@@ -17,4 +17,14 @@
     NSLog(@"Hello World!");
 }
 
+- (void)testPostData {
+    V2EXNormalModel *model = [[V2EXNormalModel alloc] initWithDelegate:self];
+    
+    [model postData:@"http://baidu.com" parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"test", @"key",nil]];
+}
+
+- (void)requestDataSuccess:(id)dataObject {
+    
+}
+
 @end

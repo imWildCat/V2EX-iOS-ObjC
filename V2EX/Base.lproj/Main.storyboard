@@ -139,6 +139,43 @@
             </objects>
             <point key="canvasLocation" x="441" y="-628"/>
         </scene>
+        <!--Reply Topic View Controller - 回复-->
+        <scene sceneID="iBG-BD-l1d">
+            <objects>
+                <viewController id="0rM-Zq-Qt9" customClass="V2EXReplyTopicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MZl-Kz-NmX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tmf-EA-fCg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GUu-Cj-Ruk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n9h-Jb-EXm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="回复" id="YPB-XZ-UpY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="reply" id="zZg-MH-dcb">
+                            <connections>
+                                <action selector="doReply:" destination="0rM-Zq-Qt9" id="L00-IH-YeG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="replyContent" destination="n9h-Jb-EXm" id="6JF-gB-sNq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9H-E5-rTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1475" y="-628"/>
+        </scene>
         <!--Single Topic View Controller-->
         <scene sceneID="h0G-gw-JkR">
             <objects>
@@ -164,6 +201,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="c60-JG-jcr">
                         <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" image="IconReply" id="xfk-ld-Z9t">
+                            <connections>
+                                <segue destination="0rM-Zq-Qt9" kind="push" identifier="toReplyController" id="gZN-P1-ztK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hO7-6M-4bQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -344,6 +386,7 @@
     </scenes>
     <resources>
         <image name="IconMenu" width="24" height="24"/>
+        <image name="IconReply" width="32" height="32"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

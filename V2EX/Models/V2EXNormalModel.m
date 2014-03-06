@@ -42,4 +42,8 @@
     [self getJSONData:NODES_ALL parameters:nil];
 }
 
+- (void)replyTopic:(NSUInteger)topicID andOnce:(NSUInteger)onceCode andContent:(NSString *)content {
+    [self postData:[NSString stringWithFormat:@"t/%i", topicID] parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%i", onceCode], @"once", content, @"content", nil]];
+}
+
 @end

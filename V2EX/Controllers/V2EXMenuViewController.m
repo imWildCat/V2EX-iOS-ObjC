@@ -126,7 +126,7 @@
     }
     
     NSArray *titles = @[@"社区节点", @"最新话题", @"个人中心", @"用户设置", @"注销登录"];
-    NSArray *images = @[@"IconHome", @"IconRecent", @"IconProfile", @"IconSettings", @"IconBack"];
+    NSArray *images = @[@"IconHome", @"IconRecent", @"IconProfile", @"IconSettings", @"IconKey"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     

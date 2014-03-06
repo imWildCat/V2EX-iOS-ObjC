@@ -23,4 +23,7 @@
 - (void)getAllNodes;
 - (void)getLatestTopics;
 
+// Topic
+- (void)replyTopic:(NSUInteger)topicID andOnce:(NSUInteger)onceCode andContent:(NSString *)content;
+
 @end

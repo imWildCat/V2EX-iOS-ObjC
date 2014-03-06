@@ -8,7 +8,7 @@
 
 #import "V2EXHttpRequestSerializer.h"
 
-#define TIMEOUT 10
+#define TIMEOUT 30
 
 @implementation V2EXHttpRequestSerializer
 
@@ -17,7 +17,6 @@
     NSMutableURLRequest *request = [super requestWithMethod:method URLString:URLString parameters:parameters error:error];
     NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
     NSDictionary *headers = [NSHTTPCookie requestHeaderFieldsWithCookies:cookies];
-//    NSLog(@"%@", cookies);
     [request setAllHTTPHeaderFields:headers];
     [request setTimeoutInterval:TIMEOUT];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];

@@ -7,13 +7,14 @@
 //
 
 #import "V2EXSingleTopicViewController.h"
-#import <TFHpple.h>
+#import "TFHpple+V2EXMethod.h"
 #import "V2EXStringUtil.h"
 #import "UIView+FrameMethods.h"
 #import <NSAttributedString+HTML.h>
 #import <DTAttributedTextCell.h>
 #import <UIImageView+WebCache.h>
 #import "UIViewController+V2EXJump.h"
+#import "V2EXReplyTopicViewController.h"
 
 // identifier for cell reuse
 NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseIdentifier";
@@ -84,6 +85,10 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     NSString *title = [[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/h1"] objectAtIndex:0] text];
     self.navigationItem.title = title;
     
+    // once code
+    NSString *onceCodeString = [[doc searchFirstElementWithXPathQuery:@"//div[@class='box']//input[@name='once']"] objectForKey:@"value"];
+    _onceCode = (NSUInteger)[onceCodeString intValue];
+
     NSString *authorUsername = [[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small/a"] objectAtIndex:0] text];
     NSString *authorTime = [[[[[[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small"] objectAtIndex:0] raw] stringByReplacingOccurrencesOfString:@"<small class=\"gray\">By " withString:@""] stringByReplacingOccurrencesOfString:[[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small/a"] objectAtIndex:0] raw] withString:@""] stringByReplacingOccurrencesOfString:@" at " withString:@""] stringByReplacingOccurrencesOfString:@"</small>" withString:@""];
     NSString *authorAvatar = [[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/div[@class='fr']/a/img[@class='avatar']"] objectAtIndex:0] objectForKey:@"src"];
@@ -306,5 +311,32 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
 //	
 //	return nil;
 //}
+
+// toReplyController
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"toReplyController"]) {
+        if (_topicID > 0 && _onceCode > 0) {
+            return YES;
+        } else {
+            [self showMessage:@"无法回复，可能因为您尚未登录"];
+            return NO;
+        }
+    }
+    return NO;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"toReplyController"]) {
+        V2EXReplyTopicViewController *replyController = [segue destinationViewController];
+        replyController.lastController = self;
+        replyController.topicID = _topicID;
+        replyController.onceCode = _onceCode;
+    }
+}
+
+// After reply
+- (void)afterReplyTopic:(NSData *)data {
+    [self requestDataSuccess:data];
+}
 
 @end

@@ -9,8 +9,7 @@
 #import "V2EXSelfViewController.h"
 #import "V2EXUserLoginViewController.h"
 #import "UIViewController+MBProgressHUD.h"
-#import <TFHpple.h>
-#import "V2EXUserUtil.h"
+#import "TFHpple+V2EXMethod.h"
 #import <UIImageView+WebCache.h>
 #import <NSAttributedString+HTML.h>
 
@@ -62,7 +61,7 @@
 - (void)requestDataSuccess:(id)dataObject {
     [self hideProgressView];
     TFHpple *doc = [[TFHpple alloc] initWithHTMLData:dataObject];
-    if ([V2EXUserUtil isLogin:doc]) {
+    if ([doc checkLogin]) {
         [self handleWithUserPage:doc];
     } else {
         [self pushToUserLoginController];

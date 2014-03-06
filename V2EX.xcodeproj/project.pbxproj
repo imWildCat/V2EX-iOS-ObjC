@@ -14,6 +14,7 @@
 		5E0553D5189F3682002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553D3189E7310002CEAAA /* V2EXMBProgressHUDUtil.m */; };
 		5E0553D9189F3E77002CEAAA /* V2EXTopicsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E0553D8189F3E77002CEAAA /* V2EXTopicsListCell.xib */; };
 		5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */; };
+		5E05C5BB18C814070016CB81 /* TFHpple+V2EXMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E05C5BA18C814070016CB81 /* TFHpple+V2EXMethod.m */; };
 		5E0880CB18BC923600F88F18 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0880CA18BC923600F88F18 /* UIView+FrameMethods.m */; };
 		5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */; };
 		5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */; };
@@ -22,6 +23,7 @@
 		5E2BAE2218A539680039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
 		5E3C0B9518C4C9C2001E8033 /* UIViewController+V2EXJump.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C0B9418C4C9C2001E8033 /* UIViewController+V2EXJump.m */; };
 		5E54EF3618A5C1E300D88308 /* V2EXNormalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */; };
+		5E55E42B18C7609C00D6E4C7 /* V2EXReplyTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E55E42A18C7609C00D6E4C7 /* V2EXReplyTopicViewController.m */; };
 		5E5A6183189D099900E29C6B /* V2EXApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6769189B518B00EDF8FD /* V2EXApiClient.m */; };
 		5E5A6187189D593B00E29C6B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E5A6186189D593B00E29C6B /* libPods.a */; };
 		5E5B6760189A42BA00EDF8FD /* V2EXNodesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B675F189A42BA00EDF8FD /* V2EXNodesListViewController.m */; };
@@ -51,7 +53,6 @@
 		5E98FF2718B0AD5000D9D2C2 /* V2EXNodesListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */; };
 		5E98FF2B18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E98FF2A18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib */; };
 		5EA83BF818C312B200D4DA13 /* V2EXGlobalCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA83BF718C312B200D4DA13 /* V2EXGlobalCache.m */; };
-		5EA83BFB18C3150000D4DA13 /* V2EXUserUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA83BFA18C3150000D4DA13 /* V2EXUserUtil.m */; };
 		5ED82F0218C1788A00ADE079 /* V2EXSelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED82F0118C1788A00ADE079 /* V2EXSelfViewController.m */; };
 		5EDEFF3318B43C7700241C3F /* V2EXSingleTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEFF3218B43C7700241C3F /* V2EXSingleTopicViewController.m */; };
 		5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2A26718AA79E700A63885 /* UIView+FrameMethods.m */; };
@@ -87,6 +88,9 @@
 		5E0553E2189F4DF4002CEAAA /* V2EXAbstractModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXAbstractModel.h; sourceTree = "<group>"; };
 		5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXAbstractModel.m; sourceTree = "<group>"; };
 		5E0553E9189F4FD7002CEAAA /* V2EXRequestDataDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2EXRequestDataDelegate.h; sourceTree = "<group>"; };
+		5E05C5B918C814070016CB81 /* TFHpple+V2EXMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TFHpple+V2EXMethod.h"; sourceTree = "<group>"; };
+		5E05C5BA18C814070016CB81 /* TFHpple+V2EXMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TFHpple+V2EXMethod.m"; sourceTree = "<group>"; };
+		5E05C5BC18C824C30016CB81 /* V2EXAfterTopicActionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXAfterTopicActionDelegate.h; sourceTree = "<group>"; };
 		5E0880C918BC923600F88F18 /* UIView+FrameMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameMethods.h"; sourceTree = "<group>"; };
 		5E0880CA18BC923600F88F18 /* UIView+FrameMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameMethods.m"; sourceTree = "<group>"; };
 		5E1398B7189E0C0C00384FF9 /* V2EXLatestTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXLatestTopicsViewController.h; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 		5E54EF3418A5C1E300D88308 /* V2EXNormalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNormalModel.h; sourceTree = "<group>"; };
 		5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNormalModel.m; sourceTree = "<group>"; };
 		5E54EF3718A5C2C100D88308 /* JSONAPIURI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONAPIURI.h; sourceTree = "<group>"; };
+		5E55E42918C7609C00D6E4C7 /* V2EXReplyTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXReplyTopicViewController.h; sourceTree = "<group>"; };
+		5E55E42A18C7609C00D6E4C7 /* V2EXReplyTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXReplyTopicViewController.m; sourceTree = "<group>"; };
 		5E5A6181189D093600E29C6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5E5A6186189D593B00E29C6B /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		5E5B675E189A42BA00EDF8FD /* V2EXNodesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNodesListViewController.h; sourceTree = "<group>"; };
@@ -144,8 +150,6 @@
 		5E98FF2A18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = V2EXNodesListCell.xib; sourceTree = "<group>"; };
 		5EA83BF618C312B200D4DA13 /* V2EXGlobalCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXGlobalCache.h; sourceTree = "<group>"; };
 		5EA83BF718C312B200D4DA13 /* V2EXGlobalCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXGlobalCache.m; sourceTree = "<group>"; };
-		5EA83BF918C3150000D4DA13 /* V2EXUserUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXUserUtil.h; sourceTree = "<group>"; };
-		5EA83BFA18C3150000D4DA13 /* V2EXUserUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXUserUtil.m; sourceTree = "<group>"; };
 		5ED82F0018C1788A00ADE079 /* V2EXSelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXSelfViewController.h; sourceTree = "<group>"; };
 		5ED82F0118C1788A00ADE079 /* V2EXSelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXSelfViewController.m; sourceTree = "<group>"; };
 		5EDEFF3118B43C7700241C3F /* V2EXSingleTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXSingleTopicViewController.h; sourceTree = "<group>"; };
@@ -234,6 +238,9 @@
 				5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */,
 				5EDEFF3118B43C7700241C3F /* V2EXSingleTopicViewController.h */,
 				5EDEFF3218B43C7700241C3F /* V2EXSingleTopicViewController.m */,
+				5E55E42918C7609C00D6E4C7 /* V2EXReplyTopicViewController.h */,
+				5E55E42A18C7609C00D6E4C7 /* V2EXReplyTopicViewController.m */,
+				5E05C5BC18C824C30016CB81 /* V2EXAfterTopicActionDelegate.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -261,8 +268,8 @@
 				5EE2A27F18ADBB1C00A63885 /* V2EXStringUtil.m */,
 				5EA83BF618C312B200D4DA13 /* V2EXGlobalCache.h */,
 				5EA83BF718C312B200D4DA13 /* V2EXGlobalCache.m */,
-				5EA83BF918C3150000D4DA13 /* V2EXUserUtil.h */,
-				5EA83BFA18C3150000D4DA13 /* V2EXUserUtil.m */,
+				5E05C5B918C814070016CB81 /* TFHpple+V2EXMethod.h */,
+				5E05C5BA18C814070016CB81 /* TFHpple+V2EXMethod.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -671,14 +678,15 @@
 				5E23700F18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m in Sources */,
 				5E98FF2618B0AD5000D9D2C2 /* V2EXNodesListCell.m in Sources */,
 				5E3C0B9518C4C9C2001E8033 /* UIViewController+V2EXJump.m in Sources */,
+				5E05C5BB18C814070016CB81 /* TFHpple+V2EXMethod.m in Sources */,
 				5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */,
 				5E7EDC6D18A74EAC0085628E /* V2EXAppSize.m in Sources */,
 				5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */,
-				5EA83BFB18C3150000D4DA13 /* V2EXUserUtil.m in Sources */,
 				5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */,
 				5E7EDC7118A762C60085628E /* UIViewController+Size.m in Sources */,
 				5EE2A26C18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */,
 				5EA83BF818C312B200D4DA13 /* V2EXGlobalCache.m in Sources */,
+				5E55E42B18C7609C00D6E4C7 /* V2EXReplyTopicViewController.m in Sources */,
 				5EF7729D18C20AF1006F3852 /* V2EXUserLoginViewController.m in Sources */,
 				5EE2A26918AA79E700A63885 /* UIView+FrameMethods.m in Sources */,
 				5E5B6760189A42BA00EDF8FD /* V2EXNodesListViewController.m in Sources */,

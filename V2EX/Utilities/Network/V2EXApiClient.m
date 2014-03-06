@@ -97,7 +97,7 @@
                 failure(error);
             }];
         } else {
-            [_manager POST:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+            [_manager POST:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
                 _isLoading = NO;
                 success(responseObject);
             } failure:^(NSURLSessionDataTask *task, NSError *error) {
