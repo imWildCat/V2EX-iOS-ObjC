@@ -11,7 +11,7 @@
 #import "V2EXUserLoginViewController.h"
 #import "UIViewController+MBProgressHUD.h"
 
-#define MENU_BUTTON_COUNT 5
+#define MENU_BUTTON_COUNT 4
 
 @interface V2EXMenuViewController ()
 
@@ -81,10 +81,10 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 3:
-            navigationController.viewControllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"settingsController"]];
+           /* navigationController.viewControllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"settingsController"]];
             [self.sideMenuViewController hideMenuViewController];
             break;
-        case 4:
+        case 4:*/
             [self doLogout];
             break;
         default:
@@ -125,8 +125,8 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
     }
     
-    NSArray *titles = @[@"社区节点", @"最新话题", @"个人中心", @"用户设置", @"注销登录"];
-    NSArray *images = @[@"IconHome", @"IconRecent", @"IconProfile", @"IconSettings", @"IconKey"];
+    NSArray *titles = @[@"社区节点", @"最新话题", @"个人中心",/* @"用户设置",*/ @"注销登录"];
+    NSArray *images = @[@"IconHome", @"IconRecent", @"IconProfile", /*@"IconSettings",*/ @"IconKey"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     

@@ -13,6 +13,8 @@
 @interface V2EXReplyTopicViewController : UIViewController <V2EXRequestDataDelegate>
 {
     V2EXNormalModel *_model;
+    
+    CGRect _originalTextViewFrame;
 }
 
 @property (nonatomic, assign) id<V2EXAfterTopicActionDelegate> lastController;

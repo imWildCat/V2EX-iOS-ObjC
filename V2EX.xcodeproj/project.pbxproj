@@ -38,12 +38,12 @@
 		5E66EAFD189A324700500B35 /* V2EXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EAFC189A324700500B35 /* V2EXAppDelegate.m */; };
 		5E66EB00189A324700500B35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EAFE189A324700500B35 /* Main.storyboard */; };
 		5E66EB03189A324700500B35 /* V2EXRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E66EB02189A324700500B35 /* V2EXRootViewController.m */; };
-		5E66EB05189A324700500B35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E66EB04189A324700500B35 /* Images.xcassets */; };
 		5E72BF9618A1D12E00BB88DD /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72BF9518A1D12E00BB88DD /* libxml2.2.dylib */; };
 		5E72BF9718A1D13500BB88DD /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E72BF9518A1D12E00BB88DD /* libxml2.2.dylib */; };
 		5E72BFA518A1F0E600BB88DD /* V2EXAbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */; };
 		5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */; };
 		5E72BFBF18A4663D00BB88DD /* V2EXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E72BFBE18A4663D00BB88DD /* V2EXTableViewController.m */; };
+		5E7D34E918CA8DDE00F0438C /* V2EXNewTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7D34E818CA8DDE00F0438C /* V2EXNewTopicViewController.m */; };
 		5E7EDC6D18A74EAC0085628E /* V2EXAppSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC6C18A74EAC0085628E /* V2EXAppSize.m */; };
 		5E7EDC6E18A74EAC0085628E /* V2EXAppSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC6C18A74EAC0085628E /* V2EXAppSize.m */; };
 		5E7EDC7118A762C60085628E /* UIViewController+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7EDC7018A762C60085628E /* UIViewController+Size.m */; };
@@ -65,6 +65,7 @@
 		5EE2A28C18ADF7AB00A63885 /* V2EXNormalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E54EF3518A5C1E300D88308 /* V2EXNormalModel.m */; };
 		5EE2A29018AE05CA00A63885 /* NodesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EE2A28F18AE05CA00A63885 /* NodesList.plist */; };
 		5EF7729D18C20AF1006F3852 /* V2EXUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7729C18C20AF1006F3852 /* V2EXUserLoginViewController.m */; };
+		5EF89F1318CDDE2B00AA0BEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF89F1218CDDE2B00AA0BEF /* Images.xcassets */; };
 		AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01641A634A3C4DD4AD34110A /* MyTest.m */; };
 /* End PBXBuildFile section */
 
@@ -131,13 +132,14 @@
 		5E66EAFF189A324700500B35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E66EB01189A324700500B35 /* V2EXRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = V2EXRootViewController.h; sourceTree = "<group>"; };
 		5E66EB02189A324700500B35 /* V2EXRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = V2EXRootViewController.m; sourceTree = "<group>"; };
-		5E66EB04189A324700500B35 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5E66EB0B189A324700500B35 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5E72BF9518A1D12E00BB88DD /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		5E72BFAF18A20A3C00BB88DD /* UIViewController+MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MBProgressHUD.h"; sourceTree = "<group>"; };
 		5E72BFB018A20A3C00BB88DD /* UIViewController+MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MBProgressHUD.m"; sourceTree = "<group>"; };
 		5E72BFBD18A4663D00BB88DD /* V2EXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXTableViewController.h; sourceTree = "<group>"; };
 		5E72BFBE18A4663D00BB88DD /* V2EXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTableViewController.m; sourceTree = "<group>"; };
+		5E7D34E718CA8DDE00F0438C /* V2EXNewTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNewTopicViewController.h; sourceTree = "<group>"; };
+		5E7D34E818CA8DDE00F0438C /* V2EXNewTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNewTopicViewController.m; sourceTree = "<group>"; };
 		5E7EDC6A18A72B510085628E /* NormalAPIURI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalAPIURI.h; sourceTree = "<group>"; };
 		5E7EDC6B18A74EAC0085628E /* V2EXAppSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXAppSize.h; sourceTree = "<group>"; };
 		5E7EDC6C18A74EAC0085628E /* V2EXAppSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXAppSize.m; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		5EE2A28F18AE05CA00A63885 /* NodesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodesList.plist; sourceTree = "<group>"; };
 		5EF7729B18C20AF1006F3852 /* V2EXUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXUserLoginViewController.h; sourceTree = "<group>"; };
 		5EF7729C18C20AF1006F3852 /* V2EXUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXUserLoginViewController.m; sourceTree = "<group>"; };
+		5EF89F1218CDDE2B00AA0BEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6B6E4DB549C04343BF3F0323 /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
 		74300964D351441AA8933272 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		81DC5CBE67FD47A2A209B4DE /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +244,8 @@
 				5E55E42918C7609C00D6E4C7 /* V2EXReplyTopicViewController.h */,
 				5E55E42A18C7609C00D6E4C7 /* V2EXReplyTopicViewController.m */,
 				5E05C5BC18C824C30016CB81 /* V2EXAfterTopicActionDelegate.h */,
+				5E7D34E718CA8DDE00F0438C /* V2EXNewTopicViewController.h */,
+				5E7D34E818CA8DDE00F0438C /* V2EXNewTopicViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -353,7 +358,6 @@
 				5E66EAFB189A324700500B35 /* V2EXAppDelegate.h */,
 				5E66EAFC189A324700500B35 /* V2EXAppDelegate.m */,
 				5E66EAFE189A324700500B35 /* Main.storyboard */,
-				5E66EB04189A324700500B35 /* Images.xcassets */,
 				5E66EAF3189A324700500B35 /* Supporting Files */,
 			);
 			path = V2EX;
@@ -362,6 +366,8 @@
 		5E66EAF3189A324700500B35 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EF89F1218CDDE2B00AA0BEF /* Images.xcassets */,
+				5EF89F0B18CDD84500AA0BEF /* LauchImages */,
 				5E66EAF4189A324700500B35 /* V2EX-Info.plist */,
 				5E66EAF5189A324700500B35 /* InfoPlist.strings */,
 				5E66EAF8189A324700500B35 /* main.m */,
@@ -451,6 +457,13 @@
 				5EF7729C18C20AF1006F3852 /* V2EXUserLoginViewController.m */,
 			);
 			name = UserControl;
+			sourceTree = "<group>";
+		};
+		5EF89F0B18CDD84500AA0BEF /* LauchImages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = LauchImages;
 			sourceTree = "<group>";
 		};
 		7AE34B76E8884B81903380CC /* Tests */ = {
@@ -553,8 +566,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E98FF2B18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib in Resources */,
-				5E66EB05189A324700500B35 /* Images.xcassets in Resources */,
 				5EE2A27D18ADB83B00A63885 /* NodesAll.json in Resources */,
+				5EF89F1318CDDE2B00AA0BEF /* Images.xcassets in Resources */,
 				5E0553D9189F3E77002CEAAA /* V2EXTopicsListCell.xib in Resources */,
 				5E66EAF7189A324700500B35 /* InfoPlist.strings in Resources */,
 				5E66EB00189A324700500B35 /* Main.storyboard in Resources */,
@@ -668,6 +681,7 @@
 				5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */,
 				5E66EAF9189A324700500B35 /* main.m in Sources */,
 				5E5B6763189A4CBF00EDF8FD /* V2EXSettingsViewController.m in Sources */,
+				5E7D34E918CA8DDE00F0438C /* V2EXNewTopicViewController.m in Sources */,
 				5E0553D4189E7310002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */,
 				5ED82F0218C1788A00ADE079 /* V2EXSelfViewController.m in Sources */,
 				5E98FED818B085B500D9D2C2 /* DRPaginatedScrollView.m in Sources */,
