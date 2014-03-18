@@ -42,8 +42,18 @@
     [self getJSONData:NODES_ALL parameters:nil];
 }
 
+// Topic
 - (void)replyTopic:(NSUInteger)topicID andOnce:(NSUInteger)onceCode andContent:(NSString *)content {
     [self postData:[NSString stringWithFormat:@"t/%i", topicID] parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%i", onceCode], @"once", content, @"content", nil]];
 }
+
+- (void)getNewTopicPage:(NSString *)uri {
+    [self getHTMLData:[NSString stringWithFormat:@"new/%@", uri]  parameters:nil];
+}
+
+- (void)newTopic:(NSString *)uri andTitle:(NSString *)title andContent:(NSString *)content andOnce:(NSUInteger)once {
+    [self postData:[NSString stringWithFormat:@"new/%@", uri] parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%i", once], @"once", title, @"title", content, @"content", nil]];
+}
+
 
 @end

@@ -25,5 +25,7 @@
 
 // Topic
 - (void)replyTopic:(NSUInteger)topicID andOnce:(NSUInteger)onceCode andContent:(NSString *)content;
+- (void)getNewTopicPage:(NSString *)uri;
+- (void)newTopic:(NSString *)uri andTitle:(NSString *)title andContent:(NSString *)content andOnce:(NSUInteger)once;
 
 @end
