@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface V2EXNewTopicViewController : UIViewController
+{
+    CGRect _originalTextViewFrame;
+}
 
 @property (strong, nonatomic) IBOutlet UITextField *topicTitle;
 @property (strong, nonatomic) IBOutlet UITextView *topicContent;

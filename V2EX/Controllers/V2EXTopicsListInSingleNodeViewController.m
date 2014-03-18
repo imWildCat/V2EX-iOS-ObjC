@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 WildCat. All rights reserved.
 //
 
-#import <TFHpple.h>
+#import "TFHpple+V2EXMethod.h"
 #import "V2EXTopicsListInSingleNodeViewController.h"
 #import "V2EXTopicsListCell.h"
 #import "V2EXNormalModel.h"
@@ -96,16 +96,21 @@
     
     TFHpple *doc = [[TFHpple alloc]initWithHTMLData:dataObject];
     
-    NSString *allHtml = [[[doc searchWithXPathQuery:@"//div[@class='header']"] objectAtIndex:0] raw];
-    NSString *delDiv = [[[doc searchWithXPathQuery:@"//div[@class='header']/div"] objectAtIndex:0] raw];
-    NSString *delA = [[[doc searchWithXPathQuery:@"//div[@class='header']/a"] objectAtIndex:0] raw];
-    NSString *delSpan = [[[doc searchWithXPathQuery:@"//div[@class='header']/span"] objectAtIndex:0] raw];
-    NSString *title = [[[[[allHtml stringByReplacingOccurrencesOfString:delDiv withString:@""]
+    NSString *allHtml = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']"] raw];
+    NSString *delDiv = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/div"] raw];
+    NSString *delA = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/a"] raw];
+    NSString *delSpan = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/span"] raw];
+    NSString *delDiv2 = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/div[@class='sep5']"] raw];
+    NSString *delDiv3 = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/div[@align='right']"] raw];
+    NSString *title = [[[[[[[allHtml stringByReplacingOccurrencesOfString:delDiv withString:@""]
                           stringByReplacingOccurrencesOfString:delA withString:@""]
                          stringByReplacingOccurrencesOfString:delSpan withString:@""]
                         stringByReplacingOccurrencesOfString:@"\n    \n    </div>" withString:@""]
-                       stringByReplacingOccurrencesOfString:@"<div class=\"header\">  " withString:@""];
+                       stringByReplacingOccurrencesOfString:@"<div class=\"header\">  " withString:@""]
+                       stringByReplacingOccurrencesOfString:delDiv2 withString:@""]
+                       stringByReplacingOccurrencesOfString:delDiv3 withString:@""];
     self.navigationItem.title = title;
+
     
     
     // Data Rows

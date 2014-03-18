@@ -147,7 +147,7 @@
             </objects>
             <point key="canvasLocation" x="441" y="-1341"/>
         </scene>
-        <!--Topics List In Single Node View Controller-->
+        <!--Topics List In Single Node View Controller - 1-->
         <scene sceneID="2e2-LL-0Zd">
             <objects>
                 <tableViewController storyboardIdentifier="topicListInSingleNodeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nnw-4N-G2h" customClass="V2EXTopicsListInSingleNodeViewController" sceneMemberID="viewController">
@@ -173,7 +173,7 @@
                             <outlet property="delegate" destination="Nnw-4N-G2h" id="oEc-Fo-v1i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="x4h-5q-0DR">
+                    <navigationItem key="navigationItem" title="1" id="x4h-5q-0DR">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="DP9-Rx-uCX">
                             <connections>
                                 <segue destination="SKK-nR-4ND" kind="push" identifier="toNewTopicController" id="4aR-GB-Dsx"/>
@@ -462,6 +462,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mkt-G8-jwl"/>
+        <segue reference="7OX-cN-IGC"/>
     </inferredMetricsTieBreakers>
 </document>

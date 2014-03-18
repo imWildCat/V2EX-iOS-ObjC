@@ -29,7 +29,6 @@
 {
     [super viewDidLoad];
     
-    
     if (self.topicID <= 0 || self.onceCode <= 0) {
         [self showMessage:@"您尚未登录，不能回复"];
         [self.navigationController popViewControllerAnimated:YES];
