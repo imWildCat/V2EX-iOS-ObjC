@@ -34,6 +34,11 @@
     _originalTextViewFrame = self.topicContent.frame;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"appear");
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -84,6 +89,19 @@
     }
     
     [UIView commitAnimations];
+}
+
+- (void)requestDataSuccess:(id)dataObject {
+    
+}
+
+- (void)requestDataFailure:(NSString *)errorMessage {
+    
+}
+
+- (void)setOnceValue:(NSUInteger) once {
+    _once = once;
+    _lastRequestTime = [[NSDate date] timeIntervalSince1970];
 }
 
 @end

@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "V2EXRequestDataDelegate.h"
 
-@interface V2EXNewTopicViewController : UIViewController
+@interface V2EXNewTopicViewController : UIViewController <V2EXRequestDataDelegate>
 {
     CGRect _originalTextViewFrame;
+    
+    NSUInteger _once;
+    
+    NSUInteger _lastRequestTime;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *topicTitle;
 @property (strong, nonatomic) IBOutlet UITextView *topicContent;
+@property (strong, nonatomic) NSString *uri;
 
 @end
