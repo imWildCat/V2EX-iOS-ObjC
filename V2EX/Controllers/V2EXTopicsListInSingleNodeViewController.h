@@ -12,6 +12,9 @@
 #import "V2EXSingleTopicViewController.h"
 
 @interface V2EXTopicsListInSingleNodeViewController : V2EXTableViewController
+{
+    BOOL _isLogin;
+}
 
 @property (weak, nonatomic) NSMutableString *uri;
 

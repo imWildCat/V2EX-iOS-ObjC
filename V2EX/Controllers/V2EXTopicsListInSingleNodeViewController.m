@@ -96,6 +96,10 @@
     
     TFHpple *doc = [[TFHpple alloc]initWithHTMLData:dataObject];
     
+    //Check login
+    _isLogin = [doc checkLogin];
+    
+    //Topic list data
     NSString *allHtml = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']"] raw];
     NSString *delDiv = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/div"] raw];
     NSString *delA = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/a"] raw];
@@ -111,8 +115,6 @@
                        stringByReplacingOccurrencesOfString:delDiv3 withString:@""];
     self.navigationItem.title = title;
 
-    
-    
     // Data Rows
     NSArray *elements = [doc searchWithXPathQuery:@"//body/div[2]/div/div/div[@class='cell']/table[1]"];
     
@@ -195,6 +197,23 @@
     NSUInteger topicID = [self link2TopicID:[[self.data objectAtIndex:[indexPath row]] objectForKey:@"link"]];
     _topicIDWillBePushedTo = topicID;
     [self loadTopic:topicID];
+}
+
+#pragma mark - Segue
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"toNewTopicController"]) {
+        if (_isLogin) {
+            return YES;
+        }
+    }
+    [self showMessage:@"无法回复，可能因为您尚未登录"];
+    return NO;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"toNewTopicController"]) {
+        
+    }
 }
 
 @end
