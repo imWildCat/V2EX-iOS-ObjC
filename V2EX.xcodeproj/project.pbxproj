@@ -66,6 +66,7 @@
 		5EE2A29018AE05CA00A63885 /* NodesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EE2A28F18AE05CA00A63885 /* NodesList.plist */; };
 		5EF7729D18C20AF1006F3852 /* V2EXUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF7729C18C20AF1006F3852 /* V2EXUserLoginViewController.m */; };
 		5EF89F1318CDDE2B00AA0BEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF89F1218CDDE2B00AA0BEF /* Images.xcassets */; };
+		5EFB90BF18D88E2000C7F95B /* TFHppleElement+V2EXMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB90BE18D88E2000C7F95B /* TFHppleElement+V2EXMethod.m */; };
 		AB7AD82EFE6A4376A77F3DDE /* MyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01641A634A3C4DD4AD34110A /* MyTest.m */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +169,8 @@
 		5EF7729B18C20AF1006F3852 /* V2EXUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXUserLoginViewController.h; sourceTree = "<group>"; };
 		5EF7729C18C20AF1006F3852 /* V2EXUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXUserLoginViewController.m; sourceTree = "<group>"; };
 		5EF89F1218CDDE2B00AA0BEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5EFB90BD18D88E2000C7F95B /* TFHppleElement+V2EXMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TFHppleElement+V2EXMethod.h"; sourceTree = "<group>"; };
+		5EFB90BE18D88E2000C7F95B /* TFHppleElement+V2EXMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TFHppleElement+V2EXMethod.m"; sourceTree = "<group>"; };
 		6B6E4DB549C04343BF3F0323 /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
 		74300964D351441AA8933272 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		81DC5CBE67FD47A2A209B4DE /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,6 +278,8 @@
 				5EA83BF718C312B200D4DA13 /* V2EXGlobalCache.m */,
 				5E05C5B918C814070016CB81 /* TFHpple+V2EXMethod.h */,
 				5E05C5BA18C814070016CB81 /* TFHpple+V2EXMethod.m */,
+				5EFB90BD18D88E2000C7F95B /* TFHppleElement+V2EXMethod.h */,
+				5EFB90BE18D88E2000C7F95B /* TFHppleElement+V2EXMethod.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -697,6 +702,7 @@
 				5E7EDC6D18A74EAC0085628E /* V2EXAppSize.m in Sources */,
 				5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */,
 				5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */,
+				5EFB90BF18D88E2000C7F95B /* TFHppleElement+V2EXMethod.m in Sources */,
 				5E7EDC7118A762C60085628E /* UIViewController+Size.m in Sources */,
 				5EE2A26C18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */,
 				5EA83BF818C312B200D4DA13 /* V2EXGlobalCache.m in Sources */,

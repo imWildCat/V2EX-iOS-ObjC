@@ -8,7 +8,7 @@
 
 #import "V2EXHttpRequestSerializer.h"
 
-#define TIMEOUT 30
+#define TIMEOUT 10
 
 @implementation V2EXHttpRequestSerializer
 

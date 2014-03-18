@@ -125,7 +125,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="sdads" translatesAutoresizingMaskIntoConstraints="NO" id="eb3-gK-ul6">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eb3-gK-ul6">
                                 <rect key="frame" x="10" y="108" width="300" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,7 +147,7 @@
             </objects>
             <point key="canvasLocation" x="441" y="-1341"/>
         </scene>
-        <!--Topics List In Single Node View Controller - 1-->
+        <!--Topics List In Single Node View Controller-->
         <scene sceneID="2e2-LL-0Zd">
             <objects>
                 <tableViewController storyboardIdentifier="topicListInSingleNodeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nnw-4N-G2h" customClass="V2EXTopicsListInSingleNodeViewController" sceneMemberID="viewController">
@@ -173,7 +173,7 @@
                             <outlet property="delegate" destination="Nnw-4N-G2h" id="oEc-Fo-v1i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="1" id="x4h-5q-0DR">
+                    <navigationItem key="navigationItem" id="x4h-5q-0DR">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="DP9-Rx-uCX">
                             <connections>
                                 <segue destination="SKK-nR-4ND" kind="push" identifier="toNewTopicController" id="4aR-GB-Dsx"/>
