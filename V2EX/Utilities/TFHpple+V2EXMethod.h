@@ -7,6 +7,7 @@
 //
 
 #import "TFHpple.h"
+#import "TFHppleElement+V2EXMethod.h"
 
 @interface TFHpple (V2EXMethod)
 
