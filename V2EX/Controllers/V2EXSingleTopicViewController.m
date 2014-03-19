@@ -93,7 +93,7 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     _onceCode = (NSUInteger)[onceCodeString intValue];
 
     NSString *authorUsername = [[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small/a"] objectAtIndex:0] text];
-    NSString *authorTime = [[[[[[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small"] objectAtIndex:0] raw] stringByReplacingOccurrencesOfString:@"<small class=\"gray\">By " withString:@""] stringByReplacingOccurrencesOfString:[[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small/a"] objectAtIndex:0] raw] withString:@""] stringByReplacingOccurrencesOfString:@" at " withString:@""] stringByReplacingOccurrencesOfString:@"</small>" withString:@""];
+    NSString *authorTime = [[[[[[[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small"] objectAtIndex:0] raw] stringByReplacingOccurrencesOfString:@"<small class=\"gray\">By " withString:@""] stringByReplacingOccurrencesOfString:[[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small/a"] objectAtIndex:0] raw] withString:@""] stringByReplacingOccurrencesOfString:@" at " withString:@""] stringByReplacingOccurrencesOfString:@"</small>" withString:@""] stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<a class=\"op\" href=\"/append/topic/%i\">APPEND</a>", _topicID] withString:@""];
     NSString *authorAvatar = [[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/div[@class='fr']/a/img[@class='avatar']"] objectAtIndex:0] objectForKey:@"src"];
     NSString *authorContent;
     if ([[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='cell']/div[@class='topic_content']"] count] > 0) {
