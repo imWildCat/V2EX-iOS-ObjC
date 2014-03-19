@@ -20,6 +20,6 @@
 + (V2EXSingleTopicViewController *)sharedController;
 
 - (void)loadNewTopicWithID:(NSUInteger)ID;
-- (void)loadNewTopicWithID:(NSUInteger)ID andData:(NSData *)data;
+- (void)loadNewTopicWithData:(NSData *)data;
 
 @end

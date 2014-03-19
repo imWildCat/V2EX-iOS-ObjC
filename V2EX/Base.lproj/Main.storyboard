@@ -136,9 +136,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="新话题" id="rMq-K3-MR1">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="myG-cF-hqS"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="myG-cF-hqS">
+                            <connections>
+                                <action selector="newTopicButtonClick:" destination="SKK-nR-4ND" id="XC9-9G-d6c"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="rightButton" destination="myG-cF-hqS" id="Uou-jb-0eE"/>
                         <outlet property="topicContent" destination="eb3-gK-ul6" id="dFa-bA-kQp"/>
                         <outlet property="topicTitle" destination="fTH-eL-TeC" id="H6T-VP-nml"/>
                     </connections>

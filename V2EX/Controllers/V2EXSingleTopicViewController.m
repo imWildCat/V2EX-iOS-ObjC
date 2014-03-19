@@ -48,8 +48,7 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     return _sharedSingleTopicViewControllerInstance;
 }
 
-- (void)loadNewTopicWithID:(NSUInteger)ID andData:(NSData *)data {
-    _topicID = ID;
+- (void)loadNewTopicWithData:(NSData *)data {
     [self requestDataSuccess:data];
 }
 
@@ -84,6 +83,10 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     
     NSString *title = [[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/h1"] objectAtIndex:0] text];
     self.navigationItem.title = title;
+    
+    // topic id
+    NSUInteger topicID = (NSUInteger)[[[[doc searchFirstElementWithXPathQuery:@"//form"] objectForKey:@"action"] stringByReplacingOccurrencesOfString:@"/t/" withString:@""] integerValue];
+    _topicID = topicID;
     
     // once code
     NSString *onceCodeString = [[doc searchFirstElementWithXPathQuery:@"//div[@class='box']//input[@name='once']"] objectForKey:@"value"];

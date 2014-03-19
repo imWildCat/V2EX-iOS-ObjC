@@ -127,7 +127,7 @@
     }
     
     V2EXSingleTopicViewController *singleTopicController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"singleTopicController"];
-    [singleTopicController loadNewTopicWithID:_topicIDWillBePushedTo andData:dataObject];
+    [singleTopicController loadNewTopicWithData:dataObject];
     [self.navigationController pushViewController:singleTopicController animated:YES];
 }
 

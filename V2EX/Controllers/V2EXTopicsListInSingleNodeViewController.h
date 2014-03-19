@@ -10,8 +10,9 @@
 #import <FMDatabase.h>
 #import "V2EXTableViewController.h"
 #import "V2EXSingleTopicViewController.h"
+#import "V2EXAfterTopicActionDelegate.h"
 
-@interface V2EXTopicsListInSingleNodeViewController : V2EXTableViewController
+@interface V2EXTopicsListInSingleNodeViewController : V2EXTableViewController <V2EXAfterTopicActionDelegate>
 {
     BOOL _isLogin;
 }

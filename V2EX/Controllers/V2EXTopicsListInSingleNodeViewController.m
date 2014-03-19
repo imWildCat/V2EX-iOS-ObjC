@@ -12,6 +12,7 @@
 #import "V2EXNormalModel.h"
 #import "V2EXMBProgressHUDUtil.h"
 #import "V2EXStringUtil.h"
+#import "V2EXNewTopicViewController.h"
 
 @interface V2EXTopicsListInSingleNodeViewController ()
 
@@ -212,7 +213,21 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"toNewTopicController"]) {
-        
+        V2EXNewTopicViewController *newTopicController = [segue destinationViewController];
+        newTopicController.uri = self.uri;
+        newTopicController.lastController = self;
+    }
+}
+
+#pragma mark - After Post New Topic
+- (void)afterCreateTopic:(NSData *)data {
+    TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
+    NSUInteger topicID = (NSUInteger)[[[[doc searchFirstElementWithXPathQuery:@"//form"] objectForKey:@"action"] stringByReplacingOccurrencesOfString:@"/t/" withString:@""] integerValue];
+    if (topicID > 0) {
+        [self showMessage:@"新主题已创建"];
+        [self pushToSingleTopicViewController:data];
+    } else {
+        [self showMessage:@"主题发布失败"];
     }
 }
 
