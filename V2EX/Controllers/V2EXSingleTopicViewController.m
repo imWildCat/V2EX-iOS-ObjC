@@ -81,7 +81,7 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     
     TFHpple *doc = [[TFHpple alloc]initWithHTMLData:dataObject];
     
-    NSString *title = [[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/h1"] objectAtIndex:0] text];
+    NSString *title = [[doc searchFirstElementWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/h1"] text];
     self.navigationItem.title = title;
     
     // topic id
@@ -92,12 +92,12 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     NSString *onceCodeString = [[doc searchFirstElementWithXPathQuery:@"//div[@class='box']//input[@name='once']"] objectForKey:@"value"];
     _onceCode = (NSUInteger)[onceCodeString intValue];
 
-    NSString *authorUsername = [[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small/a"] objectAtIndex:0] text];
-    NSString *authorTime = [[[[[[[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small"] objectAtIndex:0] raw] stringByReplacingOccurrencesOfString:@"<small class=\"gray\">By " withString:@""] stringByReplacingOccurrencesOfString:[[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small/a"] objectAtIndex:0] raw] withString:@""] stringByReplacingOccurrencesOfString:@" at " withString:@""] stringByReplacingOccurrencesOfString:@"</small>" withString:@""] stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<a class=\"op\" href=\"/append/topic/%i\">APPEND</a>", _topicID] withString:@""];
-    NSString *authorAvatar = [[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/div[@class='fr']/a/img[@class='avatar']"] objectAtIndex:0] objectForKey:@"src"];
+    NSString *authorUsername = [[doc searchFirstElementWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small/a"] text];
+    NSString *authorTime = [[[[[[[doc searchFirstElementWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small"] raw] stringByReplacingOccurrencesOfString:@"<small class=\"gray\">By " withString:@""] stringByReplacingOccurrencesOfString:[[doc searchFirstElementWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/small/a"] raw] withString:@""] stringByReplacingOccurrencesOfString:@" at " withString:@""] stringByReplacingOccurrencesOfString:@"</small>" withString:@""] stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<a class=\"op\" href=\"/append/topic/%i\">APPEND</a>", _topicID] withString:@""];
+    NSString *authorAvatar = [[doc searchFirstElementWithXPathQuery:@"//div[@id='Wrapper']//div[@class='header']/div[@class='fr']/a/img[@class='avatar']"] objectForKey:@"src"];
     NSString *authorContent;
     if ([[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='cell']/div[@class='topic_content']"] count] > 0) {
-        authorContent = [[[[[doc searchWithXPathQuery:@"//div[@id='Wrapper']//div[@class='cell']/div[@class='topic_content']"] objectAtIndex:0] raw] stringByReplacingOccurrencesOfString:@"<div class=\"topic_content\">" withString:@""] stringByReplacingOccurrencesOfString:@"</div>" withString:@""];
+        authorContent = [[[[doc searchFirstElementWithXPathQuery:@"//div[@id='Wrapper']//div[@class='cell']/div[@class='topic_content']"] raw] stringByReplacingOccurrencesOfString:@"<div class=\"topic_content\">" withString:@""] stringByReplacingOccurrencesOfString:@"</div>" withString:@""];
     } else {
         authorContent = @"";
     }
@@ -112,10 +112,10 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     
     NSArray *replyArray = [doc searchWithXPathQuery:@"//div[@class='cell']//table|//div[@class='inner']//table|//div[@class='cell collapsed']//table"];
     for (TFHppleElement *singleReply in replyArray) {
-        NSString *replyUsername = [[[singleReply searchWithXPathQuery:@"//td[3]/strong/a"] objectAtIndex:0] text];
-        NSString *replyTime = [[[singleReply searchWithXPathQuery:@"//td[3]/span[@class='fade small']"] objectAtIndex:0] text];
-        NSString *replyAvatar = [[[singleReply searchWithXPathQuery:@"//td[1]/img"] objectAtIndex:0] objectForKey:@"src"];
-        NSString *replyContent = [[[[[singleReply searchWithXPathQuery:@"//td[3]/div[@class='reply_content']"] objectAtIndex:0] raw]
+        NSString *replyUsername = [[singleReply searchFirstElementWithXPathQuery:@"//td[3]/strong/a"] text];
+        NSString *replyTime = [[singleReply searchFirstElementWithXPathQuery:@"//td[3]/span[@class='fade small']"] text];
+        NSString *replyAvatar = [[singleReply searchFirstElementWithXPathQuery:@"//td[1]/img"] objectForKey:@"src"];
+        NSString *replyContent = [[[[singleReply searchFirstElementWithXPathQuery:@"//td[3]/div[@class='reply_content']"] raw]
                                    stringByReplacingOccurrencesOfString:@"<div class=\"reply_content\">" withString:@""] stringByReplacingOccurrencesOfString:@"</div>" withString:@""];
         NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                               replyUsername, @"username",
@@ -153,17 +153,17 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     cell.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
     // Set username
-    UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(73, 6, 240, 18)];
+    UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(55, 6, 240, 21)];
     usernameLabel.text = [rowData objectForKey:@"username"];
-    usernameLabel.font = [UIFont systemFontOfSize:15];
-    usernameLabel.textAlignment = NSTextAlignmentRight;
+    usernameLabel.font = [UIFont systemFontOfSize:16];
+//    usernameLabel.textAlignment = NSTextAlignmentRight;
     usernameLabel.textColor = [UIColor darkGrayColor];
     [cell addSubview:usernameLabel];
     
     // Set other info
     UILabel *otherInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(73, 38, 240, 11)];
     otherInfoLabel.text = [rowData objectForKey:@"time"];
-    otherInfoLabel.font = [UIFont systemFontOfSize:9];
+    otherInfoLabel.font = [UIFont systemFontOfSize:10];
     otherInfoLabel.textAlignment = NSTextAlignmentRight;
     otherInfoLabel.textColor = [UIColor darkGrayColor];
     [cell addSubview:otherInfoLabel];
