@@ -23,13 +23,18 @@
 //    [self getHTMLData:[URI stringByReplacingOccurrencesOfString:@"/t/" withString:@"t/"] parameters:nil];
 //}
 
-- (void)getTopicWithID:(NSUInteger)ID {
-    [self getHTMLData:[NSString stringWithFormat:@"t/%i", (unsigned int)ID] parameters:nil];
-}
 
 // User
 - (void)getUserInfo:(NSString *)username {
     [self getHTMLData:[NSString stringWithFormat:@"member/%@", username] parameters:nil];
+}
+
+- (void)getUserTopics:(NSString *)username {
+    [self getHTMLData:[NSString stringWithFormat:@"member/%@/topics", username] parameters:nil];
+}
+
+- (void)getUserReplies:(NSString *)username {
+    [self getHTMLData:[NSString stringWithFormat:@"member/%@/replies", username] parameters:nil];
 }
 
 
@@ -43,6 +48,10 @@
 }
 
 // Topic
+- (void)getTopicWithID:(NSUInteger)ID {
+    [self getHTMLData:[NSString stringWithFormat:@"t/%i", (unsigned int)ID] parameters:nil];
+}
+
 - (void)replyTopic:(NSUInteger)topicID andOnce:(NSUInteger)onceCode andContent:(NSString *)content {
     [self postData:[NSString stringWithFormat:@"t/%i", topicID] parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%i", onceCode], @"once", content, @"content", nil]];
 }

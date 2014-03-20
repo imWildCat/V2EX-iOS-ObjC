@@ -16,6 +16,9 @@
 		5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0553E3189F4DF4002CEAAA /* V2EXAbstractModel.m */; };
 		5E05C5BB18C814070016CB81 /* TFHpple+V2EXMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E05C5BA18C814070016CB81 /* TFHpple+V2EXMethod.m */; };
 		5E0880CB18BC923600F88F18 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0880CA18BC923600F88F18 /* UIView+FrameMethods.m */; };
+		5E0E7A6718DAAB4100AF7C8C /* V2EXMyTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E7A6618DAAB4100AF7C8C /* V2EXMyTopicsViewController.m */; };
+		5E0E7A6A18DAAB9900AF7C8C /* V2EXMyRepliesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E7A6918DAAB9900AF7C8C /* V2EXMyRepliesViewController.m */; };
+		5E0E7A6D18DAABB600AF7C8C /* V2EXNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E7A6C18DAABB600AF7C8C /* V2EXNotificationCenterViewController.m */; };
 		5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */; };
 		5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */; };
 		5E23700F18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */; };
@@ -95,6 +98,12 @@
 		5E05C5BC18C824C30016CB81 /* V2EXAfterTopicActionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXAfterTopicActionDelegate.h; sourceTree = "<group>"; };
 		5E0880C918BC923600F88F18 /* UIView+FrameMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameMethods.h"; sourceTree = "<group>"; };
 		5E0880CA18BC923600F88F18 /* UIView+FrameMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameMethods.m"; sourceTree = "<group>"; };
+		5E0E7A6518DAAB4100AF7C8C /* V2EXMyTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXMyTopicsViewController.h; sourceTree = "<group>"; };
+		5E0E7A6618DAAB4100AF7C8C /* V2EXMyTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXMyTopicsViewController.m; sourceTree = "<group>"; };
+		5E0E7A6818DAAB9900AF7C8C /* V2EXMyRepliesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXMyRepliesViewController.h; sourceTree = "<group>"; };
+		5E0E7A6918DAAB9900AF7C8C /* V2EXMyRepliesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXMyRepliesViewController.m; sourceTree = "<group>"; };
+		5E0E7A6B18DAABB600AF7C8C /* V2EXNotificationCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXNotificationCenterViewController.h; sourceTree = "<group>"; };
+		5E0E7A6C18DAABB600AF7C8C /* V2EXNotificationCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXNotificationCenterViewController.m; sourceTree = "<group>"; };
 		5E1398B7189E0C0C00384FF9 /* V2EXLatestTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXLatestTopicsViewController.h; sourceTree = "<group>"; };
 		5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXLatestTopicsViewController.m; sourceTree = "<group>"; };
 		5E1398BE189E172800384FF9 /* V2EXTopicsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXTopicsListCell.h; sourceTree = "<group>"; };
@@ -460,6 +469,12 @@
 				5ED82F0118C1788A00ADE079 /* V2EXSelfViewController.m */,
 				5EF7729B18C20AF1006F3852 /* V2EXUserLoginViewController.h */,
 				5EF7729C18C20AF1006F3852 /* V2EXUserLoginViewController.m */,
+				5E0E7A6518DAAB4100AF7C8C /* V2EXMyTopicsViewController.h */,
+				5E0E7A6618DAAB4100AF7C8C /* V2EXMyTopicsViewController.m */,
+				5E0E7A6818DAAB9900AF7C8C /* V2EXMyRepliesViewController.h */,
+				5E0E7A6918DAAB9900AF7C8C /* V2EXMyRepliesViewController.m */,
+				5E0E7A6B18DAABB600AF7C8C /* V2EXNotificationCenterViewController.h */,
+				5E0E7A6C18DAABB600AF7C8C /* V2EXNotificationCenterViewController.m */,
 			);
 			name = UserControl;
 			sourceTree = "<group>";
@@ -683,11 +698,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */,
+				5E0E7A6D18DAABB600AF7C8C /* V2EXNotificationCenterViewController.m in Sources */,
 				5E72BFB118A20A3C00BB88DD /* UIViewController+MBProgressHUD.m in Sources */,
 				5E66EAF9189A324700500B35 /* main.m in Sources */,
 				5E5B6763189A4CBF00EDF8FD /* V2EXSettingsViewController.m in Sources */,
 				5E7D34E918CA8DDE00F0438C /* V2EXNewTopicViewController.m in Sources */,
 				5E0553D4189E7310002CEAAA /* V2EXMBProgressHUDUtil.m in Sources */,
+				5E0E7A6A18DAAB9900AF7C8C /* V2EXMyRepliesViewController.m in Sources */,
 				5ED82F0218C1788A00ADE079 /* V2EXSelfViewController.m in Sources */,
 				5E98FED818B085B500D9D2C2 /* DRPaginatedScrollView.m in Sources */,
 				5E72BFBF18A4663D00BB88DD /* V2EXTableViewController.m in Sources */,
@@ -703,6 +720,7 @@
 				5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */,
 				5E0553E4189F4DF4002CEAAA /* V2EXAbstractModel.m in Sources */,
 				5EFB90BF18D88E2000C7F95B /* TFHppleElement+V2EXMethod.m in Sources */,
+				5E0E7A6718DAAB4100AF7C8C /* V2EXMyTopicsViewController.m in Sources */,
 				5E7EDC7118A762C60085628E /* UIViewController+Size.m in Sources */,
 				5EE2A26C18ADAAA000A63885 /* V2EXNodesListModel.m in Sources */,
 				5EA83BF818C312B200D4DA13 /* V2EXGlobalCache.m in Sources */,

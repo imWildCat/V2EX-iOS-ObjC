@@ -14,16 +14,19 @@
 - (void)getIndex;
 - (void)getTopicsList:(NSString *)URI;
 //- (void)getTopicWithLinkURI:(NSString *)URI;
-- (void)getTopicWithID:(NSUInteger)ID;
+
 
 // User
 - (void)getUserInfo:(NSString *)username;
+- (void)getUserTopics:(NSString *)username;
+- (void)getUserReplies:(NSString *)username;
 
 // JSON API
 - (void)getAllNodes;
 - (void)getLatestTopics;
 
 // Topic
+- (void)getTopicWithID:(NSUInteger)ID;
 - (void)replyTopic:(NSUInteger)topicID andOnce:(NSUInteger)onceCode andContent:(NSString *)content;
 - (void)getNewTopicPage:(NSString *)uri;
 - (void)newTopic:(NSString *)uri andTitle:(NSString *)title andContent:(NSString *)content andOnce:(NSUInteger)once;

@@ -77,8 +77,8 @@
     
     self.userMetaLabel.text = [[self getValueForDoc:doc withXpath:@"//table//td[@width='auto']//span[@class='gray']"] stringByReplacingOccurrencesOfString:@"V2EX " withString:@""];
     
-    NSString *socialInformationHTML = [[[doc searchFirstElementWithXPathQuery:@"//div[@class='inner']"] raw] stringByReplacingOccurrencesOfString:@" src=\"" withString:@"style=\"color:black;\" src=\"http://v2ex.com"];
-    self.userSocialInformationLabel.attributedString = [[NSAttributedString alloc] initWithHTMLData:[socialInformationHTML dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:NULL];
+//    NSString *socialInformationHTML = [[[doc searchFirstElementWithXPathQuery:@"//div[@class='inner']"] raw] stringByReplacingOccurrencesOfString:@" src=\"" withString:@"style=\"color:black;\" src=\"http://v2ex.com"];
+//    self.userSocialInformationLabel.attributedString = [[NSAttributedString alloc] initWithHTMLData:[socialInformationHTML dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:NULL];
 
 }
 
@@ -86,8 +86,34 @@
     return [[doc searchFirstElementWithXPathQuery:xpath] text];
 }
 
+// Next controllers:
 
 - (IBAction)showMenu:(id)sender {
     [self.sideMenuViewController presentMenuViewController];
 }
+
+- (IBAction)myTopicsButtonClick:(id)sender {
+    [self disableAllButtons];
+}
+
+- (IBAction)myRepliesButtonClick:(id)sender {
+    [self disableAllButtons];
+}
+
+- (IBAction)notificationCenterButtonClick:(id)sender {
+    [self disableAllButtons];
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    return NO;
+}
+
+- (void)disableAllButtons {
+    self.myTopicsButton.enabled = self.myRepliesButton.enabled = self.notificationCenterButton.enabled = NO;
+}
+
+- (void)enableAllButtons {
+    self.myTopicsButton.enabled = self.myRepliesButton.enabled = self.notificationCenterButton.enabled = YES;
+}
+
 @end
