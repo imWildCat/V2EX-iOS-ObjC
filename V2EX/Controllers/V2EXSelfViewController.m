@@ -71,19 +71,19 @@
 - (void)handleWithUserPage:(TFHpple *)doc {
     self.usernameLabel.text = [self getValueForDoc:doc withXpath:@"//div[@class='inner']/table//tr/td[3]/h1"];
     
-    NSURL *avatarURL = [NSURL URLWithString:[@"https:" stringByAppendingString:[[[doc searchWithXPathQuery:@"//img[@class='avatar']"] objectAtIndex:0] objectForKey:@"src"]]];
+    NSURL *avatarURL = [NSURL URLWithString:[@"https:" stringByAppendingString:[[doc searchFirstElementWithXPathQuery:@"//img[@class='avatar']"] objectForKey:@"src"]]];
     // TODO: https
     [self.avatar setImageWithURL:avatarURL placeholderImage:[UIImage imageNamed:@"avatar_large"]];
     
     self.userMetaLabel.text = [[self getValueForDoc:doc withXpath:@"//table//td[@width='auto']//span[@class='gray']"] stringByReplacingOccurrencesOfString:@"V2EX " withString:@""];
     
-    NSString *socialInformationHTML = [[[[doc searchWithXPathQuery:@"//div[@class='inner']"] objectAtIndex:1] raw] stringByReplacingOccurrencesOfString:@" src=\"" withString:@"style=\"color:black;\" src=\"http://v2ex.com"];
+    NSString *socialInformationHTML = [[[doc searchFirstElementWithXPathQuery:@"//div[@class='inner']"] raw] stringByReplacingOccurrencesOfString:@" src=\"" withString:@"style=\"color:black;\" src=\"http://v2ex.com"];
     self.userSocialInformationLabel.attributedString = [[NSAttributedString alloc] initWithHTMLData:[socialInformationHTML dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:NULL];
 
 }
 
 - (NSString *)getValueForDoc:(TFHpple *)doc withXpath:(NSString *)xpath {
-    return [[[doc searchWithXPathQuery:xpath] objectAtIndex:0] text];
+    return [[doc searchFirstElementWithXPathQuery:xpath] text];
 }
 
 

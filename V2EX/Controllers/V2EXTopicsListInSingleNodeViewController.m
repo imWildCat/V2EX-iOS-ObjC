@@ -120,9 +120,9 @@
     NSArray *elements = [doc searchWithXPathQuery:@"//body/div[2]/div/div/div[@class='cell']/table[1]"];
     
     for (TFHppleElement *element in elements) {
-        TFHppleElement *avatarElement = [[element searchWithXPathQuery:@"//td[1]/a/img"] objectAtIndex:0];
-        TFHppleElement *titleElement = [[element searchWithXPathQuery:@"//td[3]/span[@class='item_title']/a"] objectAtIndex:0];
-        TFHppleElement *userNameElement = [[element searchWithXPathQuery:@"//td[3]/span[@class='small fade']/strong"] objectAtIndex:0];
+        TFHppleElement *avatarElement = [element searchFirstElementWithXPathQuery:@"//td[1]/a/img"];
+        TFHppleElement *titleElement = [element searchFirstElementWithXPathQuery:@"//td[3]/span[@class='item_title']/a"];
+        TFHppleElement *userNameElement = [element searchFirstElementWithXPathQuery:@"//td[3]/span[@class='small fade']/strong"];
         NSArray *replyElements = [element searchWithXPathQuery:@"//td[4]/a"];
         
         // Handle reply count
@@ -135,7 +135,7 @@
             replyCount = @"0";
         }
         
-        NSString *link = [[[element searchWithXPathQuery:@"//td[3]/span[@class='item_title']/a"] objectAtIndex:0] objectForKey:@"href"];
+        NSString *link = [[element searchFirstElementWithXPathQuery:@"//td[3]/span[@class='item_title']/a"] objectForKey:@"href"];
         
         NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                               [V2EXStringUtil hanldeAvatarURL:[avatarElement objectForKey:@"src"]], @"avatar",

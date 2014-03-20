@@ -9,7 +9,7 @@
 #import "V2EXUserLoginViewController.h"
 #import <RESideMenu.h>
 #import "UIViewController+MBProgressHUD.h"
-#import <TFHpple.h>
+#import "TFHpple+V2EXMethod.h"
 //#import "V2EXGlobalCache.h"
 
 @interface V2EXUserLoginViewController ()
@@ -113,8 +113,8 @@
     [_manager GET:@"http://v2ex.com/signin" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         TFHpple *doc = [[TFHpple alloc]initWithHTMLData:responseObject];
         
-        NSString *next = [[[doc searchWithXPathQuery:@"//input[@name='next']"] objectAtIndex:0] objectForKey:@"value"];
-        NSString *once = [[[doc searchWithXPathQuery:@"//input[@name='once']"] objectAtIndex:0] objectForKey:@"value"];
+        NSString *next = [[doc searchFirstElementWithXPathQuery:@"//input[@name='next']"] objectForKey:@"value"];
+        NSString *once = [[doc searchFirstElementWithXPathQuery:@"//input[@name='once']"] objectForKey:@"value"];
         NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:next, @"next", once, @"once", nil];
         
         

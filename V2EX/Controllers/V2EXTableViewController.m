@@ -8,7 +8,7 @@
 
 #import "V2EXTableViewController.h"
 #import "V2EXSingleTopicViewController.h"
-#import <TFHpple.h>
+#import "TFHpple+V2EXMethod.h"
 #import "V2EXUserLoginViewController.h"
 #import "UIViewController+V2EXJump.h"
 
