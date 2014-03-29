@@ -10,6 +10,7 @@
 
 #import "V2EXLatestTopicsViewController.h"
 #import "V2EXNodesListViewController.h"
+#import "V2EXSelfViewController.h"
 #import <V2EXGlobalCache.h>
 
 @interface V2EXAppDelegate : UIResponder <UIApplicationDelegate>
@@ -18,6 +19,7 @@
 
 @property (retain, nonatomic) V2EXNodesListViewController *sharedNodesListViewController;
 @property (retain, nonatomic) V2EXLatestTopicsViewController *sharedLatestTopicsViewController;
+@property (retain, nonatomic) V2EXSelfViewController *sharedSelfViewController;
 
 @property (strong, nonatomic) V2EXGlobalCache *cache;
 

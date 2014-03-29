@@ -22,6 +22,9 @@
 		5E1398B9189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398B8189E0C0C00384FF9 /* V2EXLatestTopicsViewController.m */; };
 		5E1398C0189E172800384FF9 /* V2EXTopicsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */; };
 		5E23700F18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */; };
+		5E27B16118DE720E0094BEFD /* V2EXUserTopicsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E27B16018DE720E0094BEFD /* V2EXUserTopicsListCell.xib */; };
+		5E27B16418DE72BB0094BEFD /* V2EXUserTopicsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E27B16318DE72BB0094BEFD /* V2EXUserTopicsListCell.m */; };
+		5E27B16A18DE97C10094BEFD /* repliesList.css in Resources */ = {isa = PBXBuildFile; fileRef = 5E27B16918DE97C10094BEFD /* repliesList.css */; };
 		5E2BAE2118A5302C0039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
 		5E2BAE2218A539680039FFB0 /* V2EXHttpRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */; };
 		5E3C0B9518C4C9C2001E8033 /* UIViewController+V2EXJump.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C0B9418C4C9C2001E8033 /* UIViewController+V2EXJump.m */; };
@@ -110,6 +113,10 @@
 		5E1398BF189E172800384FF9 /* V2EXTopicsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTopicsListCell.m; sourceTree = "<group>"; };
 		5E23700D18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXTopicsListInSingleNodeViewController.h; sourceTree = "<group>"; };
 		5E23700E18B0FDA300B00501 /* V2EXTopicsListInSingleNodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXTopicsListInSingleNodeViewController.m; sourceTree = "<group>"; };
+		5E27B16018DE720E0094BEFD /* V2EXUserTopicsListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = V2EXUserTopicsListCell.xib; sourceTree = "<group>"; };
+		5E27B16218DE72BB0094BEFD /* V2EXUserTopicsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXUserTopicsListCell.h; sourceTree = "<group>"; };
+		5E27B16318DE72BB0094BEFD /* V2EXUserTopicsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXUserTopicsListCell.m; sourceTree = "<group>"; };
+		5E27B16918DE97C10094BEFD /* repliesList.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = repliesList.css; sourceTree = "<group>"; };
 		5E2BAE1F18A5302C0039FFB0 /* V2EXHttpRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXHttpRequestSerializer.h; sourceTree = "<group>"; };
 		5E2BAE2018A5302C0039FFB0 /* V2EXHttpRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXHttpRequestSerializer.m; sourceTree = "<group>"; };
 		5E3C0B9318C4C9C2001E8033 /* UIViewController+V2EXJump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+V2EXJump.h"; sourceTree = "<group>"; };
@@ -235,6 +242,9 @@
 				5E98FF2418B0AD5000D9D2C2 /* V2EXNodesListCell.h */,
 				5E98FF2518B0AD5000D9D2C2 /* V2EXNodesListCell.m */,
 				5E98FF2A18B0AD9A00D9D2C2 /* V2EXNodesListCell.xib */,
+				5E27B16018DE720E0094BEFD /* V2EXUserTopicsListCell.xib */,
+				5E27B16218DE72BB0094BEFD /* V2EXUserTopicsListCell.h */,
+				5E27B16318DE72BB0094BEFD /* V2EXUserTopicsListCell.m */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -447,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				5EE2A27318ADB0D600A63885 /* NodesList */,
+				5E27B16918DE97C10094BEFD /* repliesList.css */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -590,8 +601,10 @@
 				5EF89F1318CDDE2B00AA0BEF /* Images.xcassets in Resources */,
 				5E0553D9189F3E77002CEAAA /* V2EXTopicsListCell.xib in Resources */,
 				5E66EAF7189A324700500B35 /* InfoPlist.strings in Resources */,
+				5E27B16118DE720E0094BEFD /* V2EXUserTopicsListCell.xib in Resources */,
 				5E66EB00189A324700500B35 /* Main.storyboard in Resources */,
 				5EE2A29018AE05CA00A63885 /* NodesList.plist in Resources */,
+				5E27B16A18DE97C10094BEFD /* repliesList.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +721,7 @@
 				5ED82F0218C1788A00ADE079 /* V2EXSelfViewController.m in Sources */,
 				5E98FED818B085B500D9D2C2 /* DRPaginatedScrollView.m in Sources */,
 				5E72BFBF18A4663D00BB88DD /* V2EXTableViewController.m in Sources */,
+				5E27B16418DE72BB0094BEFD /* V2EXUserTopicsListCell.m in Sources */,
 				5EDEFF3318B43C7700241C3F /* V2EXSingleTopicViewController.m in Sources */,
 				5E5B6766189A4ECC00EDF8FD /* V2EXMenuViewController.m in Sources */,
 				5E5B676A189B518B00EDF8FD /* V2EXApiClient.m in Sources */,

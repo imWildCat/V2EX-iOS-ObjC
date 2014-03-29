@@ -10,6 +10,7 @@
 
 @interface V2EXStringUtil : NSObject
 
++ (NSUInteger)link2TopicID:(NSString *)urlString;
 + (NSString *)replaceUnicode:(NSString *)unicodeStr;
 + (NSString *)stringByStrippingHTML:(NSString *)inputString;
 + (NSString *)filterHTML:(NSString *)html;

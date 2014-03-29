@@ -77,7 +77,7 @@
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 2:
-            navigationController.viewControllers = @[[self.storyboard instantiateViewControllerWithIdentifier:@"selfController"]];
+            navigationController.viewControllers = @[appDelegate.sharedSelfViewController];
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 3:
@@ -86,6 +86,7 @@
             break;
         case 4:*/
             [self doLogout];
+            [appDelegate.sharedSelfViewController viewWillAppear:YES];
             break;
         default:
             break;

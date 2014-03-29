@@ -213,16 +213,18 @@
 }
 
 #pragma mark - V2EXRequestDataDelegate
-- (void)requestTopicsList:(NSString *)URI {
-        _uriClicked = [URI copy];
-        [self showProgressView];
-        [_normalModel getTopicsList:URI];
+- (void)requestTopicsList:(NSString *)nodeTitle andURI:(NSString *)URI {
+    _uriClicked = [URI copy];
+    _loadingNodeTitle = [nodeTitle mutableCopy];
+    [self showProgressView];
+    [_normalModel getTopicsList:URI];
 }
 
 -(void)requestDataSuccess:(id)dataObject {
     V2EXTopicsListInSingleNodeViewController *_topicsListInSingleNodeViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"topicListInSingleNodeController"];
     _topicsListInSingleNodeViewController.uri = _uriClicked;
     [_topicsListInSingleNodeViewController loadNewNodeWithData:dataObject];
+    _topicsListInSingleNodeViewController.navigationItem.title = _loadingNodeTitle;
 
     [self.navigationController pushViewController:_topicsListInSingleNodeViewController animated:YES];
     [self hideProgressView];

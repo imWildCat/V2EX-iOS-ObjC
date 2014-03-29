@@ -1,0 +1,31 @@
+.dock_area {
+    background-color: #EDF3F5;
+    background-repeat: repeat-x;
+    padding: 0;
+}
+.fade {
+    color: #CCCCCC;
+}
+.fr {
+    text-align: right;
+}
+.gray {
+    color: #999999;
+}
+.chevron {
+    font-family: "Lucida Grande";
+    font-weight: 500;
+}
+a:link, a:visited, a:active {
+    font-size:14px;
+    color: #778087;
+    text-decoration: none;
+}
+a {
+    font-size:14px;
+    color: #778087;
+    text-decoration: none;
+}
+div {
+    font-size:15px;
+}

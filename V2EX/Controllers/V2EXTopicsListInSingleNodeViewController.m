@@ -99,22 +99,6 @@
     
     //Check login
     _isLogin = [doc checkLogin];
-    
-    //Topic list data
-    NSString *allHtml = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']"] raw];
-    NSString *delDiv = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/div"] raw];
-    NSString *delA = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/a"] raw];
-    NSString *delSpan = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/span"] raw];
-    NSString *delDiv2 = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/div[@class='sep5']"] raw];
-    NSString *delDiv3 = [[doc searchFirstElementWithXPathQuery:@"//div[@class='header']/div[@align='right']"] raw];
-    NSString *title = [[[[[[[allHtml stringByReplacingOccurrencesOfString:delDiv withString:@""]
-                          stringByReplacingOccurrencesOfString:delA withString:@""]
-                         stringByReplacingOccurrencesOfString:delSpan withString:@""]
-                        stringByReplacingOccurrencesOfString:@"\n    \n    </div>" withString:@""]
-                       stringByReplacingOccurrencesOfString:@"<div class=\"header\">  " withString:@""]
-                       stringByReplacingOccurrencesOfString:delDiv2 withString:@""]
-                       stringByReplacingOccurrencesOfString:delDiv3 withString:@""];
-    self.navigationItem.title = title;
 
     // Data Rows
     NSArray *elements = [doc searchWithXPathQuery:@"//body/div[2]/div/div/div[@class='cell']/table[1]"];

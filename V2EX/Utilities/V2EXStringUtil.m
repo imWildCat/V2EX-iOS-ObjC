@@ -10,6 +10,35 @@
 
 @implementation V2EXStringUtil
 
+/**
+ *  Conver link to topic ID
+ *
+ *  @param urlString The link in V2EX topics list.
+ *
+ *  @return topic ID.
+ */
++ (NSUInteger)link2TopicID:(NSString *)urlString{
+    NSError *error;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"/t/[0-9]+#reply"
+                                                                           options:0
+                                                                             error:&error];
+    if (regex != nil) {
+        NSArray *array = [regex matchesInString: urlString
+                                        options: 0
+                                          range: NSMakeRange( 0, [urlString length])];
+        if ([array count] > 0) {
+            NSTextCheckingResult *match = [array objectAtIndex:0];
+            NSRange firstHalfRange = [match rangeAtIndex:0];
+            NSString *result = [[[urlString substringWithRange:firstHalfRange] stringByReplacingOccurrencesOfString:@"/t/" withString:@""] stringByReplacingOccurrencesOfString:@"#reply" withString:@""];
+            return (NSUInteger)[result integerValue];
+        } else {
+            return 0;
+        }
+    } else {
+        return 0;
+    }
+}
+
 + (NSString *)filterHTML:(NSString *)html
 {
     NSScanner * scanner = [NSScanner scannerWithString:html];

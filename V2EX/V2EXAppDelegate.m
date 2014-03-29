@@ -111,6 +111,7 @@
 - (void)prepareForAllControllers {
     _sharedLatestTopicsViewController = [V2EXLatestTopicsViewController sharedController];
     _sharedNodesListViewController = [V2EXNodesListViewController sharedController];
+    _sharedSelfViewController = [V2EXSelfViewController sharedController];
 }
 
 

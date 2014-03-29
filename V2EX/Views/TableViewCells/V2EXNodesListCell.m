@@ -34,7 +34,7 @@
 
 - (void)cellClick {
     // TODO: This is very bad implementation to respond click event in UITableViewCell as a result of using UITableView in UIScrollView. Need to improve. The page view(DRPaginatedScrollView) in V2EXNodesListController should be replaced by one doesn't inherit form UIScrollView.
-    [self.delegate requestTopicsList:self.nodeURI];
+    [self.delegate requestTopicsList:self.nodeTitle.text andURI:self.nodeURI];
 }
 
 @end

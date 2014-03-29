@@ -16,6 +16,6 @@
 
 @optional
 - (void)requestDataFailure:(NSString *)errorMessage;
-- (void)requestTopicsList:(NSString *)URI;
+- (void)requestTopicsList:(NSString *)nodeTitle andURI:(NSString *)URI;
 
 @end

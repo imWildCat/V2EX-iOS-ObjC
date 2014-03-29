@@ -7,7 +7,10 @@
 //
 
 #import "V2EXTableViewController.h"
+#import "TFHpple+V2EXMethod.h"
 
 @interface V2EXMyTopicsViewController : V2EXTableViewController
+
+@property (strong, nonatomic) TFHpple *doc;
 
 @end

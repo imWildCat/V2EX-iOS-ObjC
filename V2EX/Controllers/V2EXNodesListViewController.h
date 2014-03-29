@@ -24,6 +24,7 @@
     
     NSMutableString *_uriClicked;
     
+    NSMutableString *_loadingNodeTitle;
 }
 
 @property (strong, nonatomic) DRPaginatedScrollView * paginatedScrollView;

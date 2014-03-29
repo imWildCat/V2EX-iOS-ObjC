@@ -13,11 +13,26 @@
 #import <UIImageView+WebCache.h>
 #import <NSAttributedString+HTML.h>
 
+#import "V2EXMyTopicsViewController.h"
+#import "V2EXMyRepliesViewController.h"
+#import "V2EXNotificationCenterViewController.h"
+
 @interface V2EXSelfViewController ()
 
 @end
 
 @implementation V2EXSelfViewController
+
++ (V2EXSelfViewController *)sharedController
+{
+    static V2EXSelfViewController *_sharedLatestTopicsViewControllerInstance = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        _sharedLatestTopicsViewControllerInstance = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"selfController"];
+    });
+    
+    return _sharedLatestTopicsViewControllerInstance;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,21 +47,31 @@
 {
     [super viewDidLoad];
     _model = [[V2EXNormalModel alloc] initWithDelegate:self];
+    _lastLoadUserInformationTime = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-     [self prepareForUserInfo];
+    [self prepareForUserInfo];
 }
 
 - (void)prepareForUserInfo {
     NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
-    NSString *username = [userDefaultes stringForKey:@"saved_username"];
+    if (![[[userDefaultes stringForKey:@"saved_username"] uppercaseString] isEqualToString:[_currentUsername uppercaseString]]) {
+        _lastLoadUserInformationTime = 0;
+        NSLog(@"'%@' set '%@'", [[userDefaultes stringForKey:@"saved_username"] uppercaseString], [_currentUsername uppercaseString]);
+    }
+    _currentUsername = [[userDefaultes stringForKey:@"saved_username"] mutableCopy];
     
-    if (username) {
-        [_model getUserInfo:username];
-        [self showProgressView];
-    } else {
-        [self pushToUserLoginController];
+    if (([[NSDate date] timeIntervalSince1970] - _lastLoadUserInformationTime) > 86400) {
+        // TODO: Produce more viable way to decide if reload data
+        _loadingStatus = 4;
+    
+        if (_currentUsername) {
+            [_model getUserInfo:_currentUsername];
+            [self showProgressView];
+        } else {
+            [self pushToUserLoginController];
+        }
     }
 }
 
@@ -59,16 +84,49 @@
 
 
 - (void)requestDataSuccess:(id)dataObject {
-    [self hideProgressView];
-    TFHpple *doc = [[TFHpple alloc] initWithHTMLData:dataObject];
-    if ([doc checkLogin]) {
-        [self handleWithUserPage:doc];
-    } else {
-        [self pushToUserLoginController];
+    switch (_loadingStatus) {
+        case 1:
+        {
+            TFHpple *doc = [[TFHpple alloc] initWithHTMLData:dataObject];
+            V2EXMyTopicsViewController *myTopicsController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"myTopicsController"];
+            [myTopicsController setDoc:doc];
+            [self.navigationController pushViewController:myTopicsController animated:YES];
+        }
+            break;
+        case 2:
+        {
+            TFHpple *doc = [[TFHpple alloc] initWithHTMLData:dataObject];
+            V2EXMyRepliesViewController *myTopicsController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"myRepliesController"];
+            [myTopicsController setDoc:doc];
+            [self.navigationController pushViewController:myTopicsController animated:YES];
+        }
+            break;
+        case 4:
+        {
+            TFHpple *doc = [[TFHpple alloc] initWithHTMLData:dataObject];
+            if ([doc checkLogin]) {
+                [self handleWithUserPage:doc];
+            } else {
+                [self pushToUserLoginController];
+            }
+        }
+            break;
+        default:
+            break;
     }
+    
+    [self enableAllButtons];
+}
+
+
+
+- (void)requestDataFailure:(NSString *)errorMessage {
+    [self enableAllButtons];
 }
 
 - (void)handleWithUserPage:(TFHpple *)doc {
+    _lastLoadUserInformationTime = [[NSDate date] timeIntervalSince1970];
+    
     self.usernameLabel.text = [self getValueForDoc:doc withXpath:@"//div[@class='inner']/table//tr/td[3]/h1"];
     
     NSURL *avatarURL = [NSURL URLWithString:[@"https:" stringByAppendingString:[[doc searchFirstElementWithXPathQuery:@"//img[@class='avatar']"] objectForKey:@"src"]]];
@@ -94,14 +152,20 @@
 
 - (IBAction)myTopicsButtonClick:(id)sender {
     [self disableAllButtons];
+    _loadingStatus = 1;
+    [_model getUserTopics:_currentUsername];
 }
 
 - (IBAction)myRepliesButtonClick:(id)sender {
     [self disableAllButtons];
+    _loadingStatus = 2;
+    [_model getUserReplies:_currentUsername];
 }
 
 - (IBAction)notificationCenterButtonClick:(id)sender {
     [self disableAllButtons];
+    _loadingStatus = 3;
+    NSLog(@"Nothing 2 do");
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
@@ -110,10 +174,13 @@
 
 - (void)disableAllButtons {
     self.myTopicsButton.enabled = self.myRepliesButton.enabled = self.notificationCenterButton.enabled = NO;
+    [self showProgressView];
 }
 
 - (void)enableAllButtons {
+    _loadingStatus = 0;
     self.myTopicsButton.enabled = self.myRepliesButton.enabled = self.notificationCenterButton.enabled = YES;
+//    [self hideProgressView];
 }
 
 @end

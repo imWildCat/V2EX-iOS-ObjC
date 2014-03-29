@@ -13,10 +13,11 @@
 
 @interface V2EXSelfViewController : UIViewController <V2EXRequestDataDelegate>
 {
-    NSUInteger _loadingStatus; // 0 - No loading ; 1 - Loading my topics ; 2 - Loading my replies ; 3 - Loading notification
+    NSUInteger _loadingStatus; // 0 - No loading ; 1 - Loading my topics ; 2 - Loading my replies ; 3 - Loading notification ; 4 - Self infomation
+    NSTimeInterval _lastLoadUserInformationTime;
     V2EXNormalModel *_model;
     
-    NSString *_currentUsername;
+    NSMutableString *_currentUsername;
 }
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *avatar;
@@ -26,6 +27,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *myRepliesButton;
 @property (strong, nonatomic) IBOutlet UIButton *notificationCenterButton;
 
++ (V2EXSelfViewController *)sharedController;
 - (IBAction)showMenu:(id)sender;
 - (IBAction)myTopicsButtonClick:(id)sender;
 - (IBAction)myRepliesButtonClick:(id)sender;
