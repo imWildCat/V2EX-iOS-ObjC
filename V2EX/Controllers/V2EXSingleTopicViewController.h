@@ -15,6 +15,8 @@
     NSUInteger _topicID;
     NSUInteger _onceCode;
     NSCache *_cellCache;
+    
+    NSUInteger _modelStatus; // 1 - topic; 2 - report
 }
 
 + (V2EXSingleTopicViewController *)sharedController;

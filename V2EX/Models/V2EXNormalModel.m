@@ -53,7 +53,7 @@
 }
 
 - (void)replyTopic:(NSUInteger)topicID andOnce:(NSUInteger)onceCode andContent:(NSString *)content {
-    [self postData:[NSString stringWithFormat:@"t/%i", topicID] parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%i", onceCode], @"once", content, @"content", nil]];
+    [self postData:[NSString stringWithFormat:@"t/%i", topicID] parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%i", onceCode], @"once", [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], @"content", nil]];
 }
 
 - (void)getNewTopicPage:(NSString *)uri {
@@ -61,7 +61,12 @@
 }
 
 - (void)newTopic:(NSString *)uri andTitle:(NSString *)title andContent:(NSString *)content andOnce:(NSUInteger)once {
-    [self postData:[NSString stringWithFormat:@"new/%@", uri] parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%i", once], @"once", title, @"title", content, @"content", nil]];
+    [self postData:[NSString stringWithFormat:@"new/%@", uri] parameters:[NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%i", once], @"once", title, @"title", [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], @"content", nil]];
+}
+
+- (void)reportTopic:(NSUInteger)topicID {
+    NSUInteger time = [[NSDate date] timeIntervalSince1970];
+    [self getHTMLData:[NSString stringWithFormat:@"report/topic/%i?t=%i", topicID, time] parameters:nil];
 }
 
 

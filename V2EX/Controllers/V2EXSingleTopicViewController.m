@@ -31,11 +31,30 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _modelStatus = 0;
 
 //    self.tableView.rowHeight = 70; // TODO: Why don't storyboard with identifiertopicListInSingleNodeController support rowHeight?
     
 //    _cellCache = [[NSCache alloc] init];
+    
+//    UILongPressGestureRecognizer *longPressGr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressToDo:)];
+//    longPressGr.minimumPressDuration = 1.0;
+//    [self.tableView addGestureRecognizer:longPressGr];
 }
+
+//-(void)longPressToDo:(UILongPressGestureRecognizer *)gesture
+//{
+//    
+//    if(gesture.state == UIGestureRecognizerStateBegan)
+//    {
+//        CGPoint point = [gesture locationInView:self.tableView];
+//        NSIndexPath * indexPath = [self.tableView indexPathForRowAtPoint:point];
+//        if(indexPath == nil) return ;
+//        
+//        //add your code here
+//    }
+//}
 
 + (V2EXSingleTopicViewController *)sharedController
 {
@@ -49,6 +68,7 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
 }
 
 - (void)loadNewTopicWithData:(NSData *)data {
+    _modelStatus = 1;
     [self requestDataSuccess:data];
 }
 
@@ -63,6 +83,7 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
         _cellCache = [[NSCache alloc] init];
     }
     
+    _modelStatus = 1;
     [self.model getTopicWithID:ID];
 }
 
@@ -71,9 +92,18 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
 }
 
 - (void)requestDataSuccess:(id)dataObject {
-    [self handleTopicData:dataObject];
+    if (_modelStatus == 1) {
+        [self handleTopicData:dataObject];
+        [super requestDataSuccess:dataObject];
+    } else if (_modelStatus == 2) {
+        [self showMessage:@"举报成功!"];
+    }
     
-    [super requestDataSuccess:dataObject];
+    _modelStatus = 0;
+}
+
+- (void)requestDataFailure:(NSString *)errorMessage {
+    _modelStatus = 0;
 }
 
 - (void)handleTopicData:(NSData *)dataObject {
@@ -138,6 +168,19 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
     cell.accessoryType = UITableViewCellAccessoryNone;
 	cell.attributedTextContextView.shouldDrawImages = YES;
     // TODO: support to display images in topics
+    
+    if (indexPath.row == 0) {
+        // Set Report Button
+        UIButton *reportButton = [[UIButton alloc] initWithFrame:CGRectMake(240, 6, 100, 21)];
+        [reportButton setTitle:@"举报" forState:UIControlStateNormal];
+        //    [reportButton setTitle:@"举报" forState:UIControlStateHighlighted];
+        //    [reportButton setTitle:@"举报" forState:UIControlStateSelected]; // not working?
+        reportButton.titleLabel.textColor = [UIColor blackColor];
+        
+        [reportButton addTarget:self action:@selector(reportButtonTouchedUp) forControlEvents:UIControlEventTouchUpInside];
+        
+        [cell addSubview:reportButton];
+    }
     
     // Set user avatar
     UIImageView *userAvatarImgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 45, 45)];
@@ -315,6 +358,12 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
 //	return nil;
 //}
 
+
+- (void)reportButtonTouchedUp {
+    [self showMessage:@"已收到您的举报，感谢支持。"];
+    [self.model reportTopic:_topicID];
+}
+
 // toReplyController
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     if ([identifier isEqualToString:@"toReplyController"]) {
@@ -339,7 +388,10 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
 
 // After reply
 - (void)afterReplyTopic:(NSData *)data {
+    _modelStatus = 2;
     [self requestDataSuccess:data];
 }
+
+
 
 @end
