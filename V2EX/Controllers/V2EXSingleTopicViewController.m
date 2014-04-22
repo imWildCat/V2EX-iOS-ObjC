@@ -360,8 +360,21 @@ NSString * const AttributedTextCellReuseIdentifier = @"AttributedTextCellReuseId
 
 
 - (void)reportButtonTouchedUp {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您确实要举报这个主题吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
+#pragma marks -- UIAlertViewDelegate --
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self.model reportTopic:_topicID];
+        [self performSelector:@selector(showThank4Report) withObject:nil afterDelay:1.23];
+    }
+}
+
+- (void)showThank4Report {
     [self showMessage:@"已收到您的举报，感谢支持。"];
-    [self.model reportTopic:_topicID];
 }
 
 // toReplyController
