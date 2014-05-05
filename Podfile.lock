@@ -18,14 +18,14 @@ PODS:
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
   - DDPageControl (0.1)
-  - DTCoreText (1.6.10):
+  - DTCoreText (1.6.11):
     - DTFoundation/Core (~> 1.6.1)
     - DTFoundation/DTHTMLParser (~> 1.6.1)
     - DTFoundation/UIKit (~> 1.6.1)
-  - DTFoundation/Core (1.6.1)
-  - DTFoundation/DTHTMLParser (1.6.1):
+  - DTFoundation/Core (1.6.2)
+  - DTFoundation/DTHTMLParser (1.6.2):
     - DTFoundation/Core
-  - DTFoundation/UIKit (1.6.1):
+  - DTFoundation/UIKit (1.6.2):
     - DTFoundation/Core
   - FMDB (2.2):
     - FMDB/standard
@@ -34,13 +34,13 @@ PODS:
     - FMDB/common
   - GHUnit (0.5.9)
   - HMSegmentedControl (1.3.0)
-  - hpple (0.2.0)
+  - Hpple (0.2.0)
   - Masonry (0.4.0)
   - MBProgressHUD (0.8)
   - RESideMenu (3.4)
-  - SDWebImage (3.5.2):
+  - SDWebImage (3.6):
     - SDWebImage/Core
-  - SDWebImage/Core (3.5.2)
+  - SDWebImage/Core (3.6)
   - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
@@ -50,26 +50,30 @@ DEPENDENCIES:
   - FMDB
   - GHUnit
   - HMSegmentedControl (~> 1.3.0)
-  - hpple
+  - Hpple (from `https://github.com/topfunky/hpple.git`)
   - Masonry
   - MBProgressHUD
   - RESideMenu (~> 3.4)
   - SDWebImage
   - SVPullToRefresh
 
+EXTERNAL SOURCES:
+  Hpple:
+    :git: https://github.com/topfunky/hpple.git
+
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
-  DDPageControl: 3fb3d25d601b460028bf09ab70a03065ebd107f9
-  DTCoreText: 39e316024954ef7e86c7fbfb5f0eee991f7211f1
-  DTFoundation: 23d39b258d481221167cd4bf3df86ff3f22b1f55
-  FMDB: 97472cfacf0d9e445e915704fb43b4b142799c36
+  DDPageControl: ed243202fe4e210f4f2c6e7de26e3c06260c6cd6
+  DTCoreText: 4d56bb74ff05a3b2415fc15fccc4b5689ed3119c
+  DTFoundation: 7c69990fa3cb7655cafa95ab59c3fcea014460f0
+  FMDB: e0dd09464b4e1a1cd7fa51ea835ae821b5656865
   GHUnit: 2f3ea0192633e92afaef959476a8d28db179797d
   HMSegmentedControl: 3a58d4fc011e40c93c5299b9e8283e89c32f4c64
-  hpple: dde62f905f482bbec50186280d1a1be2c881241b
+  Hpple: 75ce7943178ebff8812698cb11ade69dea9db141
   Masonry: d673617c9cbc24aaea90fba20b10e47fd9970a39
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   RESideMenu: d8d6330052e0348718826045b912a1c71748357d
-  SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
+  SDWebImage: 7eb273e54ca8a2e506ad9bd5e80c35b2a4d7c95e
   SVPullToRefresh: 61a0e4bd12bd6f8e3465909810b0fbeb1a28d5f2
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1

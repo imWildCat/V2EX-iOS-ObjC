@@ -1,7 +1,7 @@
 platform :ios, '7.0'
 pod 'AFNetworking', '~> 2.1.0'
 pod 'RESideMenu', '~> 3.4'
-pod 'hpple', '~> 0.2.0'
+pod 'Hpple', :git => 'https://github.com/topfunky/hpple.git'
 pod 'MBProgressHUD'
 pod 'SVPullToRefresh'
 pod 'SDWebImage'
