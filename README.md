@@ -2,6 +2,14 @@ V2EX-iOS
 ========
 The iOS client for V2EX.
 
+How to start
+========
+This project is using CocoaPods. To get more information about it, please go to the following link:  
+http://code4app.com/article/cocoapods-install-usage  
+
+**And if you are living inside the Great Fire Wall, you might have to use a mirror of CocoaPods Specs, see about this:**  
+http://www.v2ex.com/t/110435  
+
 TODO
 ========
 1. Display images in topics(https://github.com/imWildCat/V2EX-iOS/issues/5)
